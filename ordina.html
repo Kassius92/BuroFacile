@@ -579,24 +579,20 @@ async function handleSubmit(e) {
   btn.disabled = true;
   btn.innerHTML = '<span style="opacity:.7">Registrazione dati…</span>';
 
-  // ── 1. SALVA TUTTO SU GOOGLE SHEET ──
-  try {
-    await fetch(LOGGER_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email, nome, eta, citta, lavoro, reddito, famiglia,
-        situazione: situaz,
-        scheda: schedaParam || 'non specificata',
-        dettagli_scheda: JSON.stringify(specificData),
-        privacy, recesso, termini,
-        userAgent: navigator.userAgent,
-      })
-    });
-  } catch (err) {
-    console.warn('Logger non raggiunto:', err);
-  }
+  // ── 1. SALVA TUTTO SU GOOGLE SHEET (via GET — zero problemi CORS) ──
+  const logData = new URLSearchParams({
+    email, nome, eta, citta, lavoro, reddito, famiglia,
+    situazione: situaz,
+    scheda: schedaParam || 'non specificata',
+    dettagli: JSON.stringify(specificData),
+    privacy: privacy ? 'Sì' : 'No',
+    recesso: recesso ? 'Sì' : 'No',
+    termini: termini ? 'Sì' : 'No',
+  });
+  new Image().src = LOGGER_URL + '?' + logData.toString();
+
+  // Piccola pausa per dare tempo alla richiesta di partire
+  await new Promise(r => setTimeout(r, 500));
 
   // ── 2. REDIRECT A STRIPE ──
   const url = new URL(STRIPE_LINK);
