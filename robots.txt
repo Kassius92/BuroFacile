@@ -1,8 +1,8 @@
 User-agent: *
 Allow: /
 
-Disallow: /ordina.html
-Disallow: /privacy.html
-Disallow: /termini.html
+Disallow: /ordina
+Disallow: /privacy
+Disallow: /termini
 
-Sitemap: https://www.burofacile.it/sitemap.xml
+Sitemap: https://buro-facile.it/sitemap.xml
