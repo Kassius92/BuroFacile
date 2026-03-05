@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contatta BuroFacile: hai trovato un errore, vuoi suggerire una guida o hai una domanda? Rispondiamo entro 24 ore.">
+<title>Contatti — BuroFacile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F8F4E8;
+  --cream-dark: #EFE8D8;
+  --warm-brown: #0F4C5C;
+  --accent-tc: #E36414;
+  --accent-sage: #2A9D8F;
+  --text-1: #1A1A2E;
+  --text-2: #4A5568;
+  --text-3: #8A8A9A;
+  --border: #E8DFD0;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--text-1); -webkit-font-smoothing:antialiased; }
+
+.nav { position:fixed; top:0; left:0; right:0; z-index:300; height:62px; background:rgba(251,248,241,0.88); backdrop-filter:blur(24px) saturate(180%); -webkit-backdrop-filter:blur(24px) saturate(180%); border-bottom:1px solid rgba(232,223,211,0.5); transition:box-shadow .3s; }
+.nav.s { box-shadow:0 2px 24px rgba(15,76,92,.08); }
+.nav-i { max-width:1110px; margin:0 auto; padding:0 28px; height:100%; display:flex; align-items:center; justify-content:space-between; }
+.logo { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:var(--warm-brown); text-decoration:none; letter-spacing:-.3px; }
+.logo span { color:var(--accent-tc); }
+.back { display:flex; align-items:center; gap:7px; font-size:13px; font-weight:500; color:var(--text-3); text-decoration:none; transition:color .2s; }
+.back:hover { color:var(--warm-brown); }
+.back svg { width:15px; height:15px; }
+
+.page-wrap { max-width:760px; margin:0 auto; padding:110px 28px 80px; }
+.page-tag { display:inline-block; background:var(--cream-dark); color:var(--text-3); font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; padding:5px 12px; border-radius:20px; margin-bottom:20px; }
+.page-title { font-family:'Playfair Display',serif; font-size:42px; font-weight:700; color:var(--warm-brown); line-height:1.15; margin-bottom:16px; }
+.page-lead { font-size:17px; line-height:1.7; color:var(--text-2); margin-bottom:48px; padding-bottom:40px; border-bottom:1px solid var(--border); }
+
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:40px 0; }
+.contact-card { background:white; border:1px solid var(--border); border-radius:14px; padding:28px 24px; text-decoration:none; transition:box-shadow .2s, transform .2s; display:block; }
+.contact-card:hover { box-shadow:0 8px 32px rgba(15,76,92,.10); transform:translateY(-2px); }
+.contact-icon { font-size:28px; margin-bottom:12px; }
+.contact-type { font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--text-3); margin-bottom:6px; }
+.contact-value { font-size:16px; font-weight:600; color:var(--warm-brown); margin-bottom:8px; }
+.contact-desc { font-size:13px; line-height:1.55; color:var(--text-2); }
+
+.faq-section { margin:48px 0; }
+.faq-section h2 { font-family:'Playfair Display',serif; font-size:24px; font-weight:600; color:var(--warm-brown); margin-bottom:24px; }
+.faq-item { border-bottom:1px solid var(--border); padding:18px 0; }
+.faq-item:last-child { border-bottom:none; }
+.faq-q { font-size:15px; font-weight:600; color:var(--text-1); margin-bottom:8px; }
+.faq-a { font-size:14px; line-height:1.7; color:var(--text-2); }
+.faq-a a { color:var(--accent-tc); text-decoration:none; }
+.faq-a a:hover { text-decoration:underline; }
+
+.disclaimer { background:var(--cream-dark); border-radius:12px; padding:22px; margin-top:40px; }
+.disclaimer p { font-size:13px; line-height:1.65; color:var(--text-3); margin:0; }
+.disclaimer strong { color:var(--text-2); }
+
+footer { background:var(--cream); border-top:1px solid var(--border); padding:36px 28px; margin-top:60px; }
+.fi { max-width:1110px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+.fbrand { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--warm-brown); }
+.fbrand span { color:var(--accent-tc); }
+.flinks { display:flex; gap:20px; flex-wrap:wrap; }
+.flinks a { font-size:13px; color:var(--text-3); text-decoration:none; transition:color .2s; }
+.flinks a:hover { color:var(--warm-brown); }
+.fcopy { font-size:12px; color:var(--text-3); width:100%; }
+
+@media(max-width:600px) {
+  .page-title { font-size:30px; }
+  .page-wrap { padding:90px 18px 60px; }
+  .contact-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-i">
+    <a href="index.html" class="logo">Buro<span>Facile</span></a>
+    <a href="index.html" class="back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      Tutte le guide
+    </a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-tag">Parliamo</div>
+  <h1 class="page-title">Contatti</h1>
+  <p class="page-lead">Hai trovato un errore in una guida? Vuoi suggerire un argomento? Hai una domanda? Scrivi — rispondiamo a tutto, di solito entro 24 ore.</p>
+
+  <div class="contact-grid">
+    <a href="mailto:info.burofacile@gmail.com" class="contact-card">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-type">Email generale</div>
+      <div class="contact-value">info.burofacile@gmail.com</div>
+      <div class="contact-desc">Per domande, suggerimenti e feedback sul sito e sui contenuti.</div>
+    </a>
+    <a href="mailto:info.burofacile@gmail.com" class="contact-card">
+      <div class="contact-icon">🔒</div>
+      <div class="contact-type">Privacy e dati</div>
+      <div class="contact-value">info.burofacile@gmail.com</div>
+      <div class="contact-desc">Per richieste legate al trattamento dei dati personali (GDPR).</div>
+    </a>
+    <a href="mailto:info.burofacile@gmail.com" class="contact-card">
+      <div class="contact-icon">🔍</div>
+      <div class="contact-type">Segnala un errore</div>
+      <div class="contact-value">info.burofacile@gmail.com</div>
+      <div class="contact-desc">Hai trovato un'informazione sbagliata o non aggiornata? Dimmelo — la correggo entro 24 ore.</div>
+    </a>
+    <a href="mailto:info.burofacile@gmail.com" class="contact-card">
+      <div class="contact-icon">💡</div>
+      <div class="contact-type">Suggerisci una guida</div>
+      <div class="contact-value">info.burofacile@gmail.com</div>
+      <div class="contact-desc">Manca una situazione di vita che ti ha creato problemi? Scrivimi qual è e la scrivo.</div>
+    </a>
+  </div>
+
+  <div class="faq-section">
+    <h2>Domande frequenti su BuroFacile</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">Posso fidarmi delle informazioni di BuroFacile?</div>
+      <div class="faq-a">Le guide sono scritte a partire da fonti ufficiali (Agenzia delle Entrate, INPS, testi di legge) e aggiornate quando cambia la normativa. Ogni scheda indica le fonti di riferimento. Detto questo, BuroFacile non è un consulente professionale: per decisioni importanti, verifica sempre con un commercialista o un CAF.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Le guide sono davvero gratuite? Cosa c'è a pagamento?</div>
+      <div class="faq-a">Sì, le guide sono complete e gratuite. Non tagliamo il contenuto per spingerti a pagare. Le schede personalizzate (quando saranno disponibili) aggiungono i tuoi numeri specifici, i tuoi uffici, i tuoi bonus — ma la guida gratuita rimane completa per tutti.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Ho trovato un'informazione sbagliata. Cosa faccio?</div>
+      <div class="faq-a">Scrivici a <a href="mailto:info.burofacile@gmail.com">info.burofacile@gmail.com</a> indicando la scheda, la sezione e l'errore che hai trovato. Verifichiamo e correggiamo entro 24 ore. Grazie — ci aiuti a tenere le guide accurate.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Posso usare il contenuto di BuroFacile sul mio sito?</div>
+      <div class="faq-a">Puoi citare brevi estratti con link alla fonte. Non è consentita la riproduzione integrale dei testi. Per usi editoriali o collaborazioni scrivi a <a href="mailto:info.burofacile@gmail.com">info.burofacile@gmail.com</a>.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">BuroFacile può rispondere a domande sulla mia situazione specifica?</div>
+      <div class="faq-a">Al momento no — siamo un servizio informativo, non un consulente. Le guide coprono le situazioni più comuni in modo approfondito. Per domande molto specifiche ti consigliamo un CAF, un patronato o un commercialista.</div>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    <p><strong>Nota bene:</strong> BuroFacile non fornisce consulenza fiscale, legale o professionale. Le informazioni sul sito sono di carattere generale e orientativo. Per la tua situazione specifica, rivolgiti sempre a un professionista qualificato.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="fi">
+    <div class="fbrand">Buro<span>Facile</span></div>
+    <div class="flinks">
+      <a href="chi-siamo.html">Chi siamo</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="termini.html">Termini</a>
+      <a href="contatti.html">Contatti</a>
+    </div>
+    <div class="fcopy">© 2026 BuroFacile — Le informazioni sul sito sono indicative e non sostituiscono la consulenza professionale.</div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => document.getElementById('nav').classList.toggle('s', scrollY > 20), {passive:true});
+</script>
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personalizza la tua guida BuroFacile: ricevi una scheda con i tuoi numeri, i tuoi bonus e gli uffici della tua città entro 24 ore.">
+<title>Scheda personalizzata — BuroFacile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F8F4E8;
+  --cream-dark: #EFE8D8;
+  --warm-brown: #0F4C5C;
+  --accent-tc: #E36414;
+  --accent-tc-h: #CC5810;
+  --accent-sage: #2A9D8F;
+  --text-1: #1A1A2E;
+  --text-2: #4A5568;
+  --text-3: #8A8A9A;
+  --border: #E8DFD0;
+  --white: #FFFFFF;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--text-1); -webkit-font-smoothing:antialiased; }
+
+/* NAV */
+.nav { position:fixed; top:0; left:0; right:0; z-index:300; height:62px; background:rgba(251,248,241,0.88); backdrop-filter:blur(24px) saturate(180%); -webkit-backdrop-filter:blur(24px) saturate(180%); border-bottom:1px solid rgba(232,223,211,0.5); transition:box-shadow .3s; }
+.nav.s { box-shadow:0 2px 24px rgba(15,76,92,.08); }
+.nav-i { max-width:1110px; margin:0 auto; padding:0 28px; height:100%; display:flex; align-items:center; justify-content:space-between; }
+.logo { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:var(--warm-brown); text-decoration:none; letter-spacing:-.3px; }
+.logo span { color:var(--accent-tc); }
+.back { display:flex; align-items:center; gap:7px; font-size:13px; font-weight:500; color:var(--text-3); text-decoration:none; transition:color .2s; }
+.back:hover { color:var(--warm-brown); }
+.back svg { width:15px; height:15px; }
+
+/* LAYOUT */
+.wrap { max-width:720px; margin:0 auto; padding:90px 24px 80px; }
+
+/* HEADER */
+.order-header { text-align:center; margin-bottom:40px; }
+.order-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(227,100,20,.10); color:var(--accent-tc);
+  font-size:12px; font-weight:700; letter-spacing:.6px; text-transform:uppercase;
+  padding:6px 14px; border-radius:20px; margin-bottom:18px;
+}
+.order-title { font-family:'Playfair Display',serif; font-size:34px; font-weight:700; color:var(--warm-brown); line-height:1.2; margin-bottom:10px; }
+.order-sub { font-size:15px; color:var(--text-2); line-height:1.65; max-width:480px; margin:0 auto; }
+
+/* PROMISE BAR */
+.promise-bar {
+  display:flex; align-items:center; justify-content:center; gap:28px;
+  background:white; border:1px solid var(--border); border-radius:12px;
+  padding:16px 24px; margin-bottom:32px; flex-wrap:wrap; gap:16px;
+}
+.pr-item { display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-2); }
+.pr-item strong { color:var(--text-1); }
+.pr-sep { width:1px; height:28px; background:var(--border); }
+@media(max-width:560px) { .pr-sep { display:none; } .promise-bar { gap:10px; } }
+
+/* CARD FORM */
+.form-card { background:var(--white); border:1px solid var(--border); border-radius:18px; padding:36px 32px; box-shadow:0 4px 32px rgba(15,76,92,.06); }
+@media(max-width:560px) { .form-card { padding:24px 18px; } }
+
+.form-section { margin-bottom:32px; }
+.form-section:last-child { margin-bottom:0; }
+.fs-title { font-size:13px; font-weight:700; letter-spacing:.8px; text-transform:uppercase; color:var(--text-3); margin-bottom:18px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+
+.field { margin-bottom:18px; }
+.field:last-child { margin-bottom:0; }
+.field label { display:block; font-size:13px; font-weight:600; color:var(--text-1); margin-bottom:7px; }
+.field label .opt { font-weight:400; color:var(--text-3); font-size:12px; }
+
+.field input,
+.field select,
+.field textarea {
+  width:100%; padding:12px 14px;
+  border:1.5px solid var(--border); border-radius:10px;
+  font-family:'DM Sans',sans-serif; font-size:14px; color:var(--text-1);
+  background:var(--cream); outline:none;
+  transition:border-color .2s, box-shadow .2s;
+  appearance:none; -webkit-appearance:none;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color:var(--accent-tc);
+  box-shadow:0 0 0 3px rgba(227,100,20,.10);
+  background:white;
+}
+.field textarea { resize:vertical; min-height:90px; line-height:1.6; }
+.field select { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A8A9A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 14px center; padding-right:36px; cursor:pointer; }
+
+.row2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+@media(max-width:520px) { .row2 { grid-template-columns:1fr; } }
+
+/* HINT */
+.field-hint { font-size:12px; color:var(--text-3); margin-top:5px; line-height:1.5; }
+
+/* DIVIDER */
+.divider { border:none; border-top:1px solid var(--border); margin:28px 0; }
+
+/* PRICE BOX */
+.price-box {
+  background:linear-gradient(135deg, var(--warm-brown) 0%, #1A6B7A 100%);
+  border-radius:14px; padding:24px 26px; margin-bottom:24px; color:white;
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;
+}
+.price-left {}
+.price-what { font-size:13px; color:rgba(255,255,255,.7); margin-bottom:4px; }
+.price-items { font-size:14px; color:rgba(255,255,255,.9); line-height:1.65; }
+.price-items span { display:block; }
+.price-items span::before { content:'✓  '; color:var(--accent-sage); font-weight:700; }
+.price-right { text-align:right; }
+.price-amount { font-family:'Playfair Display',serif; font-size:38px; font-weight:700; color:white; line-height:1; }
+.price-once { font-size:12px; color:rgba(255,255,255,.6); margin-top:4px; }
+
+/* LEGAL */
+.legal-block { margin-bottom:20px; }
+.checkbox-row { display:flex; align-items:flex-start; gap:11px; margin-bottom:12px; cursor:pointer; }
+.checkbox-row input[type=checkbox] { width:18px; height:18px; margin-top:2px; accent-color:var(--accent-tc); cursor:pointer; flex-shrink:0; }
+.checkbox-row span { font-size:13px; line-height:1.6; color:var(--text-2); }
+.checkbox-row span a { color:var(--accent-tc); text-decoration:none; }
+.checkbox-row span a:hover { text-decoration:underline; }
+
+/* DELIVERY NOTE */
+.delivery-note {
+  display:flex; align-items:center; gap:10px;
+  background:rgba(42,157,143,.08); border:1px solid rgba(42,157,143,.2);
+  border-radius:10px; padding:13px 16px; margin-bottom:22px;
+  font-size:13px; color:var(--text-2);
+}
+.delivery-note strong { color:var(--warm-brown); }
+.delivery-icon { font-size:20px; flex-shrink:0; }
+
+/* SUBMIT */
+.btn-submit {
+  width:100%; padding:16px;
+  background:var(--accent-tc); color:white;
+  font-family:'DM Sans',sans-serif; font-size:16px; font-weight:700;
+  border:none; border-radius:12px; cursor:pointer;
+  transition:background .2s, transform .15s, box-shadow .2s;
+  box-shadow:0 4px 20px rgba(227,100,20,.3);
+  display:flex; align-items:center; justify-content:center; gap:10px;
+}
+.btn-submit:hover { background:var(--accent-tc-h); transform:translateY(-1px); box-shadow:0 6px 24px rgba(227,100,20,.4); }
+.btn-submit:active { transform:translateY(0); }
+.btn-submit:disabled { background:#ccc; cursor:not-allowed; box-shadow:none; transform:none; }
+.btn-price { background:rgba(255,255,255,.2); border-radius:6px; padding:2px 10px; font-size:15px; }
+
+.secure-note { text-align:center; font-size:12px; color:var(--text-3); margin-top:12px; display:flex; align-items:center; justify-content:center; gap:5px; }
+
+/* BACK LINK */
+.back-link { text-align:center; margin-top:28px; }
+.back-link a { font-size:13px; color:var(--text-3); text-decoration:none; transition:color .2s; }
+.back-link a:hover { color:var(--warm-brown); }
+
+/* FOOTER */
+footer { background:var(--cream); border-top:1px solid var(--border); padding:28px 28px; margin-top:60px; }
+.fi { max-width:1110px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+.fbrand { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--warm-brown); }
+.fbrand span { color:var(--accent-tc); }
+.flinks { display:flex; gap:20px; flex-wrap:wrap; }
+.flinks a { font-size:13px; color:var(--text-3); text-decoration:none; transition:color .2s; }
+.flinks a:hover { color:var(--warm-brown); }
+.fcopy { font-size:12px; color:var(--text-3); width:100%; }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-i">
+    <a href="index.html" class="logo">Buro<span>Facile</span></a>
+    <a id="back-btn" href="index.html" class="back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      <span id="back-label">Torna alla guida</span>
+    </a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="order-header">
+    <div class="order-badge">✦ Scheda personalizzata</div>
+    <h1 class="order-title" id="page-title">Personalizza la tua guida</h1>
+    <p class="order-sub">Dimmi la tua situazione in pochi campi. Ricevi una scheda con i <strong>tuoi numeri</strong>, i <strong>tuoi uffici</strong> e i <strong>bonus a cui hai diritto tu</strong>.</p>
+  </div>
+
+  <div class="promise-bar">
+    <div class="pr-item">⏱ <strong>Entro 24 ore</strong> via email</div>
+    <div class="pr-sep"></div>
+    <div class="pr-item">🔒 <strong>Dati al sicuro</strong>, mai ceduti</div>
+    <div class="pr-sep"></div>
+    <div class="pr-item">✉️ <strong>Risposta garantita</strong> o rimborso</div>
+  </div>
+
+  <div class="form-card">
+
+    <!-- SEZIONE 1: CHI SEI -->
+    <div class="form-section">
+      <div class="fs-title">Chi sei</div>
+
+      <div class="row2">
+        <div class="field">
+          <label for="nome">Nome <span class="opt">(facoltativo)</span></label>
+          <input type="text" id="nome" name="nome" placeholder="Es. Marco">
+        </div>
+        <div class="field">
+          <label for="eta">Età</label>
+          <select id="eta" name="eta">
+            <option value="" disabled selected>Seleziona</option>
+            <option>Meno di 26 anni</option>
+            <option>26–35 anni</option>
+            <option>36–45 anni</option>
+            <option>46–60 anni</option>
+            <option>Oltre 60 anni</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label for="citta">Città o CAP</label>
+          <input type="text" id="citta" name="citta" placeholder="Es. Milano oppure 80100">
+        </div>
+        <div class="field">
+          <label for="lavoro">Situazione lavorativa</label>
+          <select id="lavoro" name="lavoro">
+            <option value="" disabled selected>Seleziona</option>
+            <option>Dipendente a tempo indeterminato</option>
+            <option>Dipendente a tempo determinato</option>
+            <option>Partita IVA / Autonomo</option>
+            <option>Pensionato</option>
+            <option>Disoccupato / In cerca</option>
+            <option>Studente</option>
+            <option>Altro</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label for="reddito">Reddito annuo lordo <span class="opt">(circa)</span></label>
+          <select id="reddito" name="reddito">
+            <option value="" disabled selected>Seleziona</option>
+            <option>Meno di 15.000 €</option>
+            <option>15.000 – 28.000 €</option>
+            <option>28.000 – 50.000 €</option>
+            <option>50.000 – 75.000 €</option>
+            <option>Oltre 75.000 €</option>
+            <option>Preferisco non dirlo</option>
+          </select>
+          <div class="field-hint">Serve solo per calcolare detrazioni e scaglioni IRPEF — non serve il dato esatto.</div>
+        </div>
+        <div class="field">
+          <label for="famiglia">Nucleo familiare</label>
+          <select id="famiglia" name="famiglia">
+            <option value="" disabled selected>Seleziona</option>
+            <option>Single, senza figli</option>
+            <option>Coppia, senza figli</option>
+            <option>Con 1 figlio</option>
+            <option>Con 2 figli</option>
+            <option>Con 3 o più figli</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEZIONE 2: LA TUA SITUAZIONE -->
+    <div class="form-section">
+      <div class="fs-title">La tua situazione specifica</div>
+
+      <div class="field">
+        <label for="situazione">Raccontami la tua situazione in 2-3 righe <span class="opt">(facoltativo ma utile)</span></label>
+        <textarea id="situazione" name="situazione" placeholder="Es. Ho comprato casa l'anno scorso con mutuo, ho due figli di 5 e 8 anni, ho fatto anche dei lavori di ristrutturazione. Vorrei sapere cosa posso scaricare nel 730 e se ho diritto al bonus mobili..."></textarea>
+        <div class="field-hint">Più mi dici, più la scheda sarà precisa. Scrivi in modo libero — non c'è formato giusto o sbagliato.</div>
+      </div>
+    </div>
+
+    <!-- SEZIONE 3: DOVE MANDARE LA SCHEDA -->
+    <div class="form-section">
+      <div class="fs-title">Dove ti mando la scheda</div>
+      <div class="field">
+        <label for="email">Email <span style="color:var(--accent-tc)">*</span></label>
+        <input type="email" id="email" name="email" placeholder="la-tua@email.it" required>
+        <div class="field-hint">Riceverai la scheda personalizzata a questo indirizzo entro 24 ore dal pagamento.</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- PRICE BOX -->
+    <div class="price-box">
+      <div class="price-left">
+        <div class="price-what">Cosa ricevi</div>
+        <div class="price-items">
+          <span>Scheda personalizzata per la tua situazione</span>
+          <span>Bonus e detrazioni a cui hai diritto tu</span>
+          <span>Uffici e contatti della tua città</span>
+          <span>Scadenze personalizzate</span>
+        </div>
+      </div>
+      <div class="price-right">
+        <div class="price-amount">1,99€</div>
+        <div class="price-once">una tantum</div>
+      </div>
+    </div>
+
+    <!-- DELIVERY NOTE -->
+    <div class="delivery-note">
+      <div class="delivery-icon">📬</div>
+      <div>Ricevi la scheda <strong>entro 24 ore</strong> all'email che hai indicato. Di solito arriva molto prima — ma ci teniamo questo margine per fartela bene.</div>
+    </div>
+
+    <!-- LEGAL CHECKBOXES -->
+    <div class="legal-block">
+      <label class="checkbox-row">
+        <input type="checkbox" id="check-privacy" required>
+        <span>Acconsento al trattamento dei miei dati personali per la generazione della scheda personalizzata, come descritto nella <a href="privacy.html" target="_blank">Privacy Policy</a>. I dati non saranno ceduti a terzi.</span>
+      </label>
+      <label class="checkbox-row">
+        <input type="checkbox" id="check-recesso" required>
+        <span>Confermo di voler ricevere la scheda entro 24 ore e accetto che l'esecuzione del servizio inizi subito dopo il pagamento, <strong>rinunciando al diritto di recesso</strong> ai sensi dell'art. 59 lett. a) del Codice del Consumo.</span>
+      </label>
+      <label class="checkbox-row">
+        <input type="checkbox" id="check-termini" required>
+        <span>Ho letto e accetto i <a href="termini.html" target="_blank">Termini di Servizio</a>. Confermo di aver letto la guida gratuita e che la scheda personalizzata è un servizio integrativo a pagamento.</span>
+      </label>
+    </div>
+
+    <!-- SUBMIT -->
+    <button class="btn-submit" id="btn-pay" onclick="handleSubmit(event)">
+      Paga e ricevi la scheda <span class="btn-price">1,99 €</span>
+    </button>
+
+    <div class="secure-note">
+      🔒 Pagamento sicuro via Stripe · Carta di credito, debito o PayPal
+    </div>
+
+  </div><!-- /form-card -->
+
+  <div class="back-link">
+    <a id="back-link2" href="index.html">← Torna alla guida gratuita, non voglio la scheda personalizzata</a>
+  </div>
+
+</div><!-- /wrap -->
+
+<footer>
+  <div class="fi">
+    <div class="fbrand">Buro<span>Facile</span></div>
+    <div class="flinks">
+      <a href="chi-siamo.html">Chi siamo</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="termini.html">Termini</a>
+      <a href="contatti.html">Contatti</a>
+    </div>
+    <div class="fcopy">© 2026 BuroFacile · Le schede personalizzate sono elaborate manualmente entro 24 ore.</div>
+  </div>
+</footer>
+
+<script>
+// Nav shadow
+window.addEventListener('scroll', () => document.getElementById('nav').classList.toggle('s', scrollY > 20), {passive:true});
+
+// Read ?scheda= param from URL to customize the page
+const params = new URLSearchParams(location.search);
+const schedaParam = params.get('scheda') || '';
+
+const schede = {
+  '730':          { title: 'Personalizza la tua guida al 730',         back: '730.html' },
+  'compro-casa':  { title: 'Personalizza la tua guida — Compro casa',  back: 'compro-casa.html' },
+  'isee':         { title: 'Personalizza la tua guida all\'ISEE',      back: 'isee.html' },
+  'spid':         { title: 'Personalizza la tua guida allo SPID',      back: 'spid.html' },
+  'figlio':       { title: 'Personalizza la guida — Aspetto un figlio',back: 'figlio.html' },
+  'piva':         { title: 'Personalizza la guida — Partita IVA',      back: 'piva.html' },
+  'ristrutturare':{ title: 'Personalizza la guida — Ristrutturare casa',back:'ristrutturare.html' },
+};
+
+if (schedaParam && schede[schedaParam]) {
+  document.getElementById('page-title').textContent = schede[schedaParam].title;
+  const backHref = schede[schedaParam].back;
+  document.getElementById('back-btn').href  = backHref;
+  document.getElementById('back-link2').href = backHref;
+}
+
+// Form validation + submit
+// ─── INCOLLA QUI L'URL DEL TUO GOOGLE APPS SCRIPT ─────────────
+// Dopo aver deployato lo script su script.google.com,
+// copia l'URL "App web" e incollalo qui sotto.
+const LOGGER_URL = 'https://script.google.com/macros/s/AKfycbzPL6l1YQxmhiq_s_M-u9NKLw2HBe4_CHh3ZD2pHOt_mK31RMF3KNERDpsN9jKK6nnD/exec';
+
+// ─── INCOLLA QUI IL TUO STRIPE PAYMENT LINK ────────────────────
+// Crea il prodotto su dashboard.stripe.com → Payment Links
+// e incolla il link qui sotto.
+const STRIPE_LINK = 'QUI_INCOLLA_STRIPE_PAYMENT_LINK';
+// ───────────────────────────────────────────────────────────────
+
+async function handleSubmit(e) {
+  e.preventDefault();
+
+  const email   = document.getElementById('email').value.trim();
+  const privacy = document.getElementById('check-privacy').checked;
+  const recesso = document.getElementById('check-recesso').checked;
+  const termini = document.getElementById('check-termini').checked;
+
+  // Validazioni
+  if (!email) {
+    alert('Inserisci la tua email per ricevere la scheda.');
+    document.getElementById('email').focus();
+    return;
+  }
+  if (!email.includes('@') || !email.includes('.')) {
+    alert('L\'email non sembra valida. Controlla e riprova.');
+    document.getElementById('email').focus();
+    return;
+  }
+  if (!privacy || !recesso || !termini) {
+    alert('Per procedere devi accettare tutte e tre le condizioni.');
+    return;
+  }
+
+  // Blocca il tasto e mostra caricamento
+  const btn = document.getElementById('btn-pay');
+  btn.disabled = true;
+  btn.innerHTML = '<span style="opacity:.7">Registrazione consenso…</span>';
+
+  // ─── 1. SALVA IL CONSENSO SU GOOGLE SHEET ──────────────────────
+  try {
+    await fetch(LOGGER_URL, {
+      method: 'POST',
+      mode: 'no-cors', // Google Apps Script richiede no-cors
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email:     email,
+        scheda:    schedaParam || 'non specificata',
+        privacy:   privacy,
+        recesso:   recesso,
+        termini:   termini,
+        userAgent: navigator.userAgent,
+        // L'IP viene rilevato lato server da Google
+      })
+    });
+  } catch (err) {
+    // Se il logger fallisce, non blocchiamo l'utente —
+    // il consenso è comunque registrato nelle checkbox che ha cliccato.
+    console.warn('Logger consenso non raggiunto:', err);
+  }
+
+  // ─── 2. REDIRECT A STRIPE ──────────────────────────────────────
+  // Passa l'email a Stripe così la vedi nella dashboard
+  if (STRIPE_LINK && STRIPE_LINK !== 'QUI_INCOLLA_STRIPE_PAYMENT_LINK') {
+    const url = new URL(STRIPE_LINK);
+    url.searchParams.set('prefilled_email', email);
+    // Passa la scheda come metadata (visibile nella dashboard Stripe)
+    url.searchParams.set('client_reference_id', schedaParam || 'generica');
+    window.location.href = url.toString();
+  } else {
+    // Stripe non ancora configurato
+    btn.disabled = false;
+    btn.innerHTML = 'Paga e ricevi la scheda <span class="btn-price">1,99 €</span>';
+    alert('⚠️ Pagamenti in arrivo!\nStripe non è ancora configurato. Torna presto.');
+  }
+}
+
+// Disable submit on page load until fields are valid (UX nicety)
+document.getElementById('btn-pay').addEventListener('mouseenter', () => {
+  const allChecked =
+    document.getElementById('check-privacy').checked &&
+    document.getElementById('check-recesso').checked &&
+    document.getElementById('check-termini').checked;
+  const hasEmail = document.getElementById('email').value.trim().length > 0;
+  // Just visual feedback — actual validation is in handleSubmit
+});
+</script>
+</body>
+</html>

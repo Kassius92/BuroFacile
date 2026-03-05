@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BuroFacile: chi siamo, come lavoriamo e perché abbiamo creato il sito. Guide burocratiche gratuite, verificate e scritte in italiano semplice.">
+<title>Chi siamo — BuroFacile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F8F4E8;
+  --cream-dark: #EFE8D8;
+  --warm-brown: #0F4C5C;
+  --accent-tc: #E36414;
+  --accent-sage: #2A9D8F;
+  --accent-sage-light: #E0F2EF;
+  --text-1: #1A1A2E;
+  --text-2: #4A5568;
+  --text-3: #8A8A9A;
+  --border: #E8DFD0;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--text-1); -webkit-font-smoothing:antialiased; }
+
+.nav { position:fixed; top:0; left:0; right:0; z-index:300; height:62px; background:rgba(251,248,241,0.88); backdrop-filter:blur(24px) saturate(180%); -webkit-backdrop-filter:blur(24px) saturate(180%); border-bottom:1px solid rgba(232,223,211,0.5); transition:box-shadow .3s; }
+.nav.s { box-shadow:0 2px 24px rgba(15,76,92,.08); }
+.nav-i { max-width:1110px; margin:0 auto; padding:0 28px; height:100%; display:flex; align-items:center; justify-content:space-between; }
+.logo { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:var(--warm-brown); text-decoration:none; letter-spacing:-.3px; }
+.logo span { color:var(--accent-tc); }
+.back { display:flex; align-items:center; gap:7px; font-size:13px; font-weight:500; color:var(--text-3); text-decoration:none; transition:color .2s; }
+.back:hover { color:var(--warm-brown); }
+.back svg { width:15px; height:15px; }
+
+.page-wrap { max-width:760px; margin:0 auto; padding:110px 28px 80px; }
+.page-tag { display:inline-block; background:var(--cream-dark); color:var(--text-3); font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; padding:5px 12px; border-radius:20px; margin-bottom:20px; }
+.page-title { font-family:'Playfair Display',serif; font-size:42px; font-weight:700; color:var(--warm-brown); line-height:1.15; margin-bottom:16px; }
+.page-lead { font-size:18px; line-height:1.65; color:var(--text-2); margin-bottom:48px; padding-bottom:40px; border-bottom:1px solid var(--border); }
+
+.prose h2 { font-family:'Playfair Display',serif; font-size:24px; font-weight:600; color:var(--warm-brown); margin:48px 0 16px; }
+.prose p { font-size:15px; line-height:1.8; color:var(--text-2); margin-bottom:16px; }
+.prose strong { color:var(--text-1); font-weight:600; }
+.prose a { color:var(--accent-tc); text-decoration:none; }
+.prose a:hover { text-decoration:underline; }
+
+.values { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:32px 0; }
+.val { background:white; border:1px solid var(--border); border-radius:14px; padding:22px; }
+.val-icon { font-size:26px; margin-bottom:10px; }
+.val-title { font-size:15px; font-weight:600; color:var(--warm-brown); margin-bottom:6px; }
+.val-text { font-size:13px; line-height:1.65; color:var(--text-2); }
+
+.promise { background:linear-gradient(135deg, var(--warm-brown) 0%, #1A6B7A 100%); border-radius:16px; padding:36px; margin:48px 0; color:white; }
+.promise h3 { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; margin-bottom:14px; color:white; }
+.promise p { font-size:15px; line-height:1.75; color:rgba(255,255,255,0.85); margin-bottom:10px; }
+.promise p:last-child { margin-bottom:0; }
+.promise strong { color:white; }
+
+footer { background:var(--cream); border-top:1px solid var(--border); padding:36px 28px; margin-top:60px; }
+.fi { max-width:1110px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+.fbrand { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--warm-brown); }
+.fbrand span { color:var(--accent-tc); }
+.flinks { display:flex; gap:20px; flex-wrap:wrap; }
+.flinks a { font-size:13px; color:var(--text-3); text-decoration:none; transition:color .2s; }
+.flinks a:hover { color:var(--warm-brown); }
+.fcopy { font-size:12px; color:var(--text-3); width:100%; }
+
+@media(max-width:640px) {
+  .page-title { font-size:30px; }
+  .page-wrap { padding:90px 18px 60px; }
+  .values { grid-template-columns:1fr; }
+  .promise { padding:24px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-i">
+    <a href="index.html" class="logo">Buro<span>Facile</span></a>
+    <a href="index.html" class="back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      Tutte le guide
+    </a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-tag">Il progetto</div>
+  <h1 class="page-title">Chi siamo</h1>
+  <p class="page-lead">BuroFacile nasce da una frustrazione personale: scoprire — spesso troppo tardi — che esistevano bonus, agevolazioni e procedure più semplici di cui nessuno aveva pensato di informarci.</p>
+
+  <div class="prose">
+    <h2>Il problema che risolviamo</h2>
+    <p>Le informazioni burocratiche in Italia esistono. Sono sui siti dell'Agenzia delle Entrate, dell'INPS, dei Comuni. Il problema non è che mancano — è che sono scritte per chi le conosce già, disperse in centinaia di pagine, aggiornate senza preavviso, e quasi mai collegate tra loro.</p>
+    <p>Il risultato: milioni di italiani perdono ogni anno migliaia di euro in bonus a cui hanno diritto, fanno pratiche nel modo sbagliato, pagano più del necessario — semplicemente perché nessuno gliel'ha spiegato in modo chiaro.</p>
+    <p><strong>BuroFacile è quell'amico che sa sempre cosa fare.</strong> Non un chatbot generico. Non un sito istituzionale. Una guida scritta come se te la spiegasse una persona di fiducia, con i numeri reali, le scadenze vere, gli uffici giusti.</p>
+
+    <h2>Come lavoriamo</h2>
+    <p>Ogni scheda di BuroFacile è costruita a partire dalle fonti ufficiali: circolari dell'Agenzia delle Entrate, messaggi INPS, testi di legge, note ministeriali. Poi viene riscritta in italiano comprensibile, con esempi concreti e numeri verificati.</p>
+    <p>Le guide vengono aggiornate quando cambia la normativa — non una volta l'anno. Quando pubblichiamo una scheda, indichiamo sempre la data dell'ultimo aggiornamento e le fonti di riferimento.</p>
+    <p>Non siamo infallibili. Se trovi un errore o un'informazione non aggiornata, <a href="contatti.html">scrivici</a>: lo correggiamo entro 24 ore.</p>
+
+    <h2>I nostri valori</h2>
+    <div class="values">
+      <div class="val">
+        <div class="val-icon">🎁</div>
+        <div class="val-title">Gratis davvero</div>
+        <div class="val-text">Le guide sono complete al 100%. Non tagliamo il contenuto per spingere all'acquisto. Chi legge sa tutto quello che deve sapere.</div>
+      </div>
+      <div class="val">
+        <div class="val-icon">✅</div>
+        <div class="val-title">Verificato</div>
+        <div class="val-text">Ogni numero, ogni scadenza, ogni requisito viene controllato sulle fonti ufficiali. Indichiamo sempre da dove viene l'informazione.</div>
+      </div>
+      <div class="val">
+        <div class="val-icon">🗣️</div>
+        <div class="val-title">Semplice</div>
+        <div class="val-text">Zero paroloni senza spiegazione. Se usiamo un termine tecnico, lo spieghiamo subito. Comprensibile da un quattordicenne.</div>
+      </div>
+      <div class="val">
+        <div class="val-icon">🚫</div>
+        <div class="val-title">Zero pubblicità</div>
+        <div class="val-text">Non vendiamo spazi pubblicitari. Non facciamo affiliate marketing. Non suggeriamo prodotti in cambio di commissioni.</div>
+      </div>
+    </div>
+
+    <div class="promise">
+      <h3>La nostra promessa</h3>
+      <p>Le guide gratuite non sono mai tagliate per spingerti a pagare. La versione gratuita è completa. La personalizzazione (quando sarà disponibile) aggiunge i tuoi numeri specifici, i tuoi uffici, i tuoi bonus — non toglie informazioni a chi non paga.</p>
+      <p><strong>Il modello è semplice: diamo tanto gratis, chiediamo poco per il personalizzato, non operiamo mai in perdita di fiducia.</strong></p>
+    </div>
+
+    <h2>Contattaci</h2>
+    <p>Hai trovato un errore? Vuoi suggerire una guida? Hai una domanda? Scrivi a <a href="mailto:info.burofacile@gmail.com">info.burofacile@gmail.com</a> o vai alla <a href="contatti.html">pagina contatti</a>. Rispondiamo a tutto.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="fi">
+    <div class="fbrand">Buro<span>Facile</span></div>
+    <div class="flinks">
+      <a href="chi-siamo.html">Chi siamo</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="termini.html">Termini</a>
+      <a href="contatti.html">Contatti</a>
+    </div>
+    <div class="fcopy">© 2026 BuroFacile — Le informazioni sul sito sono indicative e non sostituiscono la consulenza professionale.</div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => document.getElementById('nav').classList.toggle('s', scrollY > 20), {passive:true});
+</script>
+</body>
+</html>
