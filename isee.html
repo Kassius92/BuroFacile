@@ -825,6 +825,41 @@ footer { background:var(--cream); border-top:1px solid var(--border); padding:36
   }
   .btn-soon::before { content: "🔒 "; }
 
+
+/* ─── BLOCCO AFFILIAZIONE ─────────────────────── */
+.aff-block {
+  background: white;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent-sage);
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin: 28px 0;
+}
+.aff-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.2px;
+  text-transform: uppercase; color: var(--accent-sage);
+  margin-bottom: 14px;
+}
+.aff-body { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.aff-left { flex: 1; min-width: 220px; }
+.aff-title { font-size: 17px; font-weight: 700; color: var(--warm-brown); margin-bottom: 8px; }
+.aff-text { font-size: 14px; line-height: 1.65; color: var(--text-2); margin-bottom: 10px; }
+.aff-note { font-size: 11px; color: var(--text-3); line-height: 1.5; font-style: italic; }
+.aff-btn {
+  display: inline-flex; align-items: center;
+  background: var(--accent-sage); color: white;
+  font-size: 14px; font-weight: 600;
+  padding: 13px 22px; border-radius: 10px;
+  text-decoration: none; white-space: nowrap;
+  transition: background .2s, transform .15s, box-shadow .2s;
+  box-shadow: 0 4px 16px rgba(42,157,143,.25);
+  flex-shrink: 0;
+}
+.aff-btn:hover { background: #238a7d; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(42,157,143,.35); }
+@media(max-width:600px) {
+  .aff-body { flex-direction: column; align-items: stretch; }
+  .aff-btn { text-align: center; justify-content: center; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -1175,7 +1210,22 @@ footer { background:var(--cream); border-top:1px solid var(--border); padding:36
   </div>
 
   <!-- ERRORI -->
-  <div class="sec breve-hide r" id="errori">
+    <!-- BLOCCO AFFILIAZIONE: ISEE ONLINE -->
+  <div class="aff-block r">
+    <div class="aff-label">Strumento consigliato</div>
+    <div class="aff-body">
+      <div class="aff-left">
+        <div class="aff-title">Fai l'ISEE online con un CAF a distanza</div>
+        <div class="aff-text">Carichi i documenti, il CAF compila e invia la DSU per te. Niente code, niente appuntamenti. Gratis o a costo minimo.</div>
+        <div class="aff-note">* Link in partnership — se usi il servizio, BuroSemplice riceve una piccola commissione. Non cambia nulla per te.</div>
+      </div>
+      <a href="QUI_LINK_AFFILIATO_ISEE" target="_blank" rel="noopener sponsored" class="aff-btn">
+        Fai l'ISEE online →
+      </a>
+    </div>
+  </div>
+
+<div class="sec breve-hide r" id="errori">
     <div class="sec-tag">Da evitare</div>
     <h2>Errori da evitare</h2>
     <div class="ib warn r"><div class="ib-t">⚠️ Dimenticare i conti correnti</div><p>Ogni conto, anche quelli che usi poco, va dichiarato. La PostePay Evolution conta come un conto corrente. Se ometti un conto e l'INPS se ne accorge (e se ne accorge, perché incrocia i dati con le banche), l'ISEE viene annullato e perdi tutte le agevolazioni retroattivamente.</p></div>

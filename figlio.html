@@ -871,6 +871,41 @@ footer { background:var(--cream); border-top:1px solid var(--border); padding:36
   }
   .btn-soon::before { content: "🔒 "; }
 
+
+/* ─── BLOCCO AFFILIAZIONE ─────────────────────── */
+.aff-block {
+  background: white;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent-sage);
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin: 28px 0;
+}
+.aff-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.2px;
+  text-transform: uppercase; color: var(--accent-sage);
+  margin-bottom: 14px;
+}
+.aff-body { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.aff-left { flex: 1; min-width: 220px; }
+.aff-title { font-size: 17px; font-weight: 700; color: var(--warm-brown); margin-bottom: 8px; }
+.aff-text { font-size: 14px; line-height: 1.65; color: var(--text-2); margin-bottom: 10px; }
+.aff-note { font-size: 11px; color: var(--text-3); line-height: 1.5; font-style: italic; }
+.aff-btn {
+  display: inline-flex; align-items: center;
+  background: var(--accent-sage); color: white;
+  font-size: 14px; font-weight: 600;
+  padding: 13px 22px; border-radius: 10px;
+  text-decoration: none; white-space: nowrap;
+  transition: background .2s, transform .15s, box-shadow .2s;
+  box-shadow: 0 4px 16px rgba(42,157,143,.25);
+  flex-shrink: 0;
+}
+.aff-btn:hover { background: #238a7d; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(42,157,143,.35); }
+@media(max-width:600px) {
+  .aff-body { flex-direction: column; align-items: stretch; }
+  .aff-btn { text-align: center; justify-content: center; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -1223,7 +1258,22 @@ footer { background:var(--cream); border-top:1px solid var(--border); padding:36
   </div>
 
   <!-- DOCUMENTI NEONATO -->
-  <div class="sec breve-hide r" id="documenti">
+    <!-- BLOCCO AFFILIAZIONE: PRODOTTI NEONATO -->
+  <div class="aff-block r">
+    <div class="aff-label">Strumento consigliato</div>
+    <div class="aff-body">
+      <div class="aff-left">
+        <div class="aff-title">Lista nascita: risparmia su passeggino, seggiolino e tutto il necessario</div>
+        <div class="aff-text">Crea la tua lista nascita online: confronta prezzi su migliaia di prodotti per neonato, con recensioni verificate e spedizione gratuita.</div>
+        <div class="aff-note">* Link in partnership — se acquisti tramite questo link, BuroSemplice riceve una piccola commissione. Non cambia nulla per te.</div>
+      </div>
+      <a href="QUI_LINK_AFFILIATO_FIGLIO" target="_blank" rel="noopener sponsored" class="aff-btn">
+        Crea la lista nascita →
+      </a>
+    </div>
+  </div>
+
+<div class="sec breve-hide r" id="documenti">
     <div class="sec-tag">Dopo la nascita</div>
     <h2>Documenti da fare per il neonato</h2>
     <p>Quando nasce un bambino, hai una serie di adempimenti da fare — quasi tutti entro i primi 10 giorni. Ecco la lista in ordine.</p>

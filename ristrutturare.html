@@ -944,6 +944,41 @@ footer { background:var(--cream); border-top:1px solid var(--bd); padding:36px 2
   }
   .btn-soon::before { content: "🔒 "; }
 
+
+/* ─── BLOCCO AFFILIAZIONE ─────────────────────── */
+.aff-block {
+  background: white;
+  border: 1px solid var(--bd);
+  border-left: 4px solid var(--sage);
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin: 28px 0;
+}
+.aff-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.2px;
+  text-transform: uppercase; color: var(--sage);
+  margin-bottom: 14px;
+}
+.aff-body { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.aff-left { flex: 1; min-width: 220px; }
+.aff-title { font-size: 17px; font-weight: 700; color: var(--warm-brown); margin-bottom: 8px; }
+.aff-text { font-size: 14px; line-height: 1.65; color: var(--t2); margin-bottom: 10px; }
+.aff-note { font-size: 11px; color: var(--t3); line-height: 1.5; font-style: italic; }
+.aff-btn {
+  display: inline-flex; align-items: center;
+  background: var(--sage); color: white;
+  font-size: 14px; font-weight: 600;
+  padding: 13px 22px; border-radius: 10px;
+  text-decoration: none; white-space: nowrap;
+  transition: background .2s, transform .15s, box-shadow .2s;
+  box-shadow: 0 4px 16px rgba(42,157,143,.25);
+  flex-shrink: 0;
+}
+.aff-btn:hover { background: #238a7d; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(42,157,143,.35); }
+@media(max-width:600px) {
+  .aff-body { flex-direction: column; align-items: stretch; }
+  .aff-btn { text-align: center; justify-content: center; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -1278,6 +1313,21 @@ footer { background:var(--cream); border-top:1px solid var(--bd); padding:36px 2
     <p>Ristrutturare casa senza perdere il bonus richiede di seguire un ordine preciso. Ecco i passaggi.</p>
     <div class="steps">
       <div class="step r d1"><div class="stepn">1</div><div class="stepb"><strong>Chiedi almeno 3 preventivi</strong><p>Confronta sempre più imprese. Il preventivo deve dettagliare ogni voce: manodopera, materiali, smaltimento, spese tecniche. Diffida di chi ti dà un prezzo "a corpo" senza voci.</p></div></div>
+
+  <!-- BLOCCO AFFILIAZIONE: PREVENTIVI ONLINE -->
+  <div class="aff-block r">
+    <div class="aff-label">Strumento consigliato</div>
+    <div class="aff-body">
+      <div class="aff-left">
+        <div class="aff-title">Ricevi fino a 4 preventivi gratuiti da imprese della tua zona</div>
+        <div class="aff-text">Descrivi i lavori, ricevi preventivi dettagliati da professionisti verificati. Confronti comodamente e scegli senza impegno.</div>
+        <div class="aff-note">* Link in partnership — se richiedi preventivi, BuroSemplice riceve una piccola commissione. Non cambia nulla per te.</div>
+      </div>
+      <a href="QUI_LINK_AFFILIATO_RISTRUTTURARE_PREV" target="_blank" rel="noopener sponsored" class="aff-btn">
+        Chiedi preventivi →
+      </a>
+    </div>
+  </div>
       <div class="step r d2"><div class="stepn">2</div><div class="stepb"><strong>Incarica un tecnico abilitato</strong><p>Geometra, architetto o ingegnere. Ti prepara la pratica edilizia (CILA o SCIA), il progetto e, se necessario, l'asseverazione per l'Ecobonus. Il suo compenso è detraibile.</p></div></div>
       <div class="step r d3"><div class="stepn">3</div><div class="stepb"><strong>Presenta la pratica in Comune</strong><p>Il tecnico deposita la CILA o SCIA al Comune. Per la CILA i lavori possono iniziare subito dopo la presentazione. Per la SCIA anche, ma il Comune ha 30 giorni per bloccarli.</p></div></div>
       <div class="step r d1"><div class="stepn">4</div><div class="stepb"><strong>Paga sempre con bonifico parlante</strong><p>Il bonifico deve riportare: causale con riferimento di legge (art. 16-bis DPR 917/86), tuo codice fiscale e partita IVA dell'impresa. <strong>Senza bonifico parlante, niente detrazione.</strong></p></div></div>
@@ -1351,7 +1401,22 @@ footer { background:var(--cream); border-top:1px solid var(--bd); padding:36px 2
     </div>
   </div>
 
-  <!-- FAQ -->
+    <!-- BLOCCO AFFILIAZIONE: MOBILI E ARREDO -->
+  <div class="aff-block r">
+    <div class="aff-label">Strumento consigliato</div>
+    <div class="aff-body">
+      <div class="aff-left">
+        <div class="aff-title">Arreda casa nuova con il bonus mobili: fino a 2.500€ di detrazione</div>
+        <div class="aff-text">Mobili, divani, letti, elettrodomestici classe A+. Paga con bonifico o carta e detrai il 50% in 10 rate. Scegli tra migliaia di prodotti.</div>
+        <div class="aff-note">* Link in partnership — se acquisti, BuroSemplice riceve una piccola commissione. Non cambia nulla per te.</div>
+      </div>
+      <a href="QUI_LINK_AFFILIATO_RISTRUTTURARE_MOBILI" target="_blank" rel="noopener sponsored" class="aff-btn">
+        Scopri l'arredamento →
+      </a>
+    </div>
+  </div>
+
+<!-- FAQ -->
   <div class="sec bh r" id="faq">
     <div class="sec-tag">Risposte rapide</div>
     <h2>Domande frequenti</h2>
