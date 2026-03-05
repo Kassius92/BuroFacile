@@ -5,4 +5,4 @@ Disallow: /ordina
 Disallow: /privacy
 Disallow: /termini
 
-Sitemap: https://buro-facile.it/sitemap.xml
+Sitemap: https://burosemplice.it/sitemap.xml
