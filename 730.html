@@ -44,6 +44,7 @@
 </script><title>Come fare il 730 nel 2026: guida completa e gratuita | BuroSemplice</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 <style>
 :root {
   --cream:#F8F4E8; --cream-dark:#EFE8D8;
@@ -489,6 +490,29 @@ footer{background:var(--cream);border-top:1px solid var(--bd);padding:36px 28px;
 @media(max-width:860px) { .mega-grid { grid-template-columns:repeat(2, 1fr); } }
 @media(max-width:520px) { .mega-grid { grid-template-columns:1fr; } .mega-inner { padding:20px; } .mega-foot { flex-direction:column; align-items:flex-start; } }
 
+/* REMIND BOX */
+.remind-box{background:linear-gradient(135deg,var(--warm-brown),#1A6B7A);padding:56px 28px;text-align:center;}
+.remind-inner{max-width:520px;margin:0 auto;}
+.remind-icon{font-size:36px;margin-bottom:12px;}
+.remind-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#F8F4E8;margin-bottom:8px;}
+.remind-desc{font-size:15px;color:rgba(248,244,232,.75);margin-bottom:24px;line-height:1.6;}
+.remind-row{display:flex;gap:8px;margin-bottom:12px;}
+.remind-input{flex:1;padding:14px 16px;border:2px solid rgba(255,255,255,.2);border-radius:10px;background:rgba(255,255,255,.12);color:#fff;font-family:'DM Sans',sans-serif;font-size:15px;outline:none;transition:border-color .2s;}
+.remind-input::placeholder{color:rgba(255,255,255,.5);}
+.remind-input:focus{border-color:var(--tc);background:rgba(255,255,255,.18);}
+.remind-btn{padding:14px 24px;border:none;border-radius:10px;background:var(--tc);color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .2s;}
+.remind-btn:hover{background:var(--tc-h);}
+.remind-check{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:rgba(248,244,232,.6);text-align:left;cursor:pointer;}
+.remind-check input{margin-top:2px;flex-shrink:0;}
+.remind-check a{color:rgba(248,244,232,.8);}
+.remind-note{font-size:11px;color:rgba(248,244,232,.4);margin-top:16px;}
+.remind-note a{color:rgba(248,244,232,.5);}
+.remind-msg{max-width:520px;margin:0 auto 16px;padding:12px 16px;border-radius:8px;font-size:14px;text-align:left;}
+.remind-msg--ok{background:rgba(42,157,143,.2);color:#a8f0e0;border:1px solid rgba(42,157,143,.4);}
+.remind-msg--err{background:rgba(227,100,20,.2);color:#ffcba4;border:1px solid rgba(227,100,20,.4);}
+.input--hidden{display:none!important;}
+@media(max-width:480px){.remind-row{flex-direction:column;}.remind-title{font-size:24px;}}
+@media print{.remind-box{display:none!important;}}
 </style>
 <script type="application/ld+json">
 {
@@ -1139,6 +1163,33 @@ footer{background:var(--cream);border-top:1px solid var(--bd);padding:36px 28px;
 </aside>
 </div>
 
+<!-- PROMEMORIA SCADENZE -->
+<div class="remind-box" id="sib-form-container">
+  <div class="remind-inner">
+    <div class="remind-icon">🔔</div>
+    <h2 class="remind-title">Non perderti le scadenze del 730</h2>
+    <p class="remind-desc">Ti avvisiamo via email prima di ogni scadenza. Gratis, niente spam, cancelli quando vuoi.</p>
+    <div id="error-message" class="remind-msg remind-msg--err" style="display:none;">La tua iscrizione non può essere convalidata.</div>
+    <div id="success-message" class="remind-msg remind-msg--ok" style="display:none;">Fatto! Controlla l'email e clicca il link per confermare. Ti avviseremo prima di ogni scadenza.</div>
+    <form id="sib-form" method="POST" action="https://26076dda.sibforms.com/serve/MUIFAOZAUqwpuIYv9EMr7PDrkBg9trLLpxxphgHJPnt7xi4uLEdOek4cX0fA_VWcBexGXTHPGawPmISFbSdJ0rQ0-JYpten6oKYM1NQMLE2ir-9nsWRI5-GUQpeWeASE2plzbGULiFOsMQdEEG6G6EV2xjinB_MkZd-qZq4KcerJ0j1UULgIneKBhwnywCD0BIDh1d3GDFw-FR8K8Q==" data-type="subscription">
+      <div class="remind-row">
+        <input class="remind-input input" type="email" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="La tua email" data-required="true" required />
+        <button class="remind-btn sib-form-block__button sib-form-block__button-with-loader" type="submit" form="sib-form">
+          <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" style="width:0;height:0;"><path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"/></svg>
+          Attiva promemoria
+        </button>
+      </div>
+      <label class="remind-check">
+        <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required />
+        <span>Accetto di ricevere i promemoria via email. <a href="privacy.html" target="_blank">Privacy Policy</a></span>
+      </label>
+      <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none;">
+      <input type="hidden" name="locale" value="it">
+    </form>
+    <p class="remind-note">Utilizziamo Brevo per l'invio. <a href="https://www.brevo.com/it/legal/privacypolicy/" target="_blank">Informativa Brevo</a></p>
+  </div>
+</div>
+
 <footer><div class="fi"><div class="fbrand">Buro<span>Semplice</span></div><div class="flinks"><a href="chi-siamo.html">Chi siamo</a><a href="privacy.html">Privacy</a><a href="termini.html">Termini</a><a href="contatti.html">Contatti</a></div></div></footer>
 
 <script>
@@ -1249,5 +1300,15 @@ calc();
   });
 })();
 </script>
+<script>
+window.REQUIRED_CODE_ERROR_MESSAGE = 'Scegli un prefisso paese';
+window.LOCALE = 'it';
+window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Le informazioni fornite non sono valide. Controlla il formato del campo e riprova.";
+window.REQUIRED_ERROR_MESSAGE = "Questo campo non può essere lasciato vuoto. ";
+window.GENERIC_INVALID_MESSAGE = "Le informazioni fornite non sono valide. Controlla il formato del campo e riprova.";
+window.translation = {common:{selectedList:'{quantity} lista selezionata',selectedLists:'{quantity} liste selezionate',selectedOption:'{quantity} selezionato',selectedOptions:'{quantity} selezionati'}};
+var AUTOHIDE = Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 </html>
