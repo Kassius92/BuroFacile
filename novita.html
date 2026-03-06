@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="description" content="Novità sulla burocrazia italiana: scadenze, circolari INPS, nuovi bonus e aggiornamenti fiscali spiegati in modo semplice.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://burosemplice.it/novita">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Novità e scadenze — BuroSemplice">
+  <meta property="og:description" content="Ogni volta che cambia qualcosa — una circolare INPS, una scadenza, un nuovo bonus — lo spieghiamo qui in parole semplici.">
+  <meta property="og:url" content="https://burosemplice.it/novita">
+  <meta property="og:site_name" content="BuroSemplice">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:image" content="https://burosemplice.it/og-home.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Novità e scadenze — BuroSemplice">
+  <meta name="twitter:description" content="Ogni volta che cambia qualcosa — una circolare INPS, una scadenza, un nuovo bonus — lo spieghiamo qui in parole semplici.">
+<title>Novità e scadenze — BuroSemplice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F8F4E8;
+  --cream-dark: #EFE8D8;
+  --warm-brown: #0F4C5C;
+  --warm-brown-light: #1A6B7A;
+  --accent-terracotta: #E36414;
+  --accent-terracotta-hover: #CC5810;
+  --accent-sage: #2A9D8F;
+  --text-primary: #1A1A2E;
+  --text-secondary: #4A5568;
+  --text-muted: #8A8A9A;
+  --white: #FFFFFF;
+  --border: #E8DFD0;
+  --shadow-sm: 0 1px 3px rgba(15,76,92,0.06);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--text-primary); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:clip; }
+
+/* NAV */
+nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(251,248,241,0.85); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-bottom:1px solid var(--border); transition:box-shadow .3s; }
+nav.scrolled { box-shadow:var(--shadow-sm); }
+.nav-inner { max-width:1120px; margin:0 auto; padding:16px 24px; display:flex; align-items:center; gap:16px; }
+.nav-logo { font-family:'Playfair Display',serif; font-size:22px; font-weight:600; color:var(--warm-brown); letter-spacing:-.3px; text-decoration:none; }
+.nav-logo span { color:var(--accent-terracotta); }
+.nav-links { display:flex; gap:32px; align-items:center; margin-left:auto; }
+.nav-links a { font-size:14px; font-weight:500; color:var(--text-secondary); text-decoration:none; transition:color .2s; }
+.nav-links a:hover { color:var(--warm-brown); }
+
+/* HAMBURGER */
+.hamburger { width:40px; height:40px; display:flex; align-items:center; justify-content:center; border:none; background:transparent; cursor:pointer; border-radius:10px; transition:background .2s; flex-shrink:0; }
+.hamburger:hover { background:rgba(15,76,92,.06); }
+.hamburger-lines { display:flex; flex-direction:column; gap:5px; }
+.hamburger-lines span { display:block; width:20px; height:2px; background:var(--warm-brown); border-radius:2px; transition:all .3s; }
+.hamburger.open .hamburger-lines span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+.hamburger.open .hamburger-lines span:nth-child(2) { opacity:0; }
+.hamburger.open .hamburger-lines span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+/* MEGA MENU */
+.mega-overlay { position:fixed; inset:0; top:0; background:rgba(15,76,92,.15); z-index:90; opacity:0; pointer-events:none; transition:opacity .3s; backdrop-filter:blur(2px); }
+.mega-overlay.open { opacity:1; pointer-events:all; }
+.mega-menu { position:fixed; top:62px; left:0; right:0; z-index:95; background:var(--white); border-bottom:2px solid var(--border); box-shadow:0 12px 48px rgba(15,76,92,.1); transform:translateY(-10px); opacity:0; pointer-events:none; transition:all .3s cubic-bezier(.4,0,.2,1); max-height:calc(100vh - 80px); overflow-y:auto; }
+.mega-menu.open { transform:translateY(0); opacity:1; pointer-events:all; }
+.mega-inner { max-width:1120px; margin:0 auto; padding:28px 24px 32px; }
+.mega-search { margin-bottom:24px; position:relative; max-width:380px; }
+.mega-search input { width:100%; padding:11px 16px 11px 40px; border:1.5px solid var(--border); border-radius:10px; font-family:'DM Sans',sans-serif; font-size:14px; color:var(--text-primary); background:var(--cream); outline:none; transition:border-color .2s; }
+.mega-search input:focus { border-color:var(--accent-terracotta); background:var(--white); }
+.mega-search input::placeholder { color:var(--text-muted); }
+.mega-search svg { position:absolute; left:13px; top:50%; transform:translateY(-50%); width:16px; height:16px; color:var(--text-muted); }
+.mega-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:28px 32px; }
+.mega-cat { display:flex; align-items:center; gap:8px; font-size:14px; font-weight:700; color:var(--warm-brown); margin-bottom:16px; padding-bottom:8px; border-bottom:2px solid var(--accent-terracotta); }
+.mega-cat-emoji { font-size:18px; }
+.mega-sub { margin-bottom:4px; }
+.mega-sub:last-child { margin-bottom:0; }
+.mega-sub-title { font-size:11px; font-weight:700; letter-spacing:.6px; text-transform:uppercase; color:var(--text-muted); margin-bottom:0; padding:8px 2px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; border-radius:6px; transition:background .15s; }
+.mega-sub-title:hover { background:rgba(15,76,92,.04); }
+.mega-sub-title::after { content:''; width:6px; height:6px; border-right:1.5px solid var(--text-muted); border-bottom:1.5px solid var(--text-muted); transform:rotate(45deg); transition:transform .25s; flex-shrink:0; margin-right:4px; }
+.mega-sub.open .mega-sub-title::after { transform:rotate(-135deg); }
+.mega-sub-links { max-height:0; overflow:hidden; transition:max-height .3s cubic-bezier(.4,0,.2,1); padding-left:2px; }
+.mega-sub.open .mega-sub-links { max-height:400px; padding-bottom:8px; }
+.mega-link { display:block; padding:5px 2px; font-size:13.5px; color:var(--text-secondary); text-decoration:none; transition:color .15s; line-height:1.4; }
+.mega-link:hover { color:var(--accent-terracotta); }
+.mega-link.soon { opacity:.4; pointer-events:none; }
+.mega-link .mtag { font-size:9px; font-weight:700; letter-spacing:.3px; text-transform:uppercase; padding:1px 5px; border-radius:3px; margin-left:5px; vertical-align:middle; color:var(--text-muted); background:var(--cream); }
+.mega-foot { margin-top:24px; padding-top:18px; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+.mega-foot-left { font-size:13px; color:var(--text-muted); }
+.mega-foot-left strong { color:var(--warm-brown); font-family:'Playfair Display',serif; font-size:20px; }
+.mega-foot-right { display:flex; gap:12px; }
+.mega-btn { padding:9px 18px; border-radius:8px; font-size:13px; font-weight:600; text-decoration:none; transition:all .2s; }
+.mega-btn-primary { background:var(--accent-terracotta); color:white; }
+.mega-btn-primary:hover { background:var(--accent-terracotta-hover); }
+
+/* HERO */
+.nov-hero { padding:100px 28px 40px; max-width:780px; margin:0 auto; }
+.nov-label { display:inline-flex; align-items:center; gap:8px; background:rgba(227,100,20,.10); color:var(--accent-terracotta); font-size:12px; font-weight:700; letter-spacing:.6px; text-transform:uppercase; padding:6px 14px; border-radius:20px; margin-bottom:16px; }
+.nov-hero h1 { font-family:'Playfair Display',serif; font-size:36px; font-weight:700; color:var(--warm-brown); margin-bottom:12px; line-height:1.2; }
+.nov-hero p { font-size:16px; color:var(--text-secondary); line-height:1.65; max-width:540px; }
+
+/* FILTERS */
+.filters { max-width:780px; margin:0 auto; padding:0 28px 32px; display:flex; gap:8px; flex-wrap:wrap; }
+.filter-pill { padding:7px 16px; border-radius:20px; border:1px solid var(--border); background:var(--white); font-family:'DM Sans',sans-serif; font-size:13px; font-weight:500; color:var(--text-secondary); cursor:pointer; transition:all .2s; text-decoration:none; }
+.filter-pill:hover { border-color:var(--warm-brown); color:var(--warm-brown); }
+.filter-pill.active { background:var(--warm-brown); color:white; border-color:var(--warm-brown); }
+
+/* POSTS */
+.posts { max-width:780px; margin:0 auto; padding:0 28px 80px; }
+
+/* FEATURED */
+.post-feat { background:linear-gradient(135deg, var(--warm-brown) 0%, var(--warm-brown-light) 100%); border-radius:18px; padding:36px 40px; margin-bottom:32px; color:white; position:relative; overflow:hidden; }
+.post-feat::after { content:''; position:absolute; top:-40px; right:-40px; width:200px; height:200px; background:rgba(255,255,255,.04); border-radius:50%; }
+.pf-tag { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.15); padding:4px 12px; border-radius:12px; font-size:11px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; margin-bottom:16px; }
+.pf-dot { width:6px; height:6px; border-radius:50%; background:var(--accent-terracotta); }
+.pf-title { font-family:'Playfair Display',serif; font-size:26px; font-weight:700; line-height:1.3; margin-bottom:12px; }
+.pf-excerpt { font-size:15px; line-height:1.65; opacity:.85; margin-bottom:20px; max-width:520px; }
+.pf-meta { font-size:12px; opacity:.6; margin-bottom:16px; }
+.pf-read { display:inline-flex; align-items:center; gap:6px; background:var(--accent-terracotta); color:white; padding:10px 22px; border-radius:10px; font-size:14px; font-weight:600; text-decoration:none; transition:all .2s; }
+.pf-read:hover { background:var(--accent-terracotta-hover); transform:translateY(-1px); }
+
+/* CARD */
+.post-card { background:var(--white); border:1px solid var(--border); border-radius:14px; padding:28px 30px; margin-bottom:16px; transition:all .25s; text-decoration:none; color:inherit; display:block; }
+.post-card:hover { border-color:var(--warm-brown); box-shadow:0 4px 20px rgba(15,76,92,.07); transform:translateY(-1px); }
+.pc-top { display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap; }
+.pc-cat { font-size:11px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; padding:3px 10px; border-radius:6px; }
+.cat-fisco { background:rgba(227,100,20,.08); color:var(--accent-terracotta); }
+.cat-casa { background:rgba(42,157,143,.08); color:var(--accent-sage); }
+.cat-famiglia { background:rgba(15,76,92,.08); color:var(--warm-brown); }
+.cat-lavoro { background:rgba(74,85,104,.08); color:var(--text-secondary); }
+.cat-documenti { background:rgba(138,138,154,.08); color:var(--text-muted); }
+.cat-scadenza { background:rgba(227,100,20,.12); color:var(--accent-terracotta); }
+.pc-date { font-size:12px; color:var(--text-muted); }
+.pc-title { font-family:'Playfair Display',serif; font-size:19px; font-weight:600; color:var(--warm-brown); line-height:1.35; margin-bottom:8px; }
+.pc-excerpt { font-size:14px; color:var(--text-secondary); line-height:1.6; }
+.pc-guide { display:inline-flex; align-items:center; gap:5px; font-size:11px; font-weight:600; color:var(--accent-sage); background:rgba(42,157,143,.06); padding:3px 10px; border-radius:6px; margin-top:10px; }
+.pc-guide::before { content:'📖'; font-size:12px; }
+.pc-footer { display:flex; align-items:center; justify-content:space-between; margin-top:14px; padding-top:14px; border-top:1px solid var(--border); }
+.pc-time { font-size:12px; color:var(--text-muted); }
+.pc-link { font-size:13px; font-weight:600; color:var(--accent-terracotta); }
+.pc-link::after { content:' →'; }
+
+/* SUBSCRIBE */
+.sub-box { background:var(--white); border:1px solid var(--border); border-radius:14px; padding:28px 30px; margin-bottom:16px; text-align:center; }
+.sub-icon { font-size:32px; margin-bottom:12px; }
+.sub-title { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--warm-brown); margin-bottom:8px; }
+.sub-desc { font-size:13px; color:var(--text-secondary); line-height:1.55; margin-bottom:16px; }
+.sub-input { width:100%; padding:10px 14px; border:1.5px solid var(--border); border-radius:8px; font-family:'DM Sans',sans-serif; font-size:13px; margin-bottom:10px; outline:none; background:var(--cream); }
+.sub-input:focus { border-color:var(--accent-terracotta); }
+.sub-btn { width:100%; padding:10px; border:none; border-radius:8px; background:var(--accent-terracotta); color:white; font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600; cursor:pointer; transition:background .2s; }
+.sub-btn:hover { background:var(--accent-terracotta-hover); }
+
+/* LOAD MORE */
+.load-more { text-align:center; margin-top:32px; }
+.load-more-btn { padding:12px 32px; border-radius:10px; border:1.5px solid var(--border); background:var(--white); font-family:'DM Sans',sans-serif; font-size:14px; font-weight:600; color:var(--text-secondary); cursor:pointer; transition:all .2s; }
+.load-more-btn:hover { border-color:var(--warm-brown); color:var(--warm-brown); }
+
+/* FOOTER */
+footer { background:var(--cream); border-top:1px solid var(--border); padding:40px 24px; }
+.footer-inner { max-width:1120px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+.footer-brand { font-family:'Playfair Display',serif; font-size:18px; font-weight:600; color:var(--warm-brown); }
+.footer-brand span { color:var(--accent-terracotta); }
+.footer-text { font-size:13px; color:var(--text-muted); }
+.footer-links { display:flex; gap:24px; }
+.footer-links a { font-size:13px; color:var(--text-muted); text-decoration:none; transition:color .2s; }
+.footer-links a:hover { color:var(--warm-brown); }
+
+/* RESPONSIVE */
+@media(max-width:860px) { .mega-grid { grid-template-columns:repeat(2, 1fr); } }
+@media(max-width:768px) { .nav-links a:not(:last-child) { display:none; } }
+@media(max-width:520px) {
+  .mega-grid { grid-template-columns:1fr; }
+  .mega-inner { padding:20px; }
+  .mega-foot { flex-direction:column; align-items:flex-start; }
+  .nov-hero { padding:85px 20px 32px; }
+  .nov-hero h1 { font-size:28px; }
+  .filters { padding:0 20px 24px; }
+  .posts { padding:0 20px 60px; }
+  .post-feat { padding:28px 24px; }
+  .pf-title { font-size:22px; }
+}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <button class="hamburger" id="hamburger" aria-label="Menu guide">
+      <div class="hamburger-lines"><span></span><span></span><span></span></div>
+    </button>
+    <a href="index.html" class="nav-logo">Buro<span>Semplice</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="chi-siamo.html">Chi siamo</a>
+      <a href="contatti.html">Contatti</a>
+      
+    </div>
+  </div>
+</nav>
+
+<!-- OVERLAY -->
+<div class="mega-overlay" id="mega-overlay"></div>
+
+<!-- MEGA MENU -->
+<div class="mega-menu" id="mega-menu">
+  <div class="mega-inner">
+    <div class="mega-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="mega-search" placeholder="Cerca tra tutte le guide…">
+    </div>
+    <div class="mega-grid">
+
+      <div class="mega-col" data-cat="fisco">
+        <div class="mega-cat"><span class="mega-cat-emoji">💰</span> Fisco e soldi</div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Dichiarazione redditi</div>
+          <div class="mega-sub-links">
+          <a href="730.html" class="mega-link">Faccio il 730</a>
+          <a href="#" class="mega-link soon">730 precompilato <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">730 senza sostituto <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">ISEE e bonus</div>
+          <div class="mega-sub-links">
+          <a href="isee.html" class="mega-link">Faccio l'ISEE</a>
+          <a href="#" class="mega-link soon">ISEE corrente <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Assegno unico <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Bonus e detrazioni 2026 <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Tasse e imposte</div>
+          <div class="mega-sub-links">
+          <a href="piva.html" class="mega-link">Apro partita IVA</a>
+          <a href="#" class="mega-link soon">Cedolare secca <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">IMU: chi paga e quanto <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-col" data-cat="casa">
+        <div class="mega-cat"><span class="mega-cat-emoji">🏠</span> Casa</div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Comprare e vendere</div>
+          <div class="mega-sub-links">
+          <a href="compro-casa.html" class="mega-link">Compro casa</a>
+          <a href="#" class="mega-link soon">Mutuo: come sceglierlo <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Vendo casa <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Lavori e bonus</div>
+          <div class="mega-sub-links">
+          <a href="ristrutturare.html" class="mega-link">Ristrutturare casa</a>
+          <a href="#" class="mega-link soon">Bonus mobili <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Bonus caldaia 2026 <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Vivere in casa</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Cambio residenza <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Affitto: diritti e doveri <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Voltura utenze <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-col" data-cat="famiglia">
+        <div class="mega-cat"><span class="mega-cat-emoji">👨‍👩‍👧</span> Famiglia</div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Figli</div>
+          <div class="mega-sub-links">
+          <a href="figlio.html" class="mega-link">Aspetto un figlio</a>
+          <a href="#" class="mega-link soon">Congedo parentale <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Bonus nido 2026 <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Coppia</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Mi sposo <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Divorzio e separazione <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Eredità</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Successione <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Testamento <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-col" data-cat="documenti">
+        <div class="mega-cat"><span class="mega-cat-emoji">🪪</span> Documenti</div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Identità digitale</div>
+          <div class="mega-sub-links">
+          <a href="spid.html" class="mega-link">Faccio lo SPID</a>
+          <a href="#" class="mega-link soon">Carta d'identità elettronica <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">PEC obbligatoria <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Documenti personali</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Rinnovo passaporto <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Codice fiscale <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Tessera sanitaria <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-col" data-cat="lavoro">
+        <div class="mega-cat"><span class="mega-cat-emoji">💼</span> Lavoro</div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Iniziare e cambiare</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Primo lavoro <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Dimissioni volontarie <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Busta paga: come leggerla <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Perdere il lavoro</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">NASpI e disoccupazione <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">TFR: cos'è e quando spetta <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-col" data-cat="salute">
+        <div class="mega-cat"><span class="mega-cat-emoji">🏥</span> Salute</div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Servizio sanitario</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Cambio medico di base <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Esenzione ticket <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Fascicolo sanitario <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Disabilità e assistenza</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Invalidità civile <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Legge 104 <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-col" data-cat="auto">
+        <div class="mega-cat"><span class="mega-cat-emoji">🚗</span> Auto</div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Comprare e vendere</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Auto usata <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Passaggio di proprietà <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Documenti e tasse</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Rinnovo patente <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Bollo auto <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-col" data-cat="pensione">
+        <div class="mega-cat"><span class="mega-cat-emoji">🧓</span> Pensione</div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Andare in pensione</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Quando vado in pensione <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Pensione anticipata <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Prepararsi</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Riscatto laurea <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Pensione integrativa <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="mega-foot">
+      <div class="mega-foot-left"><strong>7</strong> guide pronte · 40+ in arrivo</div>
+      <div class="mega-foot-right">
+        <a href="contatti.html" class="mega-btn mega-btn-primary">Suggerisci una guida</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- HERO -->
+<div class="nov-hero">
+  <div class="nov-label">📢 Aggiornamenti</div>
+  <h1>Novità e scadenze</h1>
+  <p>Ogni volta che cambia qualcosa — una circolare INPS, una scadenza, un nuovo bonus — lo spieghiamo qui in parole semplici.</p>
+</div>
+
+<!-- FILTERS -->
+<div class="filters">
+  <a class="filter-pill active" href="#" data-filter="all">Tutti</a>
+  <a class="filter-pill" href="#" data-filter="fisco">💰 Fisco</a>
+  <a class="filter-pill" href="#" data-filter="casa">🏠 Casa</a>
+  <a class="filter-pill" href="#" data-filter="famiglia">👨‍👩‍👧 Famiglia</a>
+  <a class="filter-pill" href="#" data-filter="lavoro">💼 Lavoro</a>
+  <a class="filter-pill" href="#" data-filter="documenti">🪪 Documenti</a>
+  <a class="filter-pill" href="#" data-filter="scadenza">⚠️ Scadenze</a>
+</div>
+
+<!-- POSTS -->
+<div class="posts">
+
+  <!-- FEATURED -->
+  <div class="post-feat" data-category="fisco">
+    <div class="pf-tag"><span class="pf-dot"></span> In evidenza</div>
+    <div class="pf-title">Reddito sopra 75.000€? Le detrazioni 2026 cambiano. Ecco cosa devi sapere.</div>
+    <div class="pf-excerpt">La Legge di Bilancio 2025 taglia le detrazioni al 19% per chi guadagna oltre 75.000€. Ma non tutte: spese sanitarie, mutui e ristrutturazioni restano. Ti spieghiamo chi è colpito e cosa fare.</div>
+    <div class="pf-meta">5 marzo 2026 · 3 min di lettura</div>
+    <a href="#" class="pf-read">Leggi tutto</a>
+  </div>
+
+  <!-- POST 1 -->
+  <a href="#" class="post-card" data-category="scadenza fisco">
+    <div class="pc-top">
+      <span class="pc-cat cat-scadenza">⚠️ Scadenza</span>
+      <span class="pc-date">4 marzo 2026</span>
+    </div>
+    <div class="pc-title">730 precompilato: disponibile dal 2 maggio. Ecco cosa fare prima.</div>
+    <div class="pc-excerpt">L'Agenzia delle Entrate pubblica il precompilato dal 2 maggio. Ma conviene preparare i documenti adesso. Ecco la checklist delle cose da raccogliere nelle prossime settimane.</div>
+    <div class="pc-guide">Collegato alla guida: Faccio il 730</div>
+    <div class="pc-footer">
+      <span class="pc-time">⏱ 2 min</span>
+      <span class="pc-link">Leggi</span>
+    </div>
+  </a>
+
+  <!-- POST 2 -->
+  <a href="#" class="post-card" data-category="famiglia">
+    <div class="pc-top">
+      <span class="pc-cat cat-famiglia">👨‍👩‍👧 Famiglia</span>
+      <span class="pc-date">1 marzo 2026</span>
+    </div>
+    <div class="pc-title">Assegno unico 2026: importi aggiornati e nuove soglie ISEE.</div>
+    <div class="pc-excerpt">L'INPS ha pubblicato le nuove tabelle. Per un figlio minore con ISEE sotto 17.090€ l'importo sale a 200,99€/mese. Ecco tutti gli scaglioni aggiornati.</div>
+    <div class="pc-guide">Collegato alla guida: Aspetto un figlio</div>
+    <div class="pc-footer">
+      <span class="pc-time">⏱ 2 min</span>
+      <span class="pc-link">Leggi</span>
+    </div>
+  </a>
+
+  <!-- POST 3 -->
+  <a href="#" class="post-card" data-category="casa">
+    <div class="pc-top">
+      <span class="pc-cat cat-casa">🏠 Casa</span>
+      <span class="pc-date">27 febbraio 2026</span>
+    </div>
+    <div class="pc-title">Bonus ristrutturazione 2026: confermato al 50% ma con nuovi limiti.</div>
+    <div class="pc-excerpt">La detrazione resta al 50% su un massimo di 96.000€ per la prima casa. Per la seconda casa scende al 36%. Ecco cosa cambia per chi deve iniziare i lavori quest'anno.</div>
+    <div class="pc-guide">Collegato alla guida: Ristrutturare casa</div>
+    <div class="pc-footer">
+      <span class="pc-time">⏱ 3 min</span>
+      <span class="pc-link">Leggi</span>
+    </div>
+  </a>
+
+  <!-- POST 4 -->
+  <a href="#" class="post-card" data-category="documenti">
+    <div class="pc-top">
+      <span class="pc-cat cat-documenti">🪪 Documenti</span>
+      <span class="pc-date">25 febbraio 2026</span>
+    </div>
+    <div class="pc-title">IT Wallet: patente e tessera sanitaria arrivano sull'app IO.</div>
+    <div class="pc-excerpt">Da marzo 2026 puoi avere patente e tessera sanitaria digitali nell'app IO. Serve lo SPID per attivarle. Ecco come funziona e cosa cambia nella pratica.</div>
+    <div class="pc-guide">Collegato alla guida: Faccio lo SPID</div>
+    <div class="pc-footer">
+      <span class="pc-time">⏱ 2 min</span>
+      <span class="pc-link">Leggi</span>
+    </div>
+  </a>
+
+  <!-- POST 5 -->
+  <a href="#" class="post-card" data-category="fisco scadenza">
+    <div class="pc-top">
+      <span class="pc-cat cat-fisco">💰 Fisco</span>
+      <span class="pc-date">20 febbraio 2026</span>
+    </div>
+    <div class="pc-title">ISEE 2026: attenzione alla scadenza del 30 giugno per l'assegno unico.</div>
+    <div class="pc-excerpt">Se presenti l'ISEE entro il 30 giugno, gli arretrati dell'assegno unico ti vengono riconosciuti da gennaio. Ma se lo fai dopo, perdi i mesi precedenti.</div>
+    <div class="pc-guide">Collegato alla guida: Faccio l'ISEE</div>
+    <div class="pc-footer">
+      <span class="pc-time">⏱ 2 min</span>
+      <span class="pc-link">Leggi</span>
+    </div>
+  </a>
+
+  <!-- SUBSCRIBE BOX -->
+  <div class="sub-box">
+    <div class="sub-icon">📬</div>
+    <div class="sub-title">Non perderti le scadenze</div>
+    <div class="sub-desc">Ricevi le novità importanti direttamente nella tua email. Niente spam — solo quando cambia qualcosa che ti riguarda.</div>
+    <input class="sub-input" type="email" placeholder="la-tua@email.it">
+    <button class="sub-btn">Iscrivimi</button>
+  </div>
+
+  <!-- POST 6 -->
+  <a href="#" class="post-card" data-category="lavoro">
+    <div class="pc-top">
+      <span class="pc-cat cat-lavoro">💼 Lavoro</span>
+      <span class="pc-date">18 febbraio 2026</span>
+    </div>
+    <div class="pc-title">Bonus mamme lavoratrici 2026: confermato, ma cambia la platea.</div>
+    <div class="pc-excerpt">Il bonus contributivo per le madri lavoratrici con 2+ figli resta anche nel 2026. Novità: si estende anche alle autonome. Ecco chi ne ha diritto e come si attiva.</div>
+    <div class="pc-footer">
+      <span class="pc-time">⏱ 2 min</span>
+      <span class="pc-link">Leggi</span>
+    </div>
+  </a>
+
+  <!-- POST 7 -->
+  <a href="#" class="post-card" data-category="casa">
+    <div class="pc-top">
+      <span class="pc-cat cat-casa">🏠 Casa</span>
+      <span class="pc-date">15 febbraio 2026</span>
+    </div>
+    <div class="pc-title">Mutui: i tassi fissi scendono ancora. Conviene surrogare?</div>
+    <div class="pc-excerpt">I tassi fissi sono scesi sotto il 3% per la prima volta da due anni. Se hai un mutuo a tasso variabile sopra il 4%, potrebbe essere il momento di valutare la surroga.</div>
+    <div class="pc-guide">Collegato alla guida: Compro casa</div>
+    <div class="pc-footer">
+      <span class="pc-time">⏱ 3 min</span>
+      <span class="pc-link">Leggi</span>
+    </div>
+  </a>
+
+  <div class="load-more">
+    <button class="load-more-btn">Carica altri articoli</button>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Buro<span>Semplice</span></div>
+      <div class="footer-text" style="margin-top:4px;">La burocrazia italiana, semplificata.</div>
+    </div>
+    <div class="footer-links">
+      <a href="chi-siamo.html">Chi siamo</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="termini.html">Termini</a>
+      <a href="contatti.html">Contatti</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Mega menu
+  const hamburger = document.getElementById('hamburger');
+  const megaMenu = document.getElementById('mega-menu');
+  const megaOverlay = document.getElementById('mega-overlay');
+  function megaOpen() { megaMenu.classList.add('open'); megaOverlay.classList.add('open'); hamburger.classList.add('open'); }
+  function megaClose() { megaMenu.classList.remove('open'); megaOverlay.classList.remove('open'); hamburger.classList.remove('open'); }
+  hamburger.addEventListener('click', () => { megaMenu.classList.contains('open') ? megaClose() : megaOpen(); });
+  megaOverlay.addEventListener('click', megaClose);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') megaClose(); });
+
+  // Mega search
+  document.getElementById('mega-search').addEventListener('input', e => {
+    const q = e.target.value.toLowerCase();
+    document.querySelectorAll('.mega-col').forEach(col => {
+      let colMatch = false;
+      col.querySelectorAll('.mega-sub').forEach(sub => {
+        const links = sub.querySelectorAll('.mega-link');
+        let subMatch = false;
+        links.forEach(link => {
+          const match = link.textContent.toLowerCase().includes(q);
+          link.style.display = match ? '' : 'none';
+          if (match) subMatch = true;
+        });
+        sub.querySelector('.mega-sub-title').style.display = (q && !subMatch) ? 'none' : '';
+        if (q && subMatch) sub.classList.add('open');
+        if (!q) sub.classList.remove('open');
+        sub.style.display = subMatch || !q ? '' : 'none';
+        if (subMatch) colMatch = true;
+      });
+      col.style.display = colMatch || !q ? '' : 'none';
+    });
+  });
+
+  // Subcategory accordion
+  document.querySelectorAll('.mega-sub-title').forEach(title => {
+    title.addEventListener('click', () => title.closest('.mega-sub').classList.toggle('open'));
+  });
+
+  // Filter pills
+  document.querySelectorAll('.filter-pill').forEach(pill => {
+    pill.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const f = pill.dataset.filter;
+      document.querySelectorAll('.post-card, .post-feat').forEach(card => {
+        if (f === 'all') { card.style.display = ''; return; }
+        const cats = (card.dataset.category || '').split(' ');
+        card.style.display = cats.includes(f) ? '' : 'none';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

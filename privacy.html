@@ -46,7 +46,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
   transition:box-shadow .3s;
 }
 .nav.s { box-shadow:0 2px 24px rgba(15,76,92,.08); }
-.nav-i { max-width:1110px; margin:0 auto; padding:0 28px; height:100%; display:flex; align-items:center; justify-content:space-between; }
+.nav-i { max-width:1110px; margin:0 auto; padding:0 28px; height:100%; display:flex; align-items:center; gap:16px; }
 .logo { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:var(--warm-brown); text-decoration:none; letter-spacing:-.3px; }
 .logo span { color:var(--accent-tc); }
 .back { display:flex; align-items:center; gap:7px; font-size:13px; font-weight:500; color:var(--text-3); text-decoration:none; transition:color .2s; }
@@ -84,12 +84,65 @@ footer { background:var(--cream); border-top:1px solid var(--border); padding:36
   .page-title { font-size:30px; }
   .page-wrap { padding:90px 18px 60px; }
 }
+
+/* ---- HAMBURGER ---- */
+.hamburger { width:40px; height:40px; display:flex; align-items:center; justify-content:center; border:none; background:transparent; cursor:pointer; border-radius:10px; transition:background .2s; flex-shrink:0; }
+.hamburger:hover { background:rgba(15,76,92,.06); }
+.hamburger-lines { display:flex; flex-direction:column; gap:5px; }
+.hamburger-lines span { display:block; width:20px; height:2px; background:var(--warm-brown); border-radius:2px; transition:all .3s; }
+.hamburger.open .hamburger-lines span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+.hamburger.open .hamburger-lines span:nth-child(2) { opacity:0; }
+.hamburger.open .hamburger-lines span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+/* ---- MEGA MENU ---- */
+.mega-overlay { position:fixed; inset:0; top:0; background:rgba(15,76,92,.15); z-index:90; opacity:0; pointer-events:none; transition:opacity .3s; backdrop-filter:blur(2px); }
+.mega-overlay.open { opacity:1; pointer-events:all; }
+.mega-menu { position:fixed; top:62px; left:0; right:0; z-index:95; background:#FFFFFF; border-bottom:2px solid #E8DFD0; box-shadow:0 12px 48px rgba(15,76,92,.1); transform:translateY(-10px); opacity:0; pointer-events:none; transition:all .3s cubic-bezier(.4,0,.2,1); max-height:calc(100vh - 80px); overflow-y:auto; }
+.mega-menu.open { transform:translateY(0); opacity:1; pointer-events:all; }
+.mega-inner { max-width:1120px; margin:0 auto; padding:28px 24px 32px; }
+.mega-search { margin-bottom:24px; position:relative; max-width:380px; }
+.mega-search input { width:100%; padding:11px 16px 11px 40px; border:1.5px solid #E8DFD0; border-radius:10px; font-family:'DM Sans',sans-serif; font-size:14px; color:#1A1A2E; background:#F8F4E8; outline:none; transition:border-color .2s; }
+.mega-search input:focus { border-color:#E36414; background:#FFFFFF; }
+.mega-search input::placeholder { color:#8A8A9A; }
+.mega-search svg { position:absolute; left:13px; top:50%; transform:translateY(-50%); width:16px; height:16px; color:#8A8A9A; }
+.mega-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:28px 32px; }
+.mega-cat { display:flex; align-items:center; gap:8px; font-size:14px; font-weight:700; color:#0F4C5C; margin-bottom:16px; padding-bottom:8px; border-bottom:2px solid #E36414; }
+.mega-cat-emoji { font-size:18px; }
+.mega-sub { margin-bottom:4px; }
+.mega-sub:last-child { margin-bottom:0; }
+.mega-sub-title { font-size:11px; font-weight:700; letter-spacing:.6px; text-transform:uppercase; color:#8A8A9A; margin-bottom:0; padding:8px 2px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; border-radius:6px; transition:background .15s; }
+.mega-sub-title:hover { background:rgba(15,76,92,.04); }
+.mega-sub-title::after { content:''; width:6px; height:6px; border-right:1.5px solid #8A8A9A; border-bottom:1.5px solid #8A8A9A; transform:rotate(45deg); transition:transform .25s; flex-shrink:0; margin-right:4px; }
+.mega-sub.open .mega-sub-title::after { transform:rotate(-135deg); }
+.mega-sub-links { max-height:0; overflow:hidden; transition:max-height .3s cubic-bezier(.4,0,.2,1); padding-left:2px; }
+.mega-sub.open .mega-sub-links { max-height:400px; padding-bottom:8px; }
+.mega-link { display:block; padding:5px 2px; font-size:13.5px; color:#4A5568; text-decoration:none; transition:color .15s; line-height:1.4; }
+.mega-link:hover { color:#E36414; }
+.mega-link.soon { opacity:.4; pointer-events:none; }
+.mega-link .mtag { font-size:9px; font-weight:700; letter-spacing:.3px; text-transform:uppercase; padding:1px 5px; border-radius:3px; margin-left:5px; vertical-align:middle; color:#8A8A9A; background:#F8F4E8; }
+.mega-all { display:inline-block; margin-top:10px; font-size:12px; font-weight:600; color:#E36414; text-decoration:none; transition:color .15s; }
+.mega-all:hover { color:#0F4C5C; }
+.mega-all::after { content:' \2192'; }
+.mega-foot { margin-top:24px; padding-top:18px; border-top:1px solid #E8DFD0; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+.mega-foot-left { font-size:13px; color:#8A8A9A; }
+.mega-foot-left strong { color:#0F4C5C; font-family:'Playfair Display',serif; font-size:20px; }
+.mega-foot-right { display:flex; gap:12px; }
+.mega-btn { padding:9px 18px; border-radius:8px; font-size:13px; font-weight:600; text-decoration:none; transition:all .2s; }
+.mega-btn-primary { background:#E36414; color:white; }
+.mega-btn-primary:hover { background:#CC5810; }
+.mega-btn-ghost { background:transparent; border:1px solid #E8DFD0; color:#4A5568; }
+.mega-btn-ghost:hover { border-color:#0F4C5C; color:#0F4C5C; }
+
+@media(max-width:860px) { .mega-grid { grid-template-columns:repeat(2, 1fr); } }
+@media(max-width:520px) { .mega-grid { grid-template-columns:1fr; } .mega-inner { padding:20px; } .mega-foot { flex-direction:column; align-items:flex-start; } }
+
 </style>
 </head>
 <body>
 
 <nav class="nav" id="nav">
   <div class="nav-i">
+    <button class="hamburger" id="hamburger" aria-label="Menu guide"><div class="hamburger-lines"><span></span><span></span><span></span></div></button>
     <a href="index.html" class="logo">Buro<span>Semplice</span></a>
     <a href="index.html" class="back">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
@@ -97,6 +150,206 @@ footer { background:var(--cream); border-top:1px solid var(--border); padding:36
     </a>
   </div>
 </nav>
+
+<!-- MEGA OVERLAY -->
+<div class="mega-overlay" id="mega-overlay"></div>
+
+<!-- MEGA MENU -->
+<div class="mega-menu" id="mega-menu">
+  <div class="mega-inner">
+    <div class="mega-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="mega-search" placeholder="Cerca tra tutte le guide…">
+    </div>
+    <div class="mega-grid">
+
+      <div class="mega-col" data-cat="fisco">
+        <div class="mega-cat"><span class="mega-cat-emoji">💰</span> Fisco e soldi</div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Dichiarazione redditi</div>
+          <div class="mega-sub-links">
+          <a href="730.html" class="mega-link">Faccio il 730</a>
+          <a href="#" class="mega-link soon">730 precompilato <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">730 senza sostituto <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">ISEE e bonus</div>
+          <div class="mega-sub-links">
+          <a href="isee.html" class="mega-link">Faccio l'ISEE</a>
+          <a href="#" class="mega-link soon">ISEE corrente <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Assegno unico <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Bonus e detrazioni 2026 <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Tasse e imposte</div>
+          <div class="mega-sub-links">
+          <a href="piva.html" class="mega-link">Apro partita IVA</a>
+          <a href="#" class="mega-link soon">Cedolare secca <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">IMU: chi paga e quanto <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-col" data-cat="casa">
+        <div class="mega-cat"><span class="mega-cat-emoji">🏠</span> Casa</div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Comprare e vendere</div>
+          <div class="mega-sub-links">
+          <a href="compro-casa.html" class="mega-link">Compro casa</a>
+          <a href="#" class="mega-link soon">Mutuo: come sceglierlo <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Vendo casa <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Lavori e bonus</div>
+          <div class="mega-sub-links">
+          <a href="ristrutturare.html" class="mega-link">Ristrutturare casa</a>
+          <a href="#" class="mega-link soon">Bonus mobili <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Bonus caldaia 2026 <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Vivere in casa</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Cambio residenza <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Affitto: diritti e doveri <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Voltura utenze <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-col" data-cat="famiglia">
+        <div class="mega-cat"><span class="mega-cat-emoji">👨‍👩‍👧</span> Famiglia</div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Figli</div>
+          <div class="mega-sub-links">
+          <a href="figlio.html" class="mega-link">Aspetto un figlio</a>
+          <a href="#" class="mega-link soon">Congedo parentale <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Bonus nido 2026 <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Coppia</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Mi sposo <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Divorzio e separazione <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Eredità</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Successione <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Testamento <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-col" data-cat="documenti">
+        <div class="mega-cat"><span class="mega-cat-emoji">🪪</span> Documenti</div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Identità digitale</div>
+          <div class="mega-sub-links">
+          <a href="spid.html" class="mega-link">Faccio lo SPID</a>
+          <a href="#" class="mega-link soon">Carta d'identità elettronica <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">PEC obbligatoria <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Documenti personali</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Rinnovo passaporto <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Codice fiscale <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Tessera sanitaria <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-col" data-cat="lavoro">
+        <div class="mega-cat"><span class="mega-cat-emoji">💼</span> Lavoro</div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Iniziare e cambiare</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Primo lavoro <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Dimissioni volontarie <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Busta paga: come leggerla <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Perdere il lavoro</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">NASpI e disoccupazione <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">TFR: cos'è e quando spetta <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-col" data-cat="salute">
+        <div class="mega-cat"><span class="mega-cat-emoji">🏥</span> Salute</div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Servizio sanitario</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Cambio medico di base <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Esenzione ticket <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Fascicolo sanitario <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Disabilità e assistenza</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Invalidità civile <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Legge 104 <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-col" data-cat="auto">
+        <div class="mega-cat"><span class="mega-cat-emoji">🚗</span> Auto</div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Comprare e vendere</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Auto usata <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Passaggio di proprietà <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Documenti e tasse</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Rinnovo patente <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Bollo auto <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-col" data-cat="pensione">
+        <div class="mega-cat"><span class="mega-cat-emoji">🧓</span> Pensione</div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Andare in pensione</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Quando vado in pensione <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Pensione anticipata <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+        <div class="mega-sub">
+          <div class="mega-sub-title">Prepararsi</div>
+          <div class="mega-sub-links">
+          <a href="#" class="mega-link soon">Riscatto laurea <span class="mtag">Presto</span></a>
+          <a href="#" class="mega-link soon">Pensione integrativa <span class="mtag">Presto</span></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="mega-foot">
+      <div class="mega-foot-left"><strong>7</strong> guide pronte · 40+ in arrivo</div>
+      <div class="mega-foot-right">
+        <a href="contatti.html" class="mega-btn mega-btn-primary">Suggerisci una guida</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <div class="page-wrap">
   <div class="page-tag">Documento legale</div>
@@ -170,6 +423,55 @@ footer { background:var(--cream); border-top:1px solid var(--border); padding:36
     <p>Per qualsiasi domanda sulla privacy scrivi a: <a href="mailto:info.burosemplice@gmail.com">info.burosemplice@gmail.com</a></p>
   </div>
 </div>
-
 <footer>
- 
+  <div class="fi">
+    <div class="fbrand">Buro<span>Semplice</span></div>
+    <div class="flinks">
+      <a href="chi-siamo.html">Chi siamo</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="termini.html">Termini</a>
+      <a href="contatti.html">Contatti</a>
+    </div>
+    <div class="fcopy">© 2026 BuroSemplice — Le informazioni sul sito sono indicative e non sostituiscono la consulenza professionale.</div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('s',scrollY>20),{passive:true});
+// Mega menu
+(function(){
+  const hamburger = document.getElementById('hamburger');
+  const megaMenu = document.getElementById('mega-menu');
+  const megaOverlay = document.getElementById('mega-overlay');
+  if (!hamburger || !megaMenu || !megaOverlay) return;
+  function megaOpen() { megaMenu.classList.add('open'); megaOverlay.classList.add('open'); hamburger.classList.add('open'); }
+  function megaClose() { megaMenu.classList.remove('open'); megaOverlay.classList.remove('open'); hamburger.classList.remove('open'); }
+  hamburger.addEventListener('click', () => { megaMenu.classList.contains('open') ? megaClose() : megaOpen(); });
+  megaOverlay.addEventListener('click', megaClose);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') megaClose(); });
+  document.getElementById('mega-search').addEventListener('input', e => {
+    const q = e.target.value.toLowerCase();
+    document.querySelectorAll('.mega-col').forEach(col => {
+      let colMatch = false;
+      col.querySelectorAll('.mega-sub').forEach(sub => {
+        const links = sub.querySelectorAll('.mega-link');
+        let subMatch = false;
+        links.forEach(link => { const match = link.textContent.toLowerCase().includes(q); link.style.display = match ? '' : 'none'; if (match) subMatch = true; });
+        sub.querySelector('.mega-sub-title').style.display = (q && !subMatch) ? 'none' : '';
+        if (q && subMatch) sub.classList.add('open');
+        if (!q) sub.classList.remove('open');
+        sub.style.display = subMatch || !q ? '' : 'none';
+        if (subMatch) colMatch = true;
+      });
+      col.style.display = colMatch || !q ? '' : 'none';
+      const allLink = col.querySelector('.mega-all');
+      if (allLink) allLink.style.display = q ? 'none' : '';
+    });
+  });
+  document.querySelectorAll('.mega-sub-title').forEach(title => {
+    title.addEventListener('click', () => { title.closest('.mega-sub').classList.toggle('open'); });
+  });
+})();
+</script>
+</body>
+</html>
