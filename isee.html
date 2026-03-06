@@ -912,6 +912,29 @@ footer { background:var(--cream); border-top:1px solid var(--border); padding:36
 @media(max-width:860px) { .mega-grid { grid-template-columns:repeat(2, 1fr); } }
 @media(max-width:520px) { .mega-grid { grid-template-columns:1fr; } .mega-inner { padding:20px; } .mega-foot { flex-direction:column; align-items:flex-start; } }
 
+
+/* REMIND BOX */
+.remind-box{background:linear-gradient(135deg,#0F4C5C,#1A6B7A);padding:56px 28px;text-align:center;}
+.remind-inner{max-width:520px;margin:0 auto;}
+.remind-icon{font-size:36px;margin-bottom:12px;}
+.remind-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#F8F4E8;margin-bottom:8px;}
+.remind-desc{font-size:15px;color:rgba(248,244,232,.75);margin-bottom:24px;line-height:1.6;}
+.remind-row{display:flex;gap:8px;margin-bottom:12px;}
+.remind-input{flex:1;padding:14px 16px;border:2px solid rgba(255,255,255,.2);border-radius:10px;background:rgba(255,255,255,.12);color:#fff;font-family:'DM Sans',sans-serif;font-size:15px;outline:none;transition:border-color .2s;}
+.remind-input::placeholder{color:rgba(255,255,255,.5);}
+.remind-input:focus{border-color:#E36414;background:rgba(255,255,255,.18);}
+.remind-btn{padding:14px 24px;border:none;border-radius:10px;background:#E36414;color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .2s;}
+.remind-btn:hover{background:#CC5810;}
+.remind-check{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:rgba(248,244,232,.6);text-align:left;cursor:pointer;}
+.remind-check input{margin-top:2px;flex-shrink:0;}
+.remind-check a{color:rgba(248,244,232,.8);}
+.remind-note{font-size:11px;color:rgba(248,244,232,.4);margin-top:16px;}
+.remind-note a{color:rgba(248,244,232,.5);}
+.remind-msg{max-width:520px;margin:0 auto 16px;padding:12px 16px;border-radius:8px;font-size:14px;text-align:left;}
+.remind-msg--ok{background:rgba(42,157,143,.2);color:#a8f0e0;border:1px solid rgba(42,157,143,.4);}
+.remind-msg--err{background:rgba(227,100,20,.2);color:#ffcba4;border:1px solid rgba(227,100,20,.4);}
+@media(max-width:480px){.remind-row{flex-direction:column;}.remind-title{font-size:24px;}}
+@media print{.remind-box{display:none!important;}}
 </style>
 <script type="application/ld+json">
 {
@@ -1574,6 +1597,28 @@ footer { background:var(--cream); border-top:1px solid var(--border); padding:36
 </aside>
 </div>
 
+<!-- PROMEMORIA SCADENZE -->
+<div class="remind-box">
+  <div class="remind-inner">
+    <div class="remind-icon">🔔</div>
+    <h2 class="remind-title">Non perderti le scadenze dell’ISEE</h2>
+    <p class="remind-desc">Ti avvisiamo via email prima di ogni scadenza. Gratis, niente spam, cancelli quando vuoi.</p>
+    <div id="remind-ok" class="remind-msg remind-msg--ok" style="display:none;"></div>
+    <div id="remind-err" class="remind-msg remind-msg--err" style="display:none;">Qualcosa è andato storto. Riprova tra qualche secondo.</div>
+    <form id="remind-form">
+      <div class="remind-row">
+        <input class="remind-input" type="email" id="remind-email" placeholder="La tua email" required />
+        <button class="remind-btn" type="submit" id="remind-submit">Attiva promemoria</button>
+      </div>
+      <label class="remind-check">
+        <input type="checkbox" id="remind-opt" required />
+        <span>Accetto di ricevere i promemoria via email. Puoi cancellarti con un clic da ogni email. <a href="privacy.html" target="_blank">Privacy Policy</a></span>
+      </label>
+    </form>
+    <p class="remind-note">Utilizziamo Brevo per l’invio. <a href="https://www.brevo.com/it/legal/privacypolicy/" target="_blank">Informativa Brevo</a></p>
+  </div>
+</div>
+
 <footer>
   <div class="fi">
     <div class="fbrand">Buro<span>Semplice</span></div>
@@ -1701,5 +1746,49 @@ function qa(btn) {
   });
 })();
 </script>
+
+<script>
+// Promemoria form
+(function(){
+  var form = document.getElementById('remind-form');
+  var emailEl = document.getElementById('remind-email');
+  var optEl = document.getElementById('remind-opt');
+  var btn = document.getElementById('remind-submit');
+  var ok = document.getElementById('remind-ok');
+  var err = document.getElementById('remind-err');
+  try {
+    var done = localStorage.getItem('bs_remind_isee');
+    if (done) {
+      ok.textContent = 'Sei gi\u00e0 iscritto ai promemoria. Controlla la tua casella ' + done;
+      ok.style.display = 'block';
+      emailEl.value = done; emailEl.disabled = true;
+      optEl.checked = true; optEl.disabled = true;
+      btn.textContent = '\u2713 Gi\u00e0 iscritto'; btn.disabled = true;
+    }
+  } catch(e){}
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var email = emailEl.value.trim();
+    var opt = optEl.checked;
+    ok.style.display='none'; err.style.display='none';
+    if (!email || !opt) return;
+    btn.disabled = true; btn.textContent = 'Invio in corso\u2026';
+    try {
+      var fd = new FormData();
+      fd.append('EMAIL', email); fd.append('OPT_IN', '1');
+      fd.append('email_address_check', ''); fd.append('locale', 'it');
+      await fetch('https://26076dda.sibforms.com/serve/MUIFAOZAUqwpuIYv9EMr7PDrkBg9trLLpxxphgHJPnt7xi4uLEdOek4cX0fA_VWcBexGXTHPGawPmISFbSdJ0rQ0-JYpten6oKYM1NQMLE2ir-9nsWRI5-GUQpeWeASE2plzbGULiFOsMQdEEG6G6EV2xjinB_MkZd-qZq4KcerJ0j1UULgIneKBhwnywCD0BIDh1d3GDFw-FR8K8Q==', {method:'POST', body:fd, mode:'no-cors'});
+      ok.textContent = 'Fatto! Controlla l\u2019email e clicca il link per confermare. Ti avviseremo prima di ogni scadenza.';
+      ok.style.display='block';
+      btn.textContent = '\u2713 Iscritto!';
+      emailEl.disabled = true; optEl.disabled = true;
+      try { localStorage.setItem('bs_remind_isee', email); } catch(e){}
+    } catch(ex) {
+      err.style.display='block'; btn.disabled = false; btn.textContent = 'Attiva promemoria';
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
