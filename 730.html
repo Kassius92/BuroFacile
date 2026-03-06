@@ -44,7 +44,6 @@
 </script><title>Come fare il 730 nel 2026: guida completa e gratuita | BuroSemplice</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 <style>
 :root {
   --cream:#F8F4E8; --cream-dark:#EFE8D8;
@@ -1164,27 +1163,22 @@ footer{background:var(--cream);border-top:1px solid var(--bd);padding:36px 28px;
 </div>
 
 <!-- PROMEMORIA SCADENZE -->
-<div class="remind-box" id="sib-form-container">
+<div class="remind-box">
   <div class="remind-inner">
     <div class="remind-icon">🔔</div>
     <h2 class="remind-title">Non perderti le scadenze del 730</h2>
     <p class="remind-desc">Ti avvisiamo via email prima di ogni scadenza. Gratis, niente spam, cancelli quando vuoi.</p>
-    <div id="error-message" class="sib-form-message-panel remind-msg remind-msg--err" style="display:none;">La tua iscrizione non può essere convalidata.</div>
-    <div id="success-message" class="sib-form-message-panel remind-msg remind-msg--ok" style="display:none;">Fatto! Controlla l'email e clicca il link per confermare. Ti avviseremo prima di ogni scadenza.</div>
-    <form id="sib-form" method="POST" action="https://26076dda.sibforms.com/serve/MUIFAOZAUqwpuIYv9EMr7PDrkBg9trLLpxxphgHJPnt7xi4uLEdOek4cX0fA_VWcBexGXTHPGawPmISFbSdJ0rQ0-JYpten6oKYM1NQMLE2ir-9nsWRI5-GUQpeWeASE2plzbGULiFOsMQdEEG6G6EV2xjinB_MkZd-qZq4KcerJ0j1UULgIneKBhwnywCD0BIDh1d3GDFw-FR8K8Q==" data-type="subscription">
+    <div id="remind-ok" class="remind-msg remind-msg--ok" style="display:none;">Fatto! Controlla l'email e clicca il link per confermare. Ti avviseremo prima di ogni scadenza.</div>
+    <div id="remind-err" class="remind-msg remind-msg--err" style="display:none;">Qualcosa è andato storto. Riprova tra qualche secondo.</div>
+    <form id="remind-form">
       <div class="remind-row">
-        <input class="remind-input input" type="email" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="La tua email" data-required="true" required />
-        <button class="remind-btn sib-form-block__button sib-form-block__button-with-loader" type="submit" form="sib-form">
-          <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" style="width:0;height:0;"><path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"/></svg>
-          Attiva promemoria
-        </button>
+        <input class="remind-input" type="email" id="remind-email" placeholder="La tua email" required />
+        <button class="remind-btn" type="submit" id="remind-submit">Attiva promemoria</button>
       </div>
       <label class="remind-check">
-        <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required />
+        <input type="checkbox" id="remind-opt" required />
         <span>Accetto di ricevere i promemoria via email. <a href="privacy.html" target="_blank">Privacy Policy</a></span>
       </label>
-      <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none;">
-      <input type="hidden" name="locale" value="it">
     </form>
     <p class="remind-note">Utilizziamo Brevo per l'invio. <a href="https://www.brevo.com/it/legal/privacypolicy/" target="_blank">Informativa Brevo</a></p>
   </div>
@@ -1301,24 +1295,58 @@ calc();
 })();
 </script>
 <script>
-window.REQUIRED_CODE_ERROR_MESSAGE = 'Scegli un prefisso paese';
-window.LOCALE = 'it';
-window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Le informazioni fornite non sono valide. Controlla il formato del campo e riprova.";
-window.REQUIRED_ERROR_MESSAGE = "Questo campo non può essere lasciato vuoto. ";
-window.GENERIC_INVALID_MESSAGE = "Le informazioni fornite non sono valide. Controlla il formato del campo e riprova.";
-window.translation = {common:{selectedList:'{quantity} lista selezionata',selectedLists:'{quantity} liste selezionate',selectedOption:'{quantity} selezionato',selectedOptions:'{quantity} selezionati'}};
-var AUTOHIDE = Boolean(0);
-// Fallback: observe success message visibility
+// Promemoria form
 (function(){
-  var ok=document.getElementById('success-message');
-  var err=document.getElementById('error-message');
-  if(!ok)return;
-  new MutationObserver(function(){
-    if(ok.style.display!=='none'){ok.style.display='block';}
-    if(err&&err.style.display!=='none'){err.style.display='block';}
-  }).observe(ok,{attributes:true,attributeFilter:['style']});
+  var form = document.getElementById('remind-form');
+  var emailEl = document.getElementById('remind-email');
+  var optEl = document.getElementById('remind-opt');
+  var btn = document.getElementById('remind-submit');
+  var ok = document.getElementById('remind-ok');
+  var err = document.getElementById('remind-err');
+
+  // Check if already subscribed
+  try {
+    var done = localStorage.getItem('bs_remind_730');
+    if (done) {
+      ok.textContent = 'Sei già iscritto ai promemoria del 730. Controlla la tua casella ' + done;
+      ok.style.display = 'block';
+      emailEl.value = done;
+      emailEl.disabled = true;
+      optEl.checked = true;
+      optEl.disabled = true;
+      btn.textContent = '✓ Già iscritto';
+      btn.disabled = true;
+    }
+  } catch(e){}
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var email = emailEl.value.trim();
+    var opt = optEl.checked;
+    ok.style.display='none'; err.style.display='none';
+    if (!email || !opt) return;
+    btn.disabled = true;
+    btn.textContent = 'Invio in corso…';
+    try {
+      var fd = new FormData();
+      fd.append('EMAIL', email);
+      fd.append('OPT_IN', '1');
+      fd.append('email_address_check', '');
+      fd.append('locale', 'it');
+      await fetch('https://26076dda.sibforms.com/serve/MUIFAOZAUqwpuIYv9EMr7PDrkBg9trLLpxxphgHJPnt7xi4uLEdOek4cX0fA_VWcBexGXTHPGawPmISFbSdJ0rQ0-JYpten6oKYM1NQMLE2ir-9nsWRI5-GUQpeWeASE2plzbGULiFOsMQdEEG6G6EV2xjinB_MkZd-qZq4KcerJ0j1UULgIneKBhwnywCD0BIDh1d3GDFw-FR8K8Q==', {method:'POST', body:fd, mode:'no-cors'});
+      ok.textContent = 'Fatto! Controlla l\u2019email e clicca il link per confermare. Ti avviseremo prima di ogni scadenza.';
+      ok.style.display='block';
+      btn.textContent = '✓ Iscritto!';
+      emailEl.disabled = true;
+      optEl.disabled = true;
+      try { localStorage.setItem('bs_remind_730', email); } catch(e){}
+    } catch(ex) {
+      err.style.display='block';
+      btn.disabled = false;
+      btn.textContent = 'Attiva promemoria';
+    }
+  });
 })();
 </script>
-<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 </html>
