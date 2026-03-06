@@ -190,9 +190,9 @@ footer { background:var(--cream); border-top:1px solid var(--border); padding:28
 .hamburger.open .hamburger-lines span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
 
 /* ---- MEGA MENU ---- */
-.mega-overlay { position:fixed; inset:0; top:0; background:rgba(15,76,92,.15); z-index:290; opacity:0; pointer-events:none; transition:opacity .3s; backdrop-filter:blur(2px); }
+.mega-overlay { position:fixed; inset:0; top:0; background:rgba(15,76,92,.15); z-index:250; opacity:0; pointer-events:none; transition:opacity .3s; backdrop-filter:blur(2px); }
 .mega-overlay.open { opacity:1; pointer-events:all; }
-.mega-menu { position:fixed; top:62px; left:0; right:0; z-index:295; background:#FFFFFF; border-bottom:2px solid #E8DFD0; box-shadow:0 12px 48px rgba(15,76,92,.1); transform:translateY(-10px); opacity:0; pointer-events:none; transition:all .3s cubic-bezier(.4,0,.2,1); max-height:calc(100vh - 80px); overflow-y:auto; }
+.mega-menu { position:fixed; top:64px; left:0; right:0; z-index:400; background:#FFFFFF; border-bottom:2px solid #E8DFD0; box-shadow:0 12px 48px rgba(15,76,92,.1); transform:translateY(-10px); opacity:0; pointer-events:none; transition:all .3s cubic-bezier(.4,0,.2,1); max-height:calc(100vh - 64px); overflow-y:auto; }
 .mega-menu.open { transform:translateY(0); opacity:1; pointer-events:all; }
 .mega-inner { max-width:1120px; margin:0 auto; padding:28px 24px 32px; }
 .mega-search { margin-bottom:24px; position:relative; max-width:380px; }
