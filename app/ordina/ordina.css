@@ -1,5 +1,17 @@
 /* ORDINA PAGE */
+.ordina-wrap { max-width:720px; margin:0 auto; padding:90px 24px 80px; }
 .wrap { max-width:720px; margin:0 auto; padding:90px 24px 80px; }
+
+/* HERO */
+.ordina-hero { text-align:center; margin-bottom:40px; }
+.ordina-hero h1 { font-family:'Playfair Display',serif; font-size:34px; font-weight:700; color:var(--warm-brown); line-height:1.2; margin-bottom:10px; }
+.ordina-hero p { font-size:15px; color:var(--t2); line-height:1.65; max-width:520px; margin:0 auto; }
+.back-top { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:500; color:var(--t3); text-decoration:none; margin-bottom:20px; transition:color .2s; }
+.back-top:hover { color:var(--warm-brown); }
+
+/* FORM */
+.ordina-form { background:var(--wh); border:1px solid var(--bd); border-radius:18px; padding:36px 32px; box-shadow:0 4px 32px rgba(15,76,92,.06); }
+@media(max-width:560px) { .ordina-form { padding:24px 18px; } }
 
 /* HEADER */
 .order-header { text-align:center; margin-bottom:40px; }

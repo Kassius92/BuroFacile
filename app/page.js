@@ -113,7 +113,7 @@ export default function HomePage() {
             <div className="step r">
               <div className="step-number">3</div>
               <h3>Personalizza per te</h3>
-              <p>Con la tua città, il tuo stipendio, la tua età. I numeri esatti per la tua situazione. Solo 2€.</p>
+              <p>Con la tua città, il tuo stipendio, la tua età. I numeri esatti per la tua situazione. Gratis.</p>
             </div>
           </div>
         </div>
