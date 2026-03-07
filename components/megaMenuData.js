@@ -78,7 +78,7 @@ export const categories = [
     subs: [
       { title: 'Iniziare e cambiare', links: [
         { name: 'Primo lavoro', href: '#', soon: true },
-        { name: 'Dimissioni', href: '#', soon: true },
+        { name: 'Dimissioni', href: '/dimissioni' },
         { name: 'Busta paga', href: '#', soon: true },
       ]},
       { title: 'Perdere il lavoro', links: [
