@@ -8,6 +8,10 @@ import PrintButton from '@/components/PrintButton';
 import SidebarToggle from '@/components/SidebarToggle';
 import QuizIsee from '@/components/QuizIsee';
 import SchemaOrg, { articleSchema, faqSchema } from '@/components/SchemaOrg';
+import StickyBar from '@/components/StickyBar';
+import SocialProof from '@/components/SocialProof';
+import BlurredRow from '@/components/BlurredRow';
+import ExitPopup from '@/components/ExitPopup';
 
 export const metadata = {
   title: "Come fare l'ISEE nel 2026: documenti, costi e procedura | BuroSemplice",
@@ -156,6 +160,7 @@ export default function Page() {
               </div>
             </div>
 
+            <SocialProof count={412} />
             <QuizIsee />
           </div>
 
@@ -303,6 +308,7 @@ export default function Page() {
                 </tbody>
               </table>
             </div>
+    <BlurredRow scheda="isee" />
             <div className="ib tip r">
               <div className="ib-t">💡 Quando conviene farlo</div>
               <p>L&apos;ISEE vale per tutto l&apos;anno, quindi fallo <strong>il prima possibile</strong> — idealmente a gennaio o febbraio. Molti bonus hanno scadenze o fondi limitati: chi arriva prima, prende di pi&ugrave;. Al CAF le code sono pi&ugrave; corte a inizio anno.</p>
@@ -410,6 +416,8 @@ export default function Page() {
 
       {/* PROMEMORIA SCADENZE */}
       <BrevoForm pageName="isee" />
+      <StickyBar scheda="isee" />
+      <ExitPopup scheda="isee" />
       <Footer variant="scheda" />
     </>
   );

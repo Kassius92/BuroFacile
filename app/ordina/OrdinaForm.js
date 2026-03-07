@@ -85,6 +85,7 @@ const schedeConfig = {
 
 export default function OrdinaForm() {
   const [schedaParam, setSchedaParam] = useState('');
+  const [step, setStep] = useState(1);
   const [form, setForm] = useState({
     nome:'', eta:'', citta:'', lavoro:'', reddito:'', famiglia:'', situazione:'', email:'', telefono:'',
   });
@@ -104,43 +105,46 @@ export default function OrdinaForm() {
 
   const config = schedaParam ? schedeConfig[schedaParam] : null;
   const backHref = config ? config.back : '/';
+  const totalSteps = config ? 3 : 2;
+
+  const validateStep = (s) => {
+    if (s === 1) {
+      const missing = [];
+      if (!form.eta) missing.push('Età');
+      if (!form.citta) missing.push('Città o CAP');
+      if (!form.lavoro) missing.push('Situazione lavorativa');
+      if (!form.reddito) missing.push('Reddito annuo lordo');
+      if (!form.famiglia) missing.push('Nucleo familiare');
+      if (missing.length) { alert('Completa questi campi:\n\n• ' + missing.join('\n• ')); return false; }
+      return true;
+    }
+    if (s === 2 && config) {
+      const missing = [];
+      config.fields.forEach(f => { if (f.required && !specificData[f.id]) missing.push(f.label); });
+      if (missing.length) { alert('Completa questi campi:\n\n• ' + missing.join('\n• ')); return false; }
+      return true;
+    }
+    return true;
+  };
+
+  const nextStep = () => {
+    if (!validateStep(step)) return;
+    setStep(s => Math.min(s + 1, totalSteps));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  const prevStep = () => { setStep(s => Math.max(s - 1, 1)); window.scrollTo({ top: 0, behavior: 'smooth' }); };
 
   const handleSubmit = async () => {
     if (!form.email || !form.email.includes('@') || !form.email.includes('.')) {
-      alert('Inserisci un\'email valida per ricevere la scheda.');
-      return;
+      alert('Inserisci un\'email valida.'); return;
     }
     if (!form.telefono || form.telefono.replace(/\D/g,'').length < 8) {
-      alert('Inserisci un numero di telefono valido.');
-      return;
-    }
-    const missing = [];
-    if (!form.eta) missing.push('Età');
-    if (!form.citta) missing.push('Città o CAP');
-    if (!form.lavoro) missing.push('Situazione lavorativa');
-    if (!form.reddito) missing.push('Reddito annuo lordo');
-    if (!form.famiglia) missing.push('Nucleo familiare');
-    if (missing.length) {
-      alert('Per creare la tua scheda personalizzata mi servono queste informazioni:\n\n• ' + missing.join('\n• '));
-      return;
-    }
-    if (config) {
-      const missingSpec = [];
-      config.fields.forEach(f => {
-        if (f.required && !specificData[f.id]) missingSpec.push(f.label);
-      });
-      if (missingSpec.length) {
-        alert('Completa anche questi campi:\n\n• ' + missingSpec.join('\n• '));
-        return;
-      }
+      alert('Inserisci un numero di telefono valido.'); return;
     }
     if (!checks.privacy || !checks.marketing || !checks.termini) {
-      alert('Per procedere devi accettare tutte e tre le condizioni.');
-      return;
+      alert('Per procedere devi accettare tutte e tre le condizioni.'); return;
     }
-
     setLoading(true);
-
     const logData = new URLSearchParams({
       email: form.email, telefono: form.telefono, nome: form.nome, eta: form.eta, citta: form.citta,
       lavoro: form.lavoro, reddito: form.reddito, famiglia: form.famiglia,
@@ -151,32 +155,13 @@ export default function OrdinaForm() {
       termini: checks.termini ? 'Sì' : 'No',
     });
     new Image().src = `${LOGGER_URL}?${logData.toString()}`;
-
     await new Promise(r => setTimeout(r, 800));
     setLoading(false);
     setSubmitted(true);
   };
 
-  const renderSpecificFields = () => {
-    if (!config) return null;
-    const fields = config.fields;
-    const rows = [];
-    for (let i = 0; i < fields.length; i += 2) {
-      const f1 = fields[i];
-      const f2 = fields[i + 1];
-      if (f2) {
-        rows.push(<div className="row2" key={i}>{renderField(f1)}{renderField(f2)}</div>);
-      } else {
-        rows.push(<div key={i}>{renderField(f1)}</div>);
-      }
-    }
-    return rows;
-  };
-
   const renderField = (f) => {
-    const reqMark = f.required
-      ? <span className="req"> *</span>
-      : <span className="opt"> (facoltativo)</span>;
+    const reqMark = f.required ? <span className="req"> *</span> : <span className="opt"> (facoltativo)</span>;
     return (
       <div className="field" key={f.id}>
         <label htmlFor={f.id}>{f.label}{reqMark}</label>
@@ -192,6 +177,39 @@ export default function OrdinaForm() {
     );
   };
 
+  const renderSpecificFields = () => {
+    if (!config) return null;
+    const fields = config.fields;
+    const rows = [];
+    for (let i = 0; i < fields.length; i += 2) {
+      const f1 = fields[i]; const f2 = fields[i + 1];
+      if (f2) rows.push(<div className="row2" key={i}>{renderField(f1)}{renderField(f2)}</div>);
+      else rows.push(<div key={i}>{renderField(f1)}</div>);
+    }
+    return rows;
+  };
+
+  // ─── STEPS BAR ───
+  const StepsBar = () => {
+    const items = [{ n: 1, label: 'La tua situazione' }];
+    if (config) items.push({ n: 2, label: 'Dettagli' });
+    items.push({ n: config ? 3 : 2, label: 'Dove la mando' });
+    return (
+      <div className="steps-bar">
+        {items.map((it, i) => (
+          <div key={it.n} style={{ display: 'flex', alignItems: 'center' }}>
+            {i > 0 && <div className={`step-line${step > it.n - 1 ? ' done' : ''}`} />}
+            <div className={`step-item${step === it.n ? ' active' : ''}${step > it.n ? ' done' : ''}`}>
+              <div className="step-circle">{step > it.n ? '✓' : it.n}</div>
+              <div className="step-label">{it.label}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  // ─── SUCCESS ───
   if (submitted) {
     return (
       <div className="ordina-wrap">
@@ -206,9 +224,9 @@ export default function OrdinaForm() {
     );
   }
 
+  // ─── FORM ───
   return (
     <div className="ordina-wrap">
-
       <div className="ordina-hero">
         <Link href={backHref} className="back-top">← Torna alla guida gratuita</Link>
         <h1>{config ? config.title : 'Personalizza la tua guida'}</h1>
@@ -216,155 +234,147 @@ export default function OrdinaForm() {
       </div>
 
       <div className="ordina-form">
+        <StepsBar />
 
-        <div className="form-section">
-          <div className="fs-title">I tuoi dati</div>
-          <div className="row2">
-            <div className="field">
-              <label htmlFor="nome">Nome <span className="opt">(facoltativo)</span></label>
-              <input type="text" id="nome" placeholder="Come ti chiami?" value={form.nome} onChange={e => set('nome', e.target.value)} />
-            </div>
-            <div className="field">
-              <label htmlFor="eta">Età <span className="req">*</span></label>
-              <select id="eta" value={form.eta} onChange={e => set('eta', e.target.value)}>
-                <option value="" disabled>Seleziona</option>
-                <option>Meno di 26 anni</option>
-                <option>26–35 anni</option>
-                <option>36–45 anni</option>
-                <option>46–60 anni</option>
-                <option>Oltre 60 anni</option>
-              </select>
-            </div>
-          </div>
-          <div className="row2">
-            <div className="field">
-              <label htmlFor="citta">Città o CAP <span className="req">*</span></label>
-              <input type="text" id="citta" placeholder="Es. Milano oppure 80100" value={form.citta} onChange={e => set('citta', e.target.value)} />
-            </div>
-            <div className="field">
-              <label htmlFor="lavoro">Situazione lavorativa <span className="req">*</span></label>
-              <select id="lavoro" value={form.lavoro} onChange={e => set('lavoro', e.target.value)}>
-                <option value="" disabled>Seleziona</option>
-                <option>Dipendente a tempo indeterminato</option>
-                <option>Dipendente a tempo determinato</option>
-                <option>Partita IVA / Autonomo</option>
-                <option>Pensionato</option>
-                <option>Disoccupato / In cerca</option>
-                <option>Studente</option>
-                <option>Altro</option>
-              </select>
-            </div>
-          </div>
-          <div className="row2">
-            <div className="field">
-              <label htmlFor="reddito">Reddito annuo lordo <span className="req">*</span> <span className="opt">(circa)</span></label>
-              <select id="reddito" value={form.reddito} onChange={e => set('reddito', e.target.value)}>
-                <option value="" disabled>Seleziona</option>
-                <option>Meno di 15.000 €</option>
-                <option>15.000 – 28.000 €</option>
-                <option>28.000 – 50.000 €</option>
-                <option>50.000 – 75.000 €</option>
-                <option>Oltre 75.000 €</option>
-                <option>Preferisco non dirlo</option>
-              </select>
-              <div className="field-hint">Serve solo per calcolare detrazioni e scaglioni IRPEF — non serve il dato esatto.</div>
-            </div>
-            <div className="field">
-              <label htmlFor="famiglia">Nucleo familiare <span className="req">*</span></label>
-              <select id="famiglia" value={form.famiglia} onChange={e => set('famiglia', e.target.value)}>
-                <option value="" disabled>Seleziona</option>
-                <option>Single, senza figli</option>
-                <option>Coppia, senza figli</option>
-                <option>Con 1 figlio</option>
-                <option>Con 2 figli</option>
-                <option>Con 3 o più figli</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        {config && (
+        {/* STEP 1: DATI GENERALI */}
+        {step === 1 && (
           <div className="form-section">
-            <div className="fs-title">{config.sectionTitle}</div>
-            {renderSpecificFields()}
+            <div className="fs-title">La tua situazione</div>
+            <div className="row2">
+              <div className="field">
+                <label htmlFor="nome">Nome <span className="opt">(facoltativo)</span></label>
+                <input type="text" id="nome" placeholder="Come ti chiami?" value={form.nome} onChange={e => set('nome', e.target.value)} />
+              </div>
+              <div className="field">
+                <label htmlFor="eta">Età <span className="req">*</span></label>
+                <select id="eta" value={form.eta} onChange={e => set('eta', e.target.value)}>
+                  <option value="" disabled>Seleziona</option>
+                  <option>Meno di 26 anni</option><option>26–35 anni</option><option>36–45 anni</option><option>46–60 anni</option><option>Oltre 60 anni</option>
+                </select>
+              </div>
+            </div>
+            <div className="row2">
+              <div className="field">
+                <label htmlFor="citta">Città o CAP <span className="req">*</span></label>
+                <input type="text" id="citta" placeholder="Es. Milano oppure 80100" value={form.citta} onChange={e => set('citta', e.target.value)} />
+              </div>
+              <div className="field">
+                <label htmlFor="lavoro">Situazione lavorativa <span className="req">*</span></label>
+                <select id="lavoro" value={form.lavoro} onChange={e => set('lavoro', e.target.value)}>
+                  <option value="" disabled>Seleziona</option>
+                  <option>Dipendente a tempo indeterminato</option><option>Dipendente a tempo determinato</option><option>Partita IVA / Autonomo</option><option>Pensionato</option><option>Disoccupato / In cerca</option><option>Studente</option><option>Altro</option>
+                </select>
+              </div>
+            </div>
+            <div className="row2">
+              <div className="field">
+                <label htmlFor="reddito">Reddito annuo lordo <span className="req">*</span> <span className="opt">(circa)</span></label>
+                <select id="reddito" value={form.reddito} onChange={e => set('reddito', e.target.value)}>
+                  <option value="" disabled>Seleziona</option>
+                  <option>Meno di 15.000 €</option><option>15.000 – 28.000 €</option><option>28.000 – 50.000 €</option><option>50.000 – 75.000 €</option><option>Oltre 75.000 €</option><option>Preferisco non dirlo</option>
+                </select>
+                <div className="field-hint">Serve solo per calcolare detrazioni e scaglioni IRPEF.</div>
+              </div>
+              <div className="field">
+                <label htmlFor="famiglia">Nucleo familiare <span className="req">*</span></label>
+                <select id="famiglia" value={form.famiglia} onChange={e => set('famiglia', e.target.value)}>
+                  <option value="" disabled>Seleziona</option>
+                  <option>Single, senza figli</option><option>Coppia, senza figli</option><option>Con 1 figlio</option><option>Con 2 figli</option><option>Con 3 o più figli</option>
+                </select>
+              </div>
+            </div>
+            <div className="step-btns">
+              <button className="step-next" onClick={nextStep}>Passo {config ? '2' : '2'} di {totalSteps} →</button>
+            </div>
           </div>
         )}
 
-        <div className="form-section">
-          <div className="fs-title">Qualcos&apos;altro?</div>
-          <div className="field">
-            <label htmlFor="situazione">Raccontami qualsiasi dettaglio utile <span className="opt">(facoltativo)</span></label>
-            <textarea id="situazione" placeholder="Es. Ho comprato casa l'anno scorso con mutuo, ho due figli di 5 e 8 anni, ho fatto anche dei lavori di ristrutturazione..." value={form.situazione} onChange={e => set('situazione', e.target.value)} />
-            <div className="field-hint">Più mi dici, più la scheda sarà precisa. Scrivi in modo libero.</div>
-          </div>
-        </div>
-
-        <div className="form-section">
-          <div className="fs-title">Dove ti mando la scheda</div>
-          <div className="row2">
-            <div className="field">
-              <label htmlFor="email">Email <span className="req">*</span></label>
-              <input type="email" id="email" placeholder="la-tua@email.it" value={form.email} onChange={e => set('email', e.target.value)} />
+        {/* STEP 2: DETTAGLI SPECIFICI (only if scheda has fields) */}
+        {step === 2 && config && (
+          <div className="form-section">
+            <div className="fs-title">{config.sectionTitle}</div>
+            {renderSpecificFields()}
+            <div className="field" style={{ marginTop: 20 }}>
+              <label htmlFor="situazione">Qualcos&apos;altro? <span className="opt">(facoltativo)</span></label>
+              <textarea id="situazione" placeholder="Dettagli aggiuntivi sulla tua situazione..." value={form.situazione} onChange={e => set('situazione', e.target.value)} />
             </div>
-            <div className="field">
-              <label htmlFor="telefono">Telefono <span className="req">*</span></label>
-              <input type="tel" id="telefono" placeholder="Es. 333 1234567" value={form.telefono} onChange={e => set('telefono', e.target.value)} />
+            <div className="step-btns">
+              <button className="step-back" onClick={prevStep}>← Indietro</button>
+              <button className="step-next" onClick={nextStep}>Passo 3 di 3 →</button>
             </div>
           </div>
-          <div className="field-hint">Riceverai la scheda personalizzata via email entro 24 ore. Il telefono ci serve nel caso un professionista della tua zona possa aiutarti.</div>
-        </div>
+        )}
 
-        <hr className="divider" />
-
-        <div className="price-box free-box">
-          <div className="price-left">
-            <div className="price-what">Cosa ricevi gratis</div>
-            <div className="price-items">
-              <span>Scheda personalizzata per la tua situazione</span>
-              <span>Bonus e detrazioni a cui hai diritto tu</span>
-              <span>Uffici e contatti della tua città</span>
-              <span>Eventuale contatto con professionisti qualificati della tua zona</span>
+        {/* STEP 2 (no config) or STEP 3: CONTATTI + CONSENSI */}
+        {((step === 2 && !config) || step === 3) && (
+          <div className="form-section">
+            <div className="fs-title">Dove ti mando la scheda</div>
+            <div className="row2">
+              <div className="field">
+                <label htmlFor="email">Email <span className="req">*</span></label>
+                <input type="email" id="email" placeholder="la-tua@email.it" value={form.email} onChange={e => set('email', e.target.value)} />
+              </div>
+              <div className="field">
+                <label htmlFor="telefono">Telefono <span className="req">*</span></label>
+                <input type="tel" id="telefono" placeholder="Es. 333 1234567" value={form.telefono} onChange={e => set('telefono', e.target.value)} />
+              </div>
             </div>
+            <div className="field-hint" style={{ marginBottom: 20 }}>Riceverai la scheda via email entro 24 ore. Il telefono ci serve nel caso un professionista della tua zona possa aiutarti.</div>
+
+            {!config && (
+              <div className="field">
+                <label htmlFor="situazione">Raccontami la tua situazione <span className="opt">(facoltativo)</span></label>
+                <textarea id="situazione" placeholder="Es. Ho comprato casa l'anno scorso con mutuo, ho due figli..." value={form.situazione} onChange={e => set('situazione', e.target.value)} />
+              </div>
+            )}
+
+            <hr className="divider" />
+
+            <div className="price-box free-box">
+              <div className="price-left">
+                <div className="price-what">Cosa ricevi gratis</div>
+                <div className="price-items">
+                  <span>Scheda personalizzata per la tua situazione</span>
+                  <span>Bonus e detrazioni a cui hai diritto tu</span>
+                  <span>Uffici e contatti della tua città</span>
+                  <span>Eventuale contatto con professionisti qualificati</span>
+                </div>
+              </div>
+              <div className="price-right">
+                <div className="price-amount free-amount">Gratis</div>
+              </div>
+            </div>
+
+            <div className="legal-block">
+              <label className="checkbox-row">
+                <input type="checkbox" checked={checks.privacy} onChange={e => setChecks(p => ({...p, privacy: e.target.checked}))} />
+                <span>Acconsento al trattamento dei miei dati personali per la generazione della scheda personalizzata, come descritto nella <Link href="/privacy" target="_blank">Privacy Policy</Link>.</span>
+              </label>
+              <label className="checkbox-row">
+                <input type="checkbox" checked={checks.marketing} onChange={e => setChecks(p => ({...p, marketing: e.target.checked}))} />
+                <span>Acconsento a essere contattato da <strong>professionisti selezionati</strong> (commercialisti, consulenti, mediatori creditizi, geometri) in relazione alla mia situazione, e a ricevere comunicazioni commerciali da BuroSemplice. Posso revocare il consenso in qualsiasi momento.</span>
+              </label>
+              <label className="checkbox-row">
+                <input type="checkbox" checked={checks.termini} onChange={e => setChecks(p => ({...p, termini: e.target.checked}))} />
+                <span>Ho letto e accetto i <Link href="/termini" target="_blank">Termini di Servizio</Link>.</span>
+              </label>
+            </div>
+
+            <div className="step-btns" style={{ justifyContent: 'space-between' }}>
+              <button className="step-back" onClick={prevStep}>← Indietro</button>
+              <button className="btn-submit" onClick={handleSubmit} disabled={loading} style={{ margin: 0 }}>
+                {loading ? 'Invio in corso…' : 'Ricevi la scheda gratuita →'}
+              </button>
+            </div>
+
+            <div className="secure-note">🔒 I tuoi dati sono protetti e trattati nel rispetto del GDPR</div>
           </div>
-          <div className="price-right">
-            <div className="price-amount free-amount">Gratis</div>
-          </div>
-        </div>
-
-        <div className="delivery-note">
-          <div className="delivery-icon">📬</div>
-          <div>Ricevi la scheda <strong>entro 24 ore</strong> all&apos;email che hai indicato. Di solito arriva molto prima.</div>
-        </div>
-
-        <div className="legal-block">
-          <label className="checkbox-row">
-            <input type="checkbox" checked={checks.privacy} onChange={e => setChecks(p => ({...p, privacy: e.target.checked}))} />
-            <span>Acconsento al trattamento dei miei dati personali per la generazione della scheda personalizzata, come descritto nella <Link href="/privacy" target="_blank">Privacy Policy</Link>.</span>
-          </label>
-          <label className="checkbox-row">
-            <input type="checkbox" checked={checks.marketing} onChange={e => setChecks(p => ({...p, marketing: e.target.checked}))} />
-            <span>Acconsento a essere contattato da <strong>professionisti selezionati</strong> (commercialisti, consulenti, mediatori creditizi, geometri) in relazione alla mia situazione, e a ricevere comunicazioni commerciali da BuroSemplice. Posso revocare il consenso in qualsiasi momento.</span>
-          </label>
-          <label className="checkbox-row">
-            <input type="checkbox" checked={checks.termini} onChange={e => setChecks(p => ({...p, termini: e.target.checked}))} />
-            <span>Ho letto e accetto i <Link href="/termini" target="_blank">Termini di Servizio</Link>.</span>
-          </label>
-        </div>
-
-        <button className="btn-submit" onClick={handleSubmit} disabled={loading}>
-          {loading ? 'Invio in corso…' : 'Ricevi la scheda gratuita →'}
-        </button>
-
-        <div className="secure-note">
-          🔒 I tuoi dati sono protetti e trattati nel rispetto del GDPR
-        </div>
-
+        )}
       </div>
 
       <div className="back-link">
         <Link href={backHref}>← Torna alla guida gratuita</Link>
       </div>
-
     </div>
   );
 }

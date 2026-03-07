@@ -733,3 +733,66 @@ body.mega-open .toc { display: none; }
 .footer-brand{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--warm-brown);}.footer-brand span{color:var(--tc);}
 .footer-text{font-size:13px;color:var(--t3);}
 .footer-links{display:flex;gap:24px;}.footer-links a{font-size:13px;color:var(--t3);text-decoration:none;transition:color .2s;}.footer-links a:hover{color:var(--warm-brown);}
+
+/* ═══════════════════════════════════════════ */
+/* CONVERSION FEATURES                         */
+/* ═══════════════════════════════════════════ */
+
+/* ─── 1. STICKY BAR MOBILE ─── */
+.sticky-cta-bar{position:fixed;bottom:0;left:0;right:0;z-index:250;background:linear-gradient(135deg,#0F4C5C,#1a6b7a);padding:12px 18px;display:none;align-items:center;justify-content:space-between;box-shadow:0 -4px 24px rgba(0,0,0,.2);animation:slideUp .4s ease;}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.sticky-cta-left{color:rgba(255,255,255,.85);font-size:12px;line-height:1.35;}
+.sticky-cta-left strong{color:#fff;font-weight:700;display:block;font-size:13px;}
+.sticky-cta-btn{background:#fff;color:#0F4C5C;padding:10px 20px;border-radius:10px;font-size:13px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:6px;flex-shrink:0;box-shadow:0 2px 12px rgba(0,0,0,.1);}
+.sticky-cta-free{background:#2A9D8F;color:#fff;font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;text-transform:uppercase;letter-spacing:.5px;}
+@media(max-width:768px){.sticky-cta-bar{display:flex;}}
+
+/* ─── 2. BLURRED ROW ─── */
+.blur-band{position:relative;margin:-2px 0 20px;border-radius:0 0 16px 16px;overflow:hidden;border:1px solid var(--border);border-top:none;}
+.blur-fake-row{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:var(--white);filter:blur(5px);user-select:none;pointer-events:none;}
+.blur-fake-label{font-size:14px;font-weight:700;color:var(--text-1);}
+.blur-fake-val{font-size:16px;font-weight:700;color:#2A9D8F;}
+.blur-cta-link{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(248,244,232,.7);backdrop-filter:blur(2px);font-size:13px;font-weight:700;color:#E36414;text-decoration:none;transition:all .2s;}
+.blur-cta-link:hover{background:rgba(248,244,232,.85);color:#CC5810;}
+
+/* ─── 3. SOCIAL PROOF ─── */
+.social-proof{display:inline-flex;align-items:center;gap:10px;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:10px 18px;margin-bottom:16px;}
+.sp-avatars{display:flex;margin-right:4px;}
+.sp-avatar{width:26px;height:26px;border-radius:50%;border:2px solid var(--white);margin-right:-8px;font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;}
+.sp-text{font-size:12px;color:var(--text-2);}
+.sp-text strong{color:#2A9D8F;}
+.sp-fire{animation:firePulse 1.5s ease infinite;display:inline-block;}
+@keyframes firePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+
+/* ─── 4. EXIT POPUP ─── */
+.exit-overlay{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:24px;animation:fadeIn .25s ease;}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.exit-card{background:var(--white);border-radius:20px;padding:40px 32px;max-width:440px;width:100%;text-align:center;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.3);animation:popIn .35s cubic-bezier(.22,1,.36,1);}
+@keyframes popIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+.exit-close{position:absolute;top:14px;right:16px;font-size:18px;color:var(--text-3);cursor:pointer;background:none;border:none;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .2s;}
+.exit-close:hover{background:var(--cream);}
+.exit-emoji{font-size:40px;margin-bottom:14px;}
+.exit-card h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--warm-brown);margin-bottom:10px;}
+.exit-card p{font-size:14px;color:var(--text-2);line-height:1.65;margin-bottom:20px;}
+.exit-btn{display:inline-block;background:#E36414;color:#fff;padding:13px 32px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 20px rgba(227,100,20,.3);transition:all .2s;}
+.exit-btn:hover{background:#CC5810;transform:translateY(-1px);}
+.exit-skip{display:block;margin-top:14px;font-size:12px;color:var(--text-3);cursor:pointer;transition:color .2s;}
+.exit-skip:hover{color:var(--text-2);}
+@media(max-width:480px){.exit-card{padding:28px 20px;}.exit-card h3{font-size:19px;}}
+
+/* ─── 5. MULTI-STEP FORM (ordina) ─── */
+.steps-bar{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:28px;}
+.step-item{text-align:center;}
+.step-circle{width:38px;height:38px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;border:2px solid var(--border);color:var(--text-3);background:var(--white);transition:all .3s;}
+.step-item.active .step-circle{background:#E36414;color:#fff;border-color:#E36414;}
+.step-item.done .step-circle{background:#2A9D8F;color:#fff;border-color:#2A9D8F;}
+.step-label{font-size:10px;color:var(--text-3);font-weight:600;margin-top:5px;}
+.step-item.active .step-label{color:#E36414;}
+.step-item.done .step-label{color:#2A9D8F;}
+.step-line{width:48px;height:2px;background:var(--border);margin:0 4px;margin-bottom:16px;}
+.step-line.done{background:#2A9D8F;}
+.step-btns{display:flex;justify-content:flex-end;gap:10px;margin-top:16px;}
+.step-next{background:#E36414;color:#fff;padding:11px 28px;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;border:none;cursor:pointer;transition:background .2s;}
+.step-next:hover{background:#CC5810;}
+.step-back{background:transparent;color:var(--text-3);padding:11px 20px;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;border:1px solid var(--border);cursor:pointer;transition:all .2s;}
+.step-back:hover{border-color:var(--warm-brown);color:var(--warm-brown);}

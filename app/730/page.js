@@ -11,6 +11,10 @@ import Calculator730 from '@/components/Calculator730';
 import PrintButton from '@/components/PrintButton';
 import SidebarToggle from '@/components/SidebarToggle';
 import SchemaOrg, { articleSchema, faqSchema } from '@/components/SchemaOrg';
+import StickyBar from '@/components/StickyBar';
+import SocialProof from '@/components/SocialProof';
+import BlurredRow from '@/components/BlurredRow';
+import ExitPopup from '@/components/ExitPopup';
 
 export const metadata = {
   title: 'Guida completa al 730: detrazioni, rimborso e scadenze 2026',
@@ -157,6 +161,7 @@ export default function Pagina730() {
                 <div className="sc r d3"><div className="si">💸</div><div className="sn">Rimborso</div><div className="sl">da luglio in busta paga</div></div>
               </div>
             </div>
+            <SocialProof count={324} />
             <Quiz questions={quizQuestions} results={quizResults} />
           </div>
 
@@ -243,6 +248,7 @@ export default function Pagina730() {
                 <tr><td><strong>Bonus mobili</strong></td><td className="cv">50%</td><td>Fino a 5.000€, solo con ristrutturazione.</td></tr>
               </tbody></table>
             </div>
+    <BlurredRow scheda="730" />
             <div className="ib warn r"><div className="ib-t">⚠️ Le detrazioni che la gente dimentica sempre</div><p>Abbonamento trasporti, veterinario, sport dei figli, spese funebri, donazioni ONLUS, badanti, bonus mobili. <span className="hl-text">Se non le inserisci, quei soldi li perdi per sempre.</span></p></div>
           </div>
 
@@ -419,6 +425,8 @@ export default function Pagina730() {
       </div>
 
       <BrevoForm pageName="730" />
+      <StickyBar scheda="730" />
+      <ExitPopup scheda="730" />
       <Footer />
     </>
   );

@@ -7,6 +7,10 @@ import FAQ from '@/components/FAQ';
 import PrintButton from '@/components/PrintButton';
 import SidebarToggle from '@/components/SidebarToggle';
 import SchemaOrg, { articleSchema, faqSchema } from '@/components/SchemaOrg';
+import StickyBar from '@/components/StickyBar';
+import SocialProof from '@/components/SocialProof';
+import BlurredRow from '@/components/BlurredRow';
+import ExitPopup from '@/components/ExitPopup';
 import QuizFiglio from '@/components/QuizFiglio';
 
 export const metadata = {
@@ -151,6 +155,7 @@ export default function Page() {
       </div>
     </div>
 
+    <SocialProof count={347} />
     <QuizFiglio />
   </div>
 
@@ -217,6 +222,7 @@ export default function Page() {
         </tbody>
       </table>
     </div>
+    <BlurredRow scheda="figlio" />
 
     <div className="ib mon r">
       <div className="ib-t">📊 Congedo malattia del figlio: raddoppiano i giorni</div>
@@ -462,6 +468,8 @@ export default function Page() {
 {/* PROMEMORIA SCADENZE */}
 
       <BrevoForm pageName="figlio" />
+      <StickyBar scheda="figlio" />
+      <ExitPopup scheda="figlio" />
       <Footer />
     </>
   );

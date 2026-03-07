@@ -8,6 +8,10 @@ import PrintButton from '@/components/PrintButton';
 import SidebarToggle from '@/components/SidebarToggle';
 import QuizSpid from '@/components/QuizSpid';
 import SchemaOrg, { articleSchema, faqSchema } from '@/components/SchemaOrg';
+import StickyBar from '@/components/StickyBar';
+import SocialProof from '@/components/SocialProof';
+import BlurredRow from '@/components/BlurredRow';
+import ExitPopup from '@/components/ExitPopup';
 
 export const metadata = {
   title: 'Faccio lo SPID — Guida Completa 2026 | BuroSemplice',
@@ -155,6 +159,7 @@ export default function Page() {
               </div>
             </div>
 
+            <SocialProof count={289} />
             <QuizSpid />
           </div>
 
@@ -271,6 +276,7 @@ export default function Page() {
                 </tbody>
               </table>
             </div>
+    <BlurredRow scheda="spid" />
 
             <div className="ib mon r">
               <div className="ib-t">💶 Il consiglio onesto di BuroSemplice</div>
@@ -393,6 +399,8 @@ export default function Page() {
 
       {/* PROMEMORIA SCADENZE */}
       <BrevoForm pageName="spid" />
+      <StickyBar scheda="spid" />
+      <ExitPopup scheda="spid" />
       <Footer variant="scheda" />
     </>
   );

@@ -9,6 +9,10 @@ import SidebarToggle from '@/components/SidebarToggle';
 import QuizComproCasa from '@/components/QuizComproCasa';
 import CalcComproCasa from '@/components/CalcComproCasa';
 import SchemaOrg, { articleSchema, faqSchema } from '@/components/SchemaOrg';
+import StickyBar from '@/components/StickyBar';
+import SocialProof from '@/components/SocialProof';
+import BlurredRow from '@/components/BlurredRow';
+import ExitPopup from '@/components/ExitPopup';
 
 export const metadata = {
   title: 'Compro Casa — Guida Completa 2026 | BuroSemplice',
@@ -138,6 +142,7 @@ export default function Page() {
                 <div className="sc bl r d3"><div className="si">📊</div><div className="sn">19%</div><div className="sl">detrazione interessi mutuo</div></div>
               </div>
             </div>
+            <SocialProof count={276} />
             <QuizComproCasa />
           </div>
 
@@ -190,6 +195,7 @@ export default function Page() {
                 </tbody>
               </table>
             </div>
+    <BlurredRow scheda="compro-casa" />
             <a href="/730" className="xlink r"><span className="xlink-em">🧾</span><div className="xlink-t"><strong>Faccio il 730</strong> — Gli interessi del mutuo si detraggono dalla dichiarazione. Scopri come.</div><span className="xlink-ar">→</span></a>
           </div>
 
@@ -358,6 +364,8 @@ export default function Page() {
       </div>
 
       <BrevoForm pageName="compro-casa" />
+      <StickyBar scheda="compro-casa" />
+      <ExitPopup scheda="compro-casa" />
       <Footer variant="scheda" />
     </>
   );

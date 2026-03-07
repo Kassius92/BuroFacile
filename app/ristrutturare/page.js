@@ -7,6 +7,10 @@ import FAQ from '@/components/FAQ';
 import PrintButton from '@/components/PrintButton';
 import SidebarToggle from '@/components/SidebarToggle';
 import SchemaOrg, { articleSchema, faqSchema } from '@/components/SchemaOrg';
+import StickyBar from '@/components/StickyBar';
+import SocialProof from '@/components/SocialProof';
+import BlurredRow from '@/components/BlurredRow';
+import ExitPopup from '@/components/ExitPopup';
 import QuizRistrutturare from '@/components/QuizRistrutturare';
 import CalcRistrutturare from '@/components/CalcRistrutturare';
 
@@ -153,6 +157,7 @@ export default function Page() {
       </div>
     </div>
 
+    <SocialProof count={231} />
     <QuizRistrutturare />
   </div>
 
@@ -211,6 +216,7 @@ export default function Page() {
         </tbody>
       </table>
     </div>
+    <BlurredRow scheda="ristrutturare" />
     <p style={{'fontSize':'13px','color':'var(--t3)'}}>* Il tetto dell'Ecobonus varia in base al tipo di intervento (es. 30.000 € per caldaie, 60.000 € per cappotto, 100.000 € per riqualificazione globale).</p>
 
     <div className="ib warn r">
@@ -409,6 +415,8 @@ export default function Page() {
 {/* PROMEMORIA SCADENZE */}
 
       <BrevoForm pageName="ristrutturare" />
+      <StickyBar scheda="ristrutturare" />
+      <ExitPopup scheda="ristrutturare" />
       <Footer />
     </>
   );

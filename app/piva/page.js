@@ -9,6 +9,10 @@ import SidebarToggle from '@/components/SidebarToggle';
 import QuizPiva from '@/components/QuizPiva';
 import CalcPiva from '@/components/CalcPiva';
 import SchemaOrg, { articleSchema, faqSchema } from '@/components/SchemaOrg';
+import StickyBar from '@/components/StickyBar';
+import SocialProof from '@/components/SocialProof';
+import BlurredRow from '@/components/BlurredRow';
+import ExitPopup from '@/components/ExitPopup';
 
 export const metadata = {
   title: 'Apro Partita IVA \u2014 Guida Completa 2026 | BuroSemplice',
@@ -118,6 +122,7 @@ export default function Page() {
                 <div className="sc    r d3"><div className="si">📋</div><div className="sn">15%</div><div className="sl">tasse dal 6° anno<br/>in poi</div></div>
               </div>
             </div>
+            <SocialProof count={198} />
             <QuizPiva />
           </div>
 
@@ -173,6 +178,7 @@ export default function Page() {
                 </tbody>
               </table>
             </div>
+    <BlurredRow scheda="piva" />
             <div className="ib tip r"><div className="ib-t">💡 Quando conviene l&apos;ordinario</div><p>Se hai molti costi deducibili (affitto ufficio, attrezzature, dipendenti) o se fatturi principalmente a partite IVA (che possono detrarre l&apos;IVA), il regime ordinario potrebbe convenirti. Ma per la maggior parte di chi inizia, il <strong>forfettario &egrave; imbattibile</strong>.</p></div>
 
             <h3>I 7 requisiti per il forfettario nel 2026</h3>
@@ -378,6 +384,8 @@ export default function Page() {
       </div>
 
       <BrevoForm pageName="piva" />
+      <StickyBar scheda="piva" />
+      <ExitPopup scheda="piva" />
       <Footer variant="scheda" />
     </>
   );
