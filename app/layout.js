@@ -13,9 +13,11 @@ export const metadata = {
   twitter: { card: 'summary_large_image' },
   icons: {
     icon: [
+      { url: '/favicon.ico', sizes: 'any' },
       { url: '/favicon16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/favicon32x32.png', sizes: '32x32', type: 'image/png' },
     ],
+    shortcut: '/favicon.ico',
     apple: '/appletouchicon.png',
     other: [{ rel: 'icon', url: '/androidchrome192x192.png', sizes: '192x192' }],
   },
