@@ -83,7 +83,7 @@ export const categories = [
       ]},
       { title: 'Perdere il lavoro', links: [
         { name: 'NASpI', href: '/naspi' },
-        { name: 'TFR', href: '#', soon: true },
+        { name: 'TFR', href: '/tfr' },
       ]},
     ]
   },
