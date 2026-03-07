@@ -3,6 +3,7 @@ import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import ScrollReveal from '@/components/ScrollReveal';
 import SchemaOrg from '@/components/SchemaOrg';
+import OpenMenuButton from '@/components/OpenMenuButton';
 import './home.css';
 
 export const metadata = {
@@ -34,14 +35,8 @@ const websiteSchema = {
 
 const guides = [
   { emoji: '\u{1F9FE}', title: 'Faccio il 730', desc: 'Come funziona, quando farlo, quali detrazioni puoi avere, e come massimizzare il rimborso.', tag: 'Scadenza: settembre 2026', href: '/730' },
-  { emoji: '\u{1FAAA}', title: 'Faccio lo SPID', desc: 'Serve per tutto: INPS, Agenzia Entrate, bonus. Come farlo gratis in 15 minuti.', tag: 'Primo passo', href: '/spid' },
   { emoji: '\u{1F4CB}', title: "Faccio l'ISEE", desc: 'A cosa serve, dove farlo, documenti necessari. Se devi chiedere un bonus, parti da qui.', tag: 'Guida base', href: '/isee' },
-  { emoji: '\u{1F3E0}', title: 'Compro casa', desc: 'Mutuo, notaio, tasse, bonus prima casa, under 36. Tutto quello che nessuno ti dice.', tag: 'Guida completa', href: '/compro-casa' },
-  { emoji: '\u{1F476}', title: 'Aspetto un figlio', desc: 'Congedo, assegno unico, bonus nido, cosa portare in ospedale. Mese per mese.', tag: 'Guida completa', href: '/figlio' },
-  { emoji: '\u{1F528}', title: 'Ristrutturare casa', desc: 'Bonus 50%, pratiche, permessi, come pagare e come recuperare tutto nella dichiarazione.', tag: 'Guida completa', href: '/ristrutturare' },
-  { emoji: '\u{1F4BC}', title: 'Apro partita IVA', desc: 'Forfettario o ordinario, costi veri, INPS, tasse, commercialista.', tag: 'Guida completa', href: '/piva' },
-  { emoji: '\u{1F4E6}', title: 'Ho perso il lavoro', desc: 'NASpI: quanto ti spetta, come fare domanda, scadenze e come non perdere soldi.', tag: 'Nuova', href: '/naspi' },
-  { emoji: '\u{1F48D}', title: 'Mi sposo', desc: 'Costi reali, documenti, regime patrimoniale, bonus disponibili.', tag: 'In arrivo', href: '#', soon: true },
+  { emoji: '\u{1FAAA}', title: 'Faccio lo SPID', desc: 'Serve per tutto: INPS, Agenzia Entrate, bonus. Come farlo gratis in 15 minuti.', tag: 'Primo passo', href: '/spid' },
 ];
 
 export default function HomePage() {
@@ -74,23 +69,15 @@ export default function HomePage() {
           </div>
           <div className="situations-grid">
             {guides.map((g, i) => (
-              g.soon ? (
-                <div key={i} className="situation-card r" style={{ opacity: 0.55, pointerEvents: 'none' }}>
-                  <span className="card-emoji">{g.emoji}</span>
-                  <div className="card-title">{g.title}</div>
-                  <div className="card-desc">{g.desc}</div>
-                  <span className="card-tag">{g.tag}</span>
-                </div>
-              ) : (
-                <Link key={i} href={g.href} className="situation-card r">
-                  <span className="card-emoji">{g.emoji}</span>
-                  <div className="card-title">{g.title}</div>
-                  <div className="card-desc">{g.desc}</div>
-                  <span className="card-tag">{g.tag}</span>
-                </Link>
-              )
+              <Link key={i} href={g.href} className="situation-card r">
+                <span className="card-emoji">{g.emoji}</span>
+                <div className="card-title">{g.title}</div>
+                <div className="card-desc">{g.desc}</div>
+                <span className="card-tag">{g.tag}</span>
+              </Link>
             ))}
           </div>
+          <OpenMenuButton />
         </div>
       </section>
 

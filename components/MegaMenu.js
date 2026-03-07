@@ -81,7 +81,7 @@ export default function MegaMenu({ isOpen, onClose, variant = 'scheda' }) {
           </div>
           <div className="mega-foot">
             <div className="mega-foot-left">
-              <strong>7</strong> guide pronte · 40+ in arrivo
+              <strong>8</strong> guide pronte · 40+ in arrivo
             </div>
             <div className="mega-foot-right">
               <Link href="/contatti" className="mega-btn mega-btn-primary" onClick={onClose}>Suggerisci una guida</Link>
