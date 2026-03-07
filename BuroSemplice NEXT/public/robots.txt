@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-
-Disallow: /ordina
-Disallow: /privacy
-Disallow: /termini
-
-Sitemap: https://burosemplice.it/sitemap.xml
