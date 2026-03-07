@@ -15,12 +15,12 @@ import BlurredRow from '@/components/BlurredRow';
 import ExitPopup from '@/components/ExitPopup';
 
 export const metadata = {
-  title: 'Compro Casa — Guida Completa 2026 | BuroSemplice',
-  description: 'Comprare casa in Italia nel 2026: mutuo, notaio, imposte, bonus prima casa e costi nascosti. Tutto quello che devi sapere prima di firmare.',
+  title: 'Comprare Casa nel 2026: Mutuo, Bonus Prima Casa, Costi e Documenti',
+  description: 'Comprare casa nel 2026: come funziona il mutuo, bonus prima casa, imposte, notaio, costi nascosti e documenti necessari. Guida gratuita completa.',
   alternates: { canonical: 'https://burosemplice.it/compro-casa' },
   openGraph: {
-    title: 'Compro Casa — Guida Completa 2026 | BuroSemplice',
-    description: 'Comprare casa in Italia nel 2026: mutuo, notaio, imposte, bonus prima casa e costi nascosti. Tutto quello che devi sapere prima di firmare.',
+    title: 'Comprare Casa nel 2026: Mutuo, Bonus Prima Casa, Costi e Documenti',
+    description: 'Comprare casa nel 2026: come funziona il mutuo, bonus prima casa, imposte, notaio, costi nascosti e documenti necessari. Guida gratuita completa.',
     url: 'https://burosemplice.it/compro-casa',
     type: 'article',
     siteName: 'BuroSemplice',

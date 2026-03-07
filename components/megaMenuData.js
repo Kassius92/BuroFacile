@@ -82,7 +82,7 @@ export const categories = [
         { name: 'Busta paga', href: '#', soon: true },
       ]},
       { title: 'Perdere il lavoro', links: [
-        { name: 'NASpI', href: '#', soon: true },
+        { name: 'NASpI', href: '/naspi' },
         { name: 'TFR', href: '#', soon: true },
       ]},
     ]

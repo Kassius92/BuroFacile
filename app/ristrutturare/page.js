@@ -15,12 +15,12 @@ import QuizRistrutturare from '@/components/QuizRistrutturare';
 import CalcRistrutturare from '@/components/CalcRistrutturare';
 
 export const metadata = {
-  title: 'Ristrutturare Casa — Guida Completa 2026 | BuroSemplice',
-  description: 'Ristrutturare casa nel 2026: bonus ristrutturazione, ecobonus, superbonus, permessi e preventivi. Guida gratuita su detrazioni e pratiche.',
+  title: 'Ristrutturare Casa nel 2026: Bonus, Detrazioni, Permessi e Costi',
+  description: 'Ristrutturare casa nel 2026: bonus ristrutturazione 50%, ecobonus, superbonus residuo, permessi comunali, preventivi e detrazioni fiscali. Guida gratuita.',
   alternates: { canonical: 'https://burosemplice.it/ristrutturare' },
   openGraph: {
-    title: 'Ristrutturare Casa — Guida Completa 2026 | BuroSemplice',
-    description: 'Ristrutturare casa nel 2026: bonus ristrutturazione, ecobonus, superbonus, permessi e preventivi. Guida gratuita su detrazioni e pratiche.',
+    title: 'Ristrutturare Casa nel 2026: Bonus, Detrazioni, Permessi e Costi',
+    description: 'Ristrutturare casa nel 2026: bonus ristrutturazione 50%, ecobonus, superbonus residuo, permessi comunali, preventivi e detrazioni fiscali. Guida gratuita.',
     url: 'https://burosemplice.it/ristrutturare',
     type: 'article',
     siteName: 'BuroSemplice',
@@ -29,8 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ristrutturare Casa — Guida Completa 2026 | BuroSemplice',
-    description: 'Ristrutturare casa nel 2026: bonus ristrutturazione, ecobonus, superbonus, permessi e preventivi. Guida gratuita su detrazioni e pratiche.',
+    title: 'Ristrutturare Casa nel 2026: Bonus, Detrazioni, Permessi e Costi',
+    description: 'Ristrutturare casa nel 2026: bonus ristrutturazione 50%, ecobonus, superbonus residuo, permessi comunali, preventivi e detrazioni fiscali. Guida gratuita.',
     images: ['https://burosemplice.it/ogristrutturare.png'],
   },
 };

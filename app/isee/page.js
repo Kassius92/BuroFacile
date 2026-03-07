@@ -14,12 +14,12 @@ import BlurredRow from '@/components/BlurredRow';
 import ExitPopup from '@/components/ExitPopup';
 
 export const metadata = {
-  title: "Come fare l'ISEE nel 2026: documenti, costi e procedura | BuroSemplice",
-  description: "Come fare l'ISEE nel 2026: documenti necessari, dove farlo, quanto vale e a cosa serve. Guida gratuita e aggiornata.",
+  title: "ISEE 2026: Come Farlo, Documenti Necessari, Costi e Simulazione",
+  description: "ISEE 2026: come si fa, documenti necessari, dove farlo gratis, quanto vale, simulazione online e a cosa serve. Guida gratuita aggiornata.",
   alternates: { canonical: 'https://burosemplice.it/isee' },
   openGraph: {
-    title: "Guida completa all'ISEE 2026: come farlo e a cosa serve",
-    description: "Come fare l'ISEE nel 2026: documenti necessari, dove farlo, quanto vale e a cosa serve. Guida gratuita e aggiornata.",
+    title: "ISEE 2026: Come Farlo, Documenti Necessari, Costi e Simulazione",
+    description: "ISEE 2026: come si fa, documenti necessari, dove farlo gratis, quanto vale, simulazione online e a cosa serve. Guida gratuita aggiornata.",
     url: 'https://burosemplice.it/isee',
     type: 'article',
     siteName: 'BuroSemplice',
@@ -29,8 +29,8 @@ export const metadata = {
   twitter: {
     card: 'summary',
     images: ['https://burosemplice.it/og-isee.png'],
-    title: "Guida completa all'ISEE 2026: come farlo e a cosa serve",
-    description: "Come fare l'ISEE nel 2026: documenti necessari, dove farlo, quanto vale e a cosa serve. Guida gratuita e aggiornata.",
+    title: "ISEE 2026: Come Farlo, Documenti Necessari, Costi e Simulazione",
+    description: "ISEE 2026: come si fa, documenti necessari, dove farlo gratis, quanto vale, simulazione online e a cosa serve. Guida gratuita aggiornata.",
   },
 };
 

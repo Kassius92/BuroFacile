@@ -14,12 +14,12 @@ import BlurredRow from '@/components/BlurredRow';
 import ExitPopup from '@/components/ExitPopup';
 
 export const metadata = {
-  title: 'Faccio lo SPID — Guida Completa 2026 | BuroSemplice',
-  description: 'Come fare lo SPID nel 2026: quale provider scegliere, come fare il riconoscimento, quanto costa. Guida passo passo gratuita.',
+  title: 'Come Fare lo SPID nel 2026: Costo, Tempi e Provider Migliore',
+  description: 'Come fare lo SPID nel 2026: quale provider scegliere, costo, riconoscimento online o in ufficio, tempi e problemi comuni. Guida gratuita passo per passo.',
   alternates: { canonical: 'https://burosemplice.it/spid' },
   openGraph: {
-    title: 'Faccio lo SPID — Guida Completa 2026 | BuroSemplice',
-    description: 'Come fare lo SPID nel 2026: quale provider scegliere, come fare il riconoscimento, quanto costa. Guida passo passo gratuita.',
+    title: 'Come Fare lo SPID nel 2026: Costo, Tempi e Provider Migliore',
+    description: 'Come fare lo SPID nel 2026: quale provider scegliere, costo, riconoscimento online o in ufficio, tempi e problemi comuni. Guida gratuita passo per passo.',
     url: 'https://burosemplice.it/spid',
     type: 'article',
     siteName: 'BuroSemplice',
@@ -29,8 +29,8 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     images: ['https://burosemplice.it/og-spid.png'],
-    title: 'Faccio lo SPID — Guida Completa 2026 | BuroSemplice',
-    description: 'Come fare lo SPID nel 2026: quale provider scegliere, come fare il riconoscimento, quanto costa. Guida passo passo gratuita.',
+    title: 'Come Fare lo SPID nel 2026: Costo, Tempi e Provider Migliore',
+    description: 'Come fare lo SPID nel 2026: quale provider scegliere, costo, riconoscimento online o in ufficio, tempi e problemi comuni. Guida gratuita passo per passo.',
   },
 };
 

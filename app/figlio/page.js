@@ -14,12 +14,12 @@ import ExitPopup from '@/components/ExitPopup';
 import QuizFiglio from '@/components/QuizFiglio';
 
 export const metadata = {
-  title: 'Aspetto un figlio nel 2026: bonus, congedo e documenti | BuroSemplice',
-  description: 'Aspetti un figlio nel 2026? Guida completa su congedo maternità e paternità, assegno unico, bonus nido e tutti i documenti. Gratuita e aggiornata.',
+  title: 'Aspetto un Figlio nel 2026: Bonus, Congedo, Assegno Unico e Documenti',
+  description: 'Aspetti un figlio nel 2026? Congedo maternità e paternità, assegno unico, bonus nuovi nati, bonus nido e tutti i documenti da fare. Guida gratuita aggiornata.',
   alternates: { canonical: 'https://burosemplice.it/figlio' },
   openGraph: {
-    title: 'Aspetto un figlio nel 2026: tutti i bonus e le pratiche',
-    description: 'Aspetti un figlio nel 2026? Guida completa su congedo maternità e paternità, assegno unico, bonus nido e tutti i documenti. Gratuita e aggiornata.',
+    title: 'Aspetto un Figlio nel 2026: Bonus, Congedo, Assegno Unico e Documenti',
+    description: 'Aspetti un figlio nel 2026? Congedo maternità e paternità, assegno unico, bonus nuovi nati, bonus nido e tutti i documenti da fare. Guida gratuita aggiornata.',
     url: 'https://burosemplice.it/figlio',
     type: 'article',
     siteName: 'BuroSemplice',
@@ -28,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Aspetto un figlio nel 2026: tutti i bonus e le pratiche',
-    description: 'Aspetti un figlio nel 2026? Guida completa su congedo maternità e paternità, assegno unico, bonus nido e tutti i documenti. Gratuita e aggiornata.',
+    title: 'Aspetto un Figlio nel 2026: Bonus, Congedo, Assegno Unico e Documenti',
+    description: 'Aspetti un figlio nel 2026? Congedo maternità e paternità, assegno unico, bonus nuovi nati, bonus nido e tutti i documenti da fare. Guida gratuita aggiornata.',
     images: ['https://burosemplice.it/ogfiglio.png'],
   },
 };

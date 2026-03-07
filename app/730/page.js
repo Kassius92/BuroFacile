@@ -17,13 +17,13 @@ import BlurredRow from '@/components/BlurredRow';
 import ExitPopup from '@/components/ExitPopup';
 
 export const metadata = {
-  title: 'Guida completa al 730: detrazioni, rimborso e scadenze 2026',
-  description: 'Come fare il 730 nel 2026: chi deve farlo, detrazioni, documenti, scadenze e come massimizzare il rimborso. Guida gratuita aggiornata alle novità 2026.',
+  title: '730 Precompilato 2026: Come Farlo, Detrazioni, Scadenze e Rimborso',
+  description: '730 precompilato 2026: chi deve farlo, tutte le detrazioni, documenti necessari, scadenze e come ottenere il massimo rimborso. Guida gratuita passo per passo.',
   alternates: { canonical: 'https://burosemplice.it/730' },
   openGraph: {
     type: 'article',
-    title: 'Guida completa al 730: detrazioni, rimborso e scadenze 2026',
-    description: 'Come fare il 730 nel 2026: chi deve farlo, detrazioni, documenti, scadenze e come massimizzare il rimborso. Guida gratuita aggiornata alle novità 2026.',
+    title: '730 Precompilato 2026: Come Farlo, Detrazioni, Scadenze e Rimborso',
+    description: '730 precompilato 2026: chi deve farlo, tutte le detrazioni, documenti necessari, scadenze e come ottenere il massimo rimborso. Guida gratuita passo per passo.',
     url: 'https://burosemplice.it/730',
     siteName: 'BuroSemplice',
     locale: 'it_IT',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Guida completa al 730: detrazioni, rimborso e scadenze 2026',
-    description: 'Come fare il 730 nel 2026: chi deve farlo, detrazioni, documenti, scadenze e come massimizzare il rimborso. Guida gratuita aggiornata alle novità 2026.',
+    title: '730 Precompilato 2026: Come Farlo, Detrazioni, Scadenze e Rimborso',
+    description: '730 precompilato 2026: chi deve farlo, tutte le detrazioni, documenti necessari, scadenze e come ottenere il massimo rimborso. Guida gratuita passo per passo.',
     images: ['https://burosemplice.it/og-730.png'],
   },
 };

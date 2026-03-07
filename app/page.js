@@ -7,7 +7,7 @@ import './home.css';
 
 export const metadata = {
   title: 'BuroSemplice — La burocrazia italiana, semplificata',
-  description: 'BuroSemplice semplifica la burocrazia italiana: guide gratuite su 730, ISEE, SPID, mutui, partita IVA e molto altro. Scritte come te le spiegherebbe un amico.',
+  description: 'BuroSemplice semplifica la burocrazia italiana: guide gratuite su 730, ISEE, SPID, NASpI, mutui, partita IVA e molto altro. Scritte come te le spiegherebbe un amico.',
   alternates: { canonical: 'https://burosemplice.it' },
   openGraph: { url: 'https://burosemplice.it', images: [{ url: '/oghome.png', width: 1200, height: 630 }] },
 };
@@ -17,7 +17,7 @@ const websiteSchema = {
   '@type': 'WebSite',
   name: 'BuroSemplice',
   url: 'https://burosemplice.it',
-  description: 'BuroSemplice semplifica la burocrazia italiana: guide gratuite su 730, ISEE, SPID, mutui, partita IVA e molto altro. Scritte come te le spiegherebbe un amico.',
+  description: 'BuroSemplice semplifica la burocrazia italiana: guide gratuite su 730, ISEE, SPID, NASpI, mutui, partita IVA e molto altro. Scritte come te le spiegherebbe un amico.',
   inLanguage: 'it-IT',
   publisher: {
     '@type': 'Organization',
@@ -40,6 +40,7 @@ const guides = [
   { emoji: '\u{1F476}', title: 'Aspetto un figlio', desc: 'Congedo, assegno unico, bonus nido, cosa portare in ospedale. Mese per mese.', tag: 'Guida completa', href: '/figlio' },
   { emoji: '\u{1F528}', title: 'Ristrutturare casa', desc: 'Bonus 50%, pratiche, permessi, come pagare e come recuperare tutto nella dichiarazione.', tag: 'Guida completa', href: '/ristrutturare' },
   { emoji: '\u{1F4BC}', title: 'Apro partita IVA', desc: 'Forfettario o ordinario, costi veri, INPS, tasse, commercialista.', tag: 'Guida completa', href: '/piva' },
+  { emoji: '\u{1F4E6}', title: 'Ho perso il lavoro', desc: 'NASpI: quanto ti spetta, come fare domanda, scadenze e come non perdere soldi.', tag: 'Nuova', href: '/naspi' },
   { emoji: '\u{1F48D}', title: 'Mi sposo', desc: 'Costi reali, documenti, regime patrimoniale, bonus disponibili.', tag: 'In arrivo', href: '#', soon: true },
 ];
 

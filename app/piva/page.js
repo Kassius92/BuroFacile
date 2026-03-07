@@ -15,12 +15,12 @@ import BlurredRow from '@/components/BlurredRow';
 import ExitPopup from '@/components/ExitPopup';
 
 export const metadata = {
-  title: 'Apro Partita IVA \u2014 Guida Completa 2026 | BuroSemplice',
-  description: 'Come aprire partita IVA nel 2026: forfettario o ordinario, costi reali, tasse, contributi INPS, codice ATECO. Guida gratuita passo per passo.',
+  title: 'Aprire Partita IVA nel 2026: Costi, Tasse, Forfettario e Procedura',
+  description: 'Come aprire partita IVA nel 2026: regime forfettario o ordinario, costi reali, tasse, contributi INPS, codice ATECO e procedura online. Guida gratuita.',
   alternates: { canonical: 'https://burosemplice.it/piva' },
   openGraph: {
-    title: 'Apro Partita IVA \u2014 Guida Completa 2026 | BuroSemplice',
-    description: 'Come aprire partita IVA nel 2026: forfettario o ordinario, costi reali, tasse, contributi INPS, codice ATECO. Guida gratuita passo per passo.',
+    title: 'Aprire Partita IVA nel 2026: Costi, Tasse, Forfettario e Procedura',
+    description: 'Come aprire partita IVA nel 2026: regime forfettario o ordinario, costi reali, tasse, contributi INPS, codice ATECO e procedura online. Guida gratuita.',
     url: 'https://burosemplice.it/piva',
     type: 'article',
     siteName: 'BuroSemplice',
