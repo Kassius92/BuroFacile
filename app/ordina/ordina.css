@@ -124,3 +124,19 @@
   transition:background .2s;
 }
 .btn-back:hover { background:#1a6b7a; }
+
+/* ─── INLINE ERROR MESSAGE ─── */
+.form-error {
+  display:flex; align-items:center; gap:10px;
+  background:#FFF0E0; border:1px solid rgba(227,100,20,.25);
+  border-radius:12px; padding:14px 18px; margin-bottom:20px;
+  font-size:14px; color:#1A1A2E; line-height:1.5;
+  animation: shakeIn 0.4s ease;
+}
+.form-error-icon { font-size:18px; flex-shrink:0; }
+@keyframes shakeIn {
+  0% { transform:translateX(-8px); opacity:0; }
+  40% { transform:translateX(4px); }
+  70% { transform:translateX(-2px); }
+  100% { transform:translateX(0); opacity:1; }
+}

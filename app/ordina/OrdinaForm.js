@@ -93,6 +93,7 @@ export default function OrdinaForm() {
   const [checks, setChecks] = useState({ privacy:false, marketing:false, termini:false });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     const p = new URLSearchParams(window.location.search);
@@ -115,34 +116,37 @@ export default function OrdinaForm() {
       if (!form.lavoro) missing.push('Situazione lavorativa');
       if (!form.reddito) missing.push('Reddito annuo lordo');
       if (!form.famiglia) missing.push('Nucleo familiare');
-      if (missing.length) { alert('Completa questi campi:\n\n• ' + missing.join('\n• ')); return false; }
+      if (missing.length) { setError('Completa questi campi: ' + missing.join(', ')); return false; }
       return true;
     }
     if (s === 2 && config) {
       const missing = [];
       config.fields.forEach(f => { if (f.required && !specificData[f.id]) missing.push(f.label); });
-      if (missing.length) { alert('Completa questi campi:\n\n• ' + missing.join('\n• ')); return false; }
+      if (missing.length) { setError('Completa questi campi: ' + missing.join(', ')); return false; }
       return true;
     }
     return true;
   };
 
   const nextStep = () => {
+    setError('');
     if (!validateStep(step)) return;
     setStep(s => Math.min(s + 1, totalSteps));
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-  const prevStep = () => { setStep(s => Math.max(s - 1, 1)); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+  const prevStep = () => {
+    setError(''); setStep(s => Math.max(s - 1, 1)); window.scrollTo({ top: 0, behavior: 'smooth' }); };
 
   const handleSubmit = async () => {
+    setError('');
     if (!form.email || !form.email.includes('@') || !form.email.includes('.')) {
-      alert('Inserisci un\'email valida.'); return;
+      setError('Inserisci un\'email valida per ricevere la scheda.'); return;
     }
     if (!form.telefono || form.telefono.replace(/\D/g,'').length < 8) {
-      alert('Inserisci un numero di telefono valido.'); return;
+      setError('Inserisci un numero di telefono valido.'); return;
     }
     if (!checks.privacy || !checks.marketing || !checks.termini) {
-      alert('Per procedere devi accettare tutte e tre le condizioni.'); return;
+      setError('Per procedere devi accettare tutte e tre le condizioni.'); return;
     }
     setLoading(true);
     const logData = new URLSearchParams({
@@ -235,6 +239,13 @@ export default function OrdinaForm() {
 
       <div className="ordina-form">
         <StepsBar />
+
+        {error && (
+          <div className="form-error">
+            <span className="form-error-icon">⚠️</span>
+            <span>{error}</span>
+          </div>
+        )}
 
         {/* STEP 1: DATI GENERALI */}
         {step === 1 && (
