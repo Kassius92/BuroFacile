@@ -161,7 +161,7 @@ export default function Page() {
 
           <div className="icta r">
             <div className="icta-t">Vuoi sapere <strong>esattamente quanto spenderai</strong> per la tua casa? Ti calcolo imposte, notaio e costi totali.</div>
-            <a href="/ordina?scheda=compro-casa" className="btni">Personalizza — 1,99€</a>
+            <a href="/ordina?scheda=compro-casa" className="btni">Personalizza — Gratis</a>
           </div>
 
           {/* PRIMA CASA */}
@@ -244,7 +244,7 @@ export default function Page() {
 
           <div className="icta breve-hide r">
             <div className="icta-t">Vuoi sapere <strong>esattamente quanto recuperi</strong> con la detrazione degli interessi del tuo mutuo?</div>
-            <a href="/ordina?scheda=compro-casa" className="btni">Personalizza — 1,99€</a>
+            <a href="/ordina?scheda=compro-casa" className="btni">Personalizza — Gratis</a>
           </div>
 
           {/* DOCUMENTI */}
@@ -319,7 +319,7 @@ export default function Page() {
           <div className="ctabanner r">
             <h3>Vuoi una guida personalizzata per la tua casa?</h3>
             <p>Ti calcoliamo le imposte esatte, i costi del mutuo, le detrazioni disponibili e le scadenze nel tuo Comune.</p>
-            <a href="/ordina?scheda=compro-casa" className="btnc">Personalizza la scheda <span className="pr">— 1,99€</span></a>
+            <a href="/ordina?scheda=compro-casa" className="btnc">Personalizza la scheda — Gratis</a>
           </div>
 
           {/* GUIDE CORRELATE */}
@@ -339,7 +339,7 @@ export default function Page() {
           <div className="sb-cta">
             <div className="sb-ct">Guida personalizzata per la tua casa</div>
             <div className="sb-cd">Imposte esatte, costi reali, scadenze nel tuo Comune.</div>
-            <a href="/ordina?scheda=compro-casa" className="sb-cb">Personalizza — 1,99€</a>
+            <a href="/ordina?scheda=compro-casa" className="sb-cb">Personalizza — Gratis</a>
           </div>
           <div className="sbsec">
             <div className="sbsec-t">🛠 Strumenti</div>

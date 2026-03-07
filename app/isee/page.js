@@ -195,7 +195,7 @@ export default function Page() {
 
           <div className="icta r">
             <div className="icta-t">Vuoi sapere <strong>tutti i bonus a cui hai diritto</strong> con il tuo ISEE?</div>
-            <a href="/ordina?scheda=isee" className="btni">Personalizza — 1,99€</a>
+            <a href="/ordina?scheda=isee" className="btni">Personalizza — Gratis</a>
           </div>
 
           {/* COME SI FA */}
@@ -286,7 +286,7 @@ export default function Page() {
 
           <div className="icta breve-hide r">
             <div className="icta-t">Vuoi la <strong>lista documenti personalizzata</strong> per la tua situazione familiare?</div>
-            <a href="/ordina?scheda=isee" className="btni">Personalizza — 1,99€</a>
+            <a href="/ordina?scheda=isee" className="btni">Personalizza — Gratis</a>
           </div>
 
           {/* COSTI */}
@@ -370,7 +370,7 @@ export default function Page() {
           <div className="ctabanner r">
             <h3>Vuoi sapere esattamente quanto ti spetta?</h3>
             <p>Rispondi a 5 domande sulla tua situazione e ricevi la scheda personalizzata: ISEE stimato, bonus a cui hai diritto, CAF pi&ugrave; vicino a te.</p>
-            <a href="/ordina?scheda=isee" className="btnc">Personalizza per me <span className="pr">— 1,99€</span></a>
+            <a href="/ordina?scheda=isee" className="btnc">Personalizza per me — Gratis</a>
           </div>
 
           {/* GUIDE CORRELATE */}
@@ -390,7 +390,7 @@ export default function Page() {
           <div className="sb-cta">
             <div className="sb-ct">Tutti i bonus a cui hai diritto</div>
             <div className="sb-cd">ISEE stimato e agevolazioni nella tua situazione.</div>
-            <a href="/ordina?scheda=isee" className="sb-cb">Personalizza — 1,99€</a>
+            <a href="/ordina?scheda=isee" className="sb-cb">Personalizza — Gratis</a>
           </div>
           <div className="sbsec">
             <div className="sbsec-t">🛠 Strumenti</div>

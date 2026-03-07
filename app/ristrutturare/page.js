@@ -192,7 +192,7 @@ export default function Page() {
     </div>
   </div>
 
-  <div className="icta bh r"><div className="icta-t">Vuoi sapere <strong>esattamente quanto recuperi tu</strong>? Calcoliamo le detrazioni per la tua ristrutturazione.</div><a href="/ordina?scheda=ristrutturare" className="btni">Personalizza — 1,99€</a></div>
+  <div className="icta bh r"><div className="icta-t">Vuoi sapere <strong>esattamente quanto recuperi tu</strong>? Calcoliamo le detrazioni per la tua ristrutturazione.</div><a href="/ordina?scheda=ristrutturare" className="btni">Personalizza — Gratis</a></div>
 
   {/* BONUS 2026 */}
   <div className="sec r" id="bonus">
@@ -272,7 +272,7 @@ export default function Page() {
     </div>
   </div>
 
-  <div className="icta r"><div className="icta-t">Non sai <strong>quale permesso ti serve</strong>? Ti diciamo esattamente cosa fare per i tuoi lavori.</div><a href="/ordina?scheda=ristrutturare" className="btni">Personalizza — 1,99€</a></div>
+  <div className="icta r"><div className="icta-t">Non sai <strong>quale permesso ti serve</strong>? Ti diciamo esattamente cosa fare per i tuoi lavori.</div><a href="/ordina?scheda=ristrutturare" className="btni">Personalizza — Gratis</a></div>
 
   {/* COME FARE */}
   <div className="sec r" id="come-fare">
@@ -366,7 +366,7 @@ export default function Page() {
   <div className="ctab r">
     <h3>Vuoi una guida su misura per la tua ristrutturazione?</h3>
     <p>Ti calcoliamo il bonus esatto, il permesso che ti serve, i documenti da preparare e le scadenze per la tua situazione.</p>
-    <a href="/ordina?scheda=ristrutturare" className="btnc">Personalizza per me <span className="pr">— 1,99€</span></a>
+    <a href="/ordina?scheda=ristrutturare" className="btnc">Personalizza per me — Gratis</a>
   </div>
 
   {/* GUIDE CORRELATE */}
@@ -387,7 +387,7 @@ export default function Page() {
           <div className="sb-cta">
             <div className="sb-ct">Guida personalizzata per la tua ristrutturazione</div>
             <div className="sb-cd">Bonus esatti, permessi, scadenze e documenti per il tuo caso.</div>
-            <a href="/ordina?scheda=ristrutturare" className="sb-cb">Personalizza — 1,99€</a>
+            <a href="/ordina?scheda=ristrutturare" className="sb-cb">Personalizza — Gratis</a>
           </div>
           <div className="sbsec">
             <div className="sbsec-t">🛠 Strumenti</div>

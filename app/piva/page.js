@@ -189,7 +189,7 @@ export default function Page() {
 
           <div className="icta r">
             <div className="icta-t">Vuoi sapere <strong>esattamente quanto pagherai</strong> con la tua attivit&agrave;? Calcoliamo tasse, contributi e netto per la tua situazione.</div>
-            <a href="/ordina?scheda=piva" className="btni">Personalizza — 1,99€</a>
+            <a href="/ordina?scheda=piva" className="btni">Personalizza — Gratis</a>
           </div>
 
           {/* COME APRIRE */}
@@ -265,7 +265,7 @@ export default function Page() {
 
           <div className="icta r bh">
             <div className="icta-t">Non sai se ti conviene il <strong>forfettario o l&apos;ordinario</strong>? Ti facciamo una simulazione personalizzata con i tuoi numeri.</div>
-            <a href="/ordina?scheda=piva" className="btni">Personalizza — 1,99€</a>
+            <a href="/ordina?scheda=piva" className="btni">Personalizza — Gratis</a>
           </div>
 
           {/* AFFILIAZIONI */}
@@ -340,7 +340,7 @@ export default function Page() {
           <div className="ctab r">
             <h3>Vuoi i numeri esatti per la tua attivit&agrave;?</h3>
             <p>Ti calcoliamo tasse, contributi, netto in tasca, scadenze e il codice ATECO migliore. Su misura per te.</p>
-            <a href="/ordina?scheda=piva" className="btnc">Personalizza per me <span className="pr">— 1,99€</span></a>
+            <a href="/ordina?scheda=piva" className="btnc">Personalizza per me — Gratis</a>
           </div>
 
           {/* RELATED */}
@@ -358,7 +358,7 @@ export default function Page() {
 
         {/* SIDEBAR */}
         <aside className="aside">
-          <div className="sb-cta"><div className="sb-ct">Quanto pagherai tu?</div><div className="sb-cd">Tasse, contributi e netto — calcolati sulla tua attivit&agrave;</div><a href="/ordina?scheda=piva" className="sb-cb">Personalizza — 1,99€</a></div>
+          <div className="sb-cta"><div className="sb-ct">Quanto pagherai tu?</div><div className="sb-cd">Tasse, contributi e netto — calcolati sulla tua attivit&agrave;</div><a href="/ordina?scheda=piva" className="sb-cb">Personalizza — Gratis</a></div>
           <div className="sbsec">
             <div className="sbsec-t">🔧 Strumenti</div>
             <a href="#quiz-serve" className="sbtool"><span className="sbtool-i">✅</span><div><div className="sbtool-n">Quiz: serve a me?</div><div className="sbtool-d">Scopri se ti serve</div></div></a>

@@ -4,7 +4,6 @@ import Link from 'next/link';
 import './ordina.css';
 
 const LOGGER_URL = 'https://script.google.com/macros/s/AKfycbzwgeKBMEUseNbkEGq5c8HW_EBc72h3Ls3FBQ6v6N1NzIrgIuiKrYfYv5xKcXwvYWlAQw/exec';
-const STRIPE_LINK = 'https://buy.stripe.com/bJeaEY81s43d9NNepH9R600';
 
 const schedeConfig = {
   '730': {
@@ -87,11 +86,12 @@ const schedeConfig = {
 export default function OrdinaForm() {
   const [schedaParam, setSchedaParam] = useState('');
   const [form, setForm] = useState({
-    nome:'', eta:'', citta:'', lavoro:'', reddito:'', famiglia:'', situazione:'', email:'',
+    nome:'', eta:'', citta:'', lavoro:'', reddito:'', famiglia:'', situazione:'', email:'', telefono:'',
   });
   const [specificData, setSpecificData] = useState({});
-  const [checks, setChecks] = useState({ privacy:false, recesso:false, termini:false });
+  const [checks, setChecks] = useState({ privacy:false, marketing:false, termini:false });
   const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     const p = new URLSearchParams(window.location.search);
@@ -106,12 +106,14 @@ export default function OrdinaForm() {
   const backHref = config ? config.back : '/';
 
   const handleSubmit = async () => {
-    // Validate email
     if (!form.email || !form.email.includes('@') || !form.email.includes('.')) {
       alert('Inserisci un\'email valida per ricevere la scheda.');
       return;
     }
-    // Validate generic required
+    if (!form.telefono || form.telefono.replace(/\D/g,'').length < 8) {
+      alert('Inserisci un numero di telefono valido.');
+      return;
+    }
     const missing = [];
     if (!form.eta) missing.push('Età');
     if (!form.citta) missing.push('Città o CAP');
@@ -122,7 +124,6 @@ export default function OrdinaForm() {
       alert('Per creare la tua scheda personalizzata mi servono queste informazioni:\n\n• ' + missing.join('\n• '));
       return;
     }
-    // Validate specific required
     if (config) {
       const missingSpec = [];
       config.fields.forEach(f => {
@@ -133,36 +134,29 @@ export default function OrdinaForm() {
         return;
       }
     }
-    // Validate checkboxes
-    if (!checks.privacy || !checks.recesso || !checks.termini) {
+    if (!checks.privacy || !checks.marketing || !checks.termini) {
       alert('Per procedere devi accettare tutte e tre le condizioni.');
       return;
     }
 
     setLoading(true);
 
-    // Log to Google Sheet
     const logData = new URLSearchParams({
-      email: form.email, nome: form.nome, eta: form.eta, citta: form.citta,
+      email: form.email, telefono: form.telefono, nome: form.nome, eta: form.eta, citta: form.citta,
       lavoro: form.lavoro, reddito: form.reddito, famiglia: form.famiglia,
       situazione: form.situazione, scheda: schedaParam || 'non specificata',
       dettagli: JSON.stringify(specificData),
       privacy: checks.privacy ? 'Sì' : 'No',
-      recesso: checks.recesso ? 'Sì' : 'No',
+      marketing: checks.marketing ? 'Sì' : 'No',
       termini: checks.termini ? 'Sì' : 'No',
     });
     new Image().src = `${LOGGER_URL}?${logData.toString()}`;
 
-    await new Promise(r => setTimeout(r, 500));
-
-    // Redirect to Stripe
-    const url = new URL(STRIPE_LINK);
-    url.searchParams.set('prefilled_email', form.email);
-    url.searchParams.set('client_reference_id', schedaParam || 'generica');
-    window.location.href = url.toString();
+    await new Promise(r => setTimeout(r, 800));
+    setLoading(false);
+    setSubmitted(true);
   };
 
-  // Render specific fields in pairs (row2)
   const renderSpecificFields = () => {
     if (!config) return null;
     const fields = config.fields;
@@ -171,12 +165,7 @@ export default function OrdinaForm() {
       const f1 = fields[i];
       const f2 = fields[i + 1];
       if (f2) {
-        rows.push(
-          <div className="row2" key={i}>
-            {renderField(f1)}
-            {renderField(f2)}
-          </div>
-        );
+        rows.push(<div className="row2" key={i}>{renderField(f1)}{renderField(f2)}</div>);
       } else {
         rows.push(<div key={i}>{renderField(f1)}</div>);
       }
@@ -203,32 +192,37 @@ export default function OrdinaForm() {
     );
   };
 
+  if (submitted) {
+    return (
+      <div className="ordina-wrap">
+        <div className="ordina-success">
+          <div className="success-icon">✅</div>
+          <h2>Richiesta ricevuta!</h2>
+          <p>Stiamo preparando la tua scheda personalizzata. La riceverai all&apos;indirizzo <strong>{form.email}</strong> entro 24 ore.</p>
+          <p className="success-sub">In base alla tua situazione, potremmo anche suggerirti professionisti della tua zona che possono aiutarti concretamente. Nessun obbligo — solo se ti fa comodo.</p>
+          <Link href={backHref} className="btn-back">← Torna alla guida</Link>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="wrap">
+    <div className="ordina-wrap">
 
-      <div className="order-header">
-        <div className="order-badge">✦ Scheda personalizzata</div>
-        <h1 className="order-title">{config ? config.title : 'Personalizza la tua guida'}</h1>
-        <p className="order-sub">Dimmi la tua situazione in pochi campi. Ricevi una scheda con i <strong>tuoi numeri</strong>, i <strong>tuoi uffici</strong> e i <strong>bonus a cui hai diritto tu</strong>.</p>
+      <div className="ordina-hero">
+        <Link href={backHref} className="back-top">← Torna alla guida gratuita</Link>
+        <h1>{config ? config.title : 'Personalizza la tua guida'}</h1>
+        <p>Compila il form e ricevi <strong>gratis</strong> una scheda con i tuoi numeri esatti, i bonus a cui hai diritto e i contatti utili nella tua zona.</p>
       </div>
 
-      <div className="promise-bar">
-        <div className="pr-item">⏱ <strong>Entro 24 ore</strong> via email</div>
-        <div className="pr-sep" />
-        <div className="pr-item">🔒 <strong>Dati al sicuro</strong>, mai ceduti</div>
-        <div className="pr-sep" />
-        <div className="pr-item">✉️ <strong>Risposta garantita</strong> o rimborso</div>
-      </div>
+      <div className="ordina-form">
 
-      <div className="form-card">
-
-        {/* SEZIONE 1: CHI SEI */}
         <div className="form-section">
-          <div className="fs-title">Chi sei</div>
+          <div className="fs-title">I tuoi dati</div>
           <div className="row2">
             <div className="field">
               <label htmlFor="nome">Nome <span className="opt">(facoltativo)</span></label>
-              <input type="text" id="nome" placeholder="Es. Marco" value={form.nome} onChange={e => set('nome', e.target.value)} />
+              <input type="text" id="nome" placeholder="Come ti chiami?" value={form.nome} onChange={e => set('nome', e.target.value)} />
             </div>
             <div className="field">
               <label htmlFor="eta">Età <span className="req">*</span></label>
@@ -289,7 +283,6 @@ export default function OrdinaForm() {
           </div>
         </div>
 
-        {/* SEZIONE 2: CAMPI SPECIFICI PER SCHEDA */}
         {config && (
           <div className="form-section">
             <div className="fs-title">{config.sectionTitle}</div>
@@ -297,7 +290,6 @@ export default function OrdinaForm() {
           </div>
         )}
 
-        {/* SEZIONE 3: NOTE LIBERE */}
         <div className="form-section">
           <div className="fs-title">Qualcos&apos;altro?</div>
           <div className="field">
@@ -307,70 +299,70 @@ export default function OrdinaForm() {
           </div>
         </div>
 
-        {/* SEZIONE 4: EMAIL */}
         <div className="form-section">
           <div className="fs-title">Dove ti mando la scheda</div>
-          <div className="field">
-            <label htmlFor="email">Email <span className="req">*</span></label>
-            <input type="email" id="email" placeholder="la-tua@email.it" value={form.email} onChange={e => set('email', e.target.value)} />
-            <div className="field-hint">Riceverai la scheda personalizzata a questo indirizzo entro 24 ore dal pagamento.</div>
+          <div className="row2">
+            <div className="field">
+              <label htmlFor="email">Email <span className="req">*</span></label>
+              <input type="email" id="email" placeholder="la-tua@email.it" value={form.email} onChange={e => set('email', e.target.value)} />
+            </div>
+            <div className="field">
+              <label htmlFor="telefono">Telefono <span className="req">*</span></label>
+              <input type="tel" id="telefono" placeholder="Es. 333 1234567" value={form.telefono} onChange={e => set('telefono', e.target.value)} />
+            </div>
           </div>
+          <div className="field-hint">Riceverai la scheda personalizzata via email entro 24 ore. Il telefono ci serve nel caso un professionista della tua zona possa aiutarti.</div>
         </div>
 
         <hr className="divider" />
 
-        {/* PRICE BOX */}
-        <div className="price-box">
+        <div className="price-box free-box">
           <div className="price-left">
-            <div className="price-what">Cosa ricevi</div>
+            <div className="price-what">Cosa ricevi gratis</div>
             <div className="price-items">
               <span>Scheda personalizzata per la tua situazione</span>
               <span>Bonus e detrazioni a cui hai diritto tu</span>
               <span>Uffici e contatti della tua città</span>
-              <span>Scadenze personalizzate</span>
+              <span>Eventuale contatto con professionisti qualificati della tua zona</span>
             </div>
           </div>
           <div className="price-right">
-            <div className="price-amount">1,99€</div>
-            <div className="price-once">una tantum</div>
+            <div className="price-amount free-amount">Gratis</div>
           </div>
         </div>
 
-        {/* DELIVERY NOTE */}
         <div className="delivery-note">
           <div className="delivery-icon">📬</div>
-          <div>Ricevi la scheda <strong>entro 24 ore</strong> all&apos;email che hai indicato. Di solito arriva molto prima — ma ci teniamo questo margine per fartela bene.</div>
+          <div>Ricevi la scheda <strong>entro 24 ore</strong> all&apos;email che hai indicato. Di solito arriva molto prima.</div>
         </div>
 
-        {/* LEGAL CHECKBOXES */}
         <div className="legal-block">
           <label className="checkbox-row">
             <input type="checkbox" checked={checks.privacy} onChange={e => setChecks(p => ({...p, privacy: e.target.checked}))} />
-            <span>Acconsento al trattamento dei miei dati personali per la generazione della scheda personalizzata, come descritto nella <Link href="/privacy" target="_blank">Privacy Policy</Link>. I dati non saranno ceduti a terzi.</span>
+            <span>Acconsento al trattamento dei miei dati personali per la generazione della scheda personalizzata, come descritto nella <Link href="/privacy" target="_blank">Privacy Policy</Link>.</span>
           </label>
           <label className="checkbox-row">
-            <input type="checkbox" checked={checks.recesso} onChange={e => setChecks(p => ({...p, recesso: e.target.checked}))} />
-            <span>Confermo di voler ricevere la scheda entro 24 ore e accetto che l&apos;esecuzione del servizio inizi subito dopo il pagamento, <strong>rinunciando al diritto di recesso</strong> ai sensi dell&apos;art. 59 lett. a) del Codice del Consumo.</span>
+            <input type="checkbox" checked={checks.marketing} onChange={e => setChecks(p => ({...p, marketing: e.target.checked}))} />
+            <span>Acconsento a essere contattato da <strong>professionisti selezionati</strong> (commercialisti, consulenti, mediatori creditizi, geometri) in relazione alla mia situazione, e a ricevere comunicazioni commerciali da BuroSemplice. Posso revocare il consenso in qualsiasi momento.</span>
           </label>
           <label className="checkbox-row">
             <input type="checkbox" checked={checks.termini} onChange={e => setChecks(p => ({...p, termini: e.target.checked}))} />
-            <span>Ho letto e accetto i <Link href="/termini" target="_blank">Termini di Servizio</Link>. Confermo di aver letto la guida gratuita e che la scheda personalizzata è un servizio integrativo a pagamento.</span>
+            <span>Ho letto e accetto i <Link href="/termini" target="_blank">Termini di Servizio</Link>.</span>
           </label>
         </div>
 
-        {/* SUBMIT */}
         <button className="btn-submit" onClick={handleSubmit} disabled={loading}>
-          {loading ? 'Registrazione dati…' : <> Paga e ricevi la scheda <span className="btn-price">1,99 €</span></>}
+          {loading ? 'Invio in corso…' : 'Ricevi la scheda gratuita →'}
         </button>
 
         <div className="secure-note">
-          🔒 Pagamento sicuro via Stripe · Carta di credito, debito o PayPal
+          🔒 I tuoi dati sono protetti e trattati nel rispetto del GDPR
         </div>
 
       </div>
 
       <div className="back-link">
-        <Link href={backHref}>← Torna alla guida gratuita, non voglio la scheda personalizzata</Link>
+        <Link href={backHref}>← Torna alla guida gratuita</Link>
       </div>
 
     </div>

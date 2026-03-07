@@ -148,8 +148,8 @@ export default function HomePage() {
         <div className="container">
           <div className="pricing-header r">
             <div className="section-label">Prezzi</div>
-            <h2 className="section-title">Leggere è gratis. Personalizzare costa un caffè.</h2>
-            <p className="section-subtitle">Le guide complete sono gratuite per sempre. Paghi solo se vuoi i numeri esatti per la tua situazione.</p>
+            <h2 className="section-title">Leggere è gratis. Personalizzare anche.</h2>
+            <p className="section-subtitle">Le guide complete sono gratuite per sempre. La scheda personalizzata con i tuoi numeri esatti? Anche quella.</p>
           </div>
           <div className="pricing-cards">
             <div className="pricing-card r">
@@ -166,7 +166,7 @@ export default function HomePage() {
             </div>
             <div className="pricing-card featured r">
               <div className="pricing-label">Personalizzata</div>
-              <div className="pricing-price">1,99€ <span>una tantum</span></div>
+              <div className="pricing-price">Gratis</div>
               <p className="pricing-desc">I numeri esatti per la tua vita.</p>
               <ul className="pricing-features">
                 <li>Tutto della guida gratuita</li>
@@ -175,7 +175,7 @@ export default function HomePage() {
                 <li>Bonus a cui hai diritto tu</li>
                 <li>Promemoria scadenze via email</li>
               </ul>
-              <Link href="/ordina" className="btn-primary" style={{ width: '100%', display: 'block', textAlign: 'center' }}>Personalizza — 1,99€</Link>
+              <Link href="/ordina" className="btn-primary" style={{ width: '100%', display: 'block', textAlign: 'center' }}>Personalizza — Gratis</Link>
             </div>
           </div>
         </div>

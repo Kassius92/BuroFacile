@@ -187,7 +187,7 @@ export default function Page() {
 
   <div className="icta r">
     <div className="icta-t">Vuoi sapere <strong>esattamente quanto riceverai</strong> con il tuo ISEE e la tua situazione lavorativa?</div>
-    <a href="/ordina?scheda=figlio" className="btni">Personalizza — 1,99€</a>
+    <a href="/ordina?scheda=figlio" className="btni">Personalizza — Gratis</a>
   </div>
 
   {/* CONGEDI */}
@@ -294,7 +294,7 @@ export default function Page() {
 
   <div className="icta r">
     <div className="icta-t">Hai un ISEE basso o una situazione particolare? <strong>Ti calcoliamo tutto</strong> — bonus, congedi e importi esatti per te.</div>
-    <a href="/ordina?scheda=figlio" className="btni">Personalizza — 1,99€</a>
+    <a href="/ordina?scheda=figlio" className="btni">Personalizza — Gratis</a>
   </div>
 
   {/* DOCUMENTI NEONATO */}
@@ -399,7 +399,7 @@ export default function Page() {
   <div className="ctabanner r">
     <h3>Hai la testa piena di scadenze?</h3>
     <p>Ti prepariamo un promemoria personalizzato: tutti i bonus, le date e i documenti che servono alla tua famiglia — con il tuo ISEE e la tua situazione.</p>
-    <a href="/ordina?scheda=figlio" className="btnc">Personalizza per me <span className="pr">— 1,99€</span></a>
+    <a href="/ordina?scheda=figlio" className="btnc">Personalizza per me — Gratis</a>
   </div>
 
   {/* RELATED */}
@@ -440,7 +440,7 @@ export default function Page() {
           <div className="sb-cta">
             <div className="sb-ct">Personalizza la guida</div>
             <div className="sb-cd">Tutti i tuoi bonus, importi e scadenze con ISEE reale.</div>
-            <a href="/ordina?scheda=figlio" className="sb-cb">Personalizza — 1,99€</a>
+            <a href="/ordina?scheda=figlio" className="sb-cb">Personalizza — Gratis</a>
           </div>
           <div className="sbsec">
             <div className="sbsec-t">🛠 Strumenti utili</div>

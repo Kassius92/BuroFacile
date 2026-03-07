@@ -193,7 +193,7 @@ export default function Pagina730() {
           </div>
 
           {/* ICTA */}
-          <div className="icta bh r"><div className="icta-t">Vuoi sapere <strong>quanto stai perdendo tu</strong>? Calcoliamo il tuo rimborso in 2 minuti.</div><Link href="/ordina?scheda=730" className="btni">Personalizza — 1,99€</Link></div>
+          <div className="icta bh r"><div className="icta-t">Vuoi sapere <strong>quanto stai perdendo tu</strong>? Calcoliamo il tuo rimborso in 2 minuti.</div><Link href="/ordina?scheda=730" className="btni">Personalizza — Gratis</Link></div>
 
           {/* NOVITÀ 2026 */}
           <div className="sec bh r" id="novita">
@@ -247,7 +247,7 @@ export default function Pagina730() {
           </div>
 
           {/* ICTA */}
-          <div className="icta bh r"><div className="icta-t">Vuoi sapere <strong>esattamente quanto recuperi tu</strong> con le tue spese?</div><Link href="/ordina?scheda=730" className="btni">Personalizza — 1,99€</Link></div>
+          <div className="icta bh r"><div className="icta-t">Vuoi sapere <strong>esattamente quanto recuperi tu</strong> con le tue spese?</div><Link href="/ordina?scheda=730" className="btni">Personalizza — Gratis</Link></div>
 
           {/* CHI DEVE FARLO */}
           <div className="sec r" id="chi-deve">
@@ -260,7 +260,7 @@ export default function Pagina730() {
           </div>
 
           {/* ICTA */}
-          <div className="icta r"><div className="icta-t">Hai avuto <strong>due lavori</strong> quest&apos;anno? Scopri quanto devi pagare o recuperare.</div><Link href="/ordina?scheda=730" className="btni">Personalizza — 1,99€</Link></div>
+          <div className="icta r"><div className="icta-t">Hai avuto <strong>due lavori</strong> quest&apos;anno? Scopri quanto devi pagare o recuperare.</div><Link href="/ordina?scheda=730" className="btni">Personalizza — Gratis</Link></div>
 
           {/* COME SI FA */}
           <div className="sec r" id="come">
@@ -380,7 +380,7 @@ export default function Pagina730() {
           <div className="ctab r">
             <h3>Vuoi sapere esattamente quanto recuperi tu?</h3>
             <p>Rispondi a 5 domande sulla tua situazione e ricevi la scheda con i tuoi numeri: detrazioni, rimborso stimato, CAF più vicino, scadenze personalizzate.</p>
-            <Link href="/ordina?scheda=730" className="btnc">Personalizza per me <span className="pr">— 1,99€</span></Link>
+            <Link href="/ordina?scheda=730" className="btnc">Personalizza per me — Gratis</Link>
           </div>
 
           {/* RELATED */}
@@ -399,7 +399,7 @@ export default function Pagina730() {
           <div className="sb-cta">
             <div className="sb-ct">Quanto recuperi con il tuo 730?</div>
             <div className="sb-cd">Detrazioni e rimborso personalizzati per te.</div>
-            <Link href="/ordina?scheda=730" className="sb-cb">Personalizza — 1,99€</Link>
+            <Link href="/ordina?scheda=730" className="sb-cb">Personalizza — Gratis</Link>
           </div>
           <div className="sbsec">
             <div className="sbsec-t">🛠 Strumenti</div>

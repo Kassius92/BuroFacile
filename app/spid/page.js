@@ -200,7 +200,7 @@ export default function Page() {
 
           <div className="icta r">
             <div className="icta-t">Non sai <strong>quali bonus puoi richiedere</strong> con lo SPID nella tua situazione?</div>
-            <a href="/ordina?scheda=spid" className="btni">Personalizza — 1,99€</a>
+            <a href="/ordina?scheda=spid" className="btni">Personalizza — Gratis</a>
           </div>
 
           {/* COME SI FA */}
@@ -353,7 +353,7 @@ export default function Page() {
           <div className="ctabanner r">
             <h3>Vuoi sapere tutti i bonus a cui hai diritto?</h3>
             <p>Ti facciamo un elenco personalizzato dei bonus e agevolazioni che puoi richiedere con lo SPID nella tua situazione.</p>
-            <a href="/ordina?scheda=spid" className="btnc">Personalizza per me <span className="pr">— 1,99€</span></a>
+            <a href="/ordina?scheda=spid" className="btnc">Personalizza per me — Gratis</a>
           </div>
 
           {/* GUIDE CORRELATE */}
@@ -373,7 +373,7 @@ export default function Page() {
           <div className="sb-cta">
             <div className="sb-ct">Bonus e agevolazioni nella tua situazione</div>
             <div className="sb-cd">Scopri cosa puoi richiedere con lo SPID.</div>
-            <a href="/ordina?scheda=spid" className="sb-cb">Personalizza — 1,99€</a>
+            <a href="/ordina?scheda=spid" className="sb-cb">Personalizza — Gratis</a>
           </div>
           <div className="sbsec">
             <div className="sbsec-t">🛠 Strumenti</div>

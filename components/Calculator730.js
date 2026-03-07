@@ -112,7 +112,7 @@ export default function Calculator730() {
             <div className="calc-bd-it"><span>Scuola figli</span><span className={`bdv${result.detScu === 0 ? ' z' : ''}`}>{fmt(result.detScu)}</span></div>
             <div className="calc-bd-it"><span>Sport figli</span><span className={`bdv${result.detSpo === 0 ? ' z' : ''}`}>{fmt(result.detSpo)}</span></div>
           </div>
-          <Link href="/ordina?scheda=730" className="btni">Personalizza — 1,99&euro;</Link>
+          <Link href="/ordina?scheda=730" className="btni">Personalizza — Gratis</Link>
           <div className="calc-dis">Stima indicativa basata sulle aliquote 2026. Non considera tutte le casistiche.</div>
         </div>
       </div>

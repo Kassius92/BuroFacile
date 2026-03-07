@@ -61,7 +61,7 @@ export default function ContattiPage() {
 
           <div className="faq-item">
             <div className="faq-q">Le guide sono davvero gratuite? Cosa c&apos;è a pagamento?</div>
-            <div className="faq-a">Sì, le guide sono complete e gratuite. Non tagliamo il contenuto per spingerti a pagare. Le schede personalizzate (quando saranno disponibili) aggiungono i tuoi numeri specifici, i tuoi uffici, i tuoi bonus — ma la guida gratuita rimane completa per tutti.</div>
+            <div className="faq-a">Tutto è gratuito. Le guide sono complete e le schede personalizzate anche. Compilando il form ricevi gratis i tuoi numeri specifici, i tuoi uffici e i tuoi bonus. In cambio ti chiediamo solo il consenso a essere eventualmente contattato da professionisti qualificati della tua zona.</div>
           </div>
 
           <div className="faq-item">
