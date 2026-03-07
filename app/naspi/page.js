@@ -224,7 +224,6 @@ export default function Page() {
                 </tbody>
               </table>
             </div>
-            <BlurredRow label="Il tuo importo stimato" />
           </div>
 
           {/* QUANTO SPETTA */}
@@ -251,6 +250,7 @@ export default function Page() {
             </div>
 
             <CalcNaspi />
+            <BlurredRow label="Il tuo importo netto stimato" />
 
             <h3>La riduzione progressiva (décalage)</h3>
             <p>La NASpI non resta uguale per tutta la durata. Dal <strong>6° mese</strong> (151° giorno) l&apos;importo si riduce del <strong>3% ogni mese</strong>, calcolato sull&apos;importo del mese precedente. Se hai compiuto 55 anni, la riduzione parte dall&apos;8° mese — hai 2 mesi in più a importo pieno.</p>
@@ -288,35 +288,31 @@ export default function Page() {
             <h2>Come fare domanda di NASpI</h2>
             <p>La domanda si fa <strong>solo online</strong>. Hai tre modi:</p>
 
-            <div className="icgrid r">
-              <div className="ic r d1">
-                <div className="ic-n">1. Dal sito INPS (fai da te)</div>
-                <div className="ic-d">Accedi con SPID, CIE o CNS. Vai su <strong>Prestazioni e servizi → NASpI → Nuova domanda</strong>. La procedura è guidata: verifichi i dati, confermi l&apos;ultimo rapporto di lavoro e invii. Ricevi la ricevuta con protocollo.</div>
-              </div>
-              <div className="ic r d2">
-                <div className="ic-n">2. Tramite patronato (gratis)</div>
-                <div className="ic-d">Vai a un patronato (CGIL, CISL, UIL, ACLI, ecc.) con i documenti. Fanno tutto loro, gratis per legge. È il metodo più sicuro se non ti senti a tuo agio con il sito INPS.</div>
-              </div>
-              <div className="ic r d3">
-                <div className="ic-n">3. Contact Center INPS</div>
-                <div className="ic-d">Chiama il <strong>803 164</strong> (gratuito da rete fissa) o il <strong>06 164 164</strong> (da cellulare). Un operatore può aiutarti a presentare la domanda per telefono.</div>
-              </div>
+            <div className="ib tip r d1">
+              <div className="ib-t">1. Dal sito INPS (fai da te)</div>
+              <p>Accedi con SPID, CIE o CNS. Vai su <strong>Prestazioni e servizi → NASpI → Nuova domanda</strong>. La procedura è guidata: verifichi i dati, confermi l&apos;ultimo rapporto di lavoro e invii. Ricevi la ricevuta con protocollo.</p>
+            </div>
+            <div className="ib tip r d2">
+              <div className="ib-t">2. Tramite patronato (gratis)</div>
+              <p>Vai a un patronato (CGIL, CISL, UIL, ACLI, ecc.) con i documenti. Fanno tutto loro, gratis per legge. È il metodo più sicuro se non ti senti a tuo agio con il sito INPS.</p>
+            </div>
+            <div className="ib tip r d3">
+              <div className="ib-t">3. Contact Center INPS</div>
+              <p>Chiama il <strong>803 164</strong> (gratuito da rete fissa) o il <strong>06 164 164</strong> (da cellulare). Un operatore può aiutarti a presentare la domanda per telefono.</p>
             </div>
 
             <h3>Documenti che ti servono</h3>
-            <div className="icgrid r">
-              <div className="ic r d1">
-                <div className="ic-n">📱 SPID o CIE</div>
-                <div className="ic-d">Per accedere al portale INPS. Se non ce l&apos;hai, <a href="/spid">fallo subito — ci vogliono 15 minuti</a>.</div>
-              </div>
-              <div className="ic r d2">
-                <div className="ic-n">📄 Ultima busta paga</div>
-                <div className="ic-d">Non obbligatoria per la domanda (i dati sono precompilati), ma utile per verificare che le informazioni siano corrette.</div>
-              </div>
-              <div className="ic r d3">
-                <div className="ic-n">🏦 IBAN</div>
-                <div className="ic-d">Il conto deve essere intestato o cointestato a te. L&apos;IBAN estero va bene solo se è area SEPA.</div>
-              </div>
+            <div className="ib tip r d1">
+              <div className="ib-t">📱 SPID o CIE</div>
+              <p>Per accedere al portale INPS. Se non ce l&apos;hai, <a href="/spid">fallo subito — ci vogliono 15 minuti</a>.</p>
+            </div>
+            <div className="ib tip r d2">
+              <div className="ib-t">📄 Ultima busta paga</div>
+              <p>Non obbligatoria per la domanda (i dati sono precompilati), ma utile per verificare che le informazioni siano corrette.</p>
+            </div>
+            <div className="ib tip r d3">
+              <div className="ib-t">🏦 IBAN</div>
+              <p>Il conto deve essere intestato o cointestato a te. L&apos;IBAN estero va bene solo se è area SEPA.</p>
             </div>
 
             <div className="ib tip r">
@@ -333,27 +329,25 @@ export default function Page() {
             <div className="sec-tag">Attenzione</div>
             <h2>I 5 errori che fanno perdere la NASpI</h2>
 
-            <div className="icgrid r">
-              <div className="ic r d1">
-                <div className="ic-n">❌ Fare domanda dopo 68 giorni</div>
-                <div className="ic-d">Il termine è <strong>tassativo</strong>. Non ci sono proroghe. Se lo superi, perdi tutto — anche se avevi tutti i requisiti. Segna la data sul calendario il giorno stesso in cui perdi il lavoro.</div>
-              </div>
-              <div className="ic r d2">
-                <div className="ic-n">❌ Non comunicare un nuovo lavoro</div>
-                <div className="ic-d">Se inizi un lavoretto (anche part-time o autonomo) e non lo comunichi con il modello NASpI-COM entro 30 giorni, la NASpI <strong>decade completamente</strong>. Non rischiare.</div>
-              </div>
-              <div className="ic r d3">
-                <div className="ic-n">❌ Saltare il Centro per l&apos;Impiego</div>
-                <div className="ic-d">Hai 15 giorni dalla domanda per firmare il Patto di Servizio. Se non ti presenti e non rispondi alla convocazione, la NASpI può essere sospesa.</div>
-              </div>
-              <div className="ic r d1">
-                <div className="ic-n">❌ Aspettare ad aggiornare l&apos;ISEE</div>
-                <div className="ic-d">La NASpI abbassa il tuo reddito. Fai l&apos;<a href="/isee">ISEE corrente</a> per sbloccare bonus e agevolazioni che prima non ti spettavano.</div>
-              </div>
-              <div className="ic r d2">
-                <div className="ic-n">❌ Non fare il 730</div>
-                <div className="ic-d">Anche con la NASpI devi fare la <a href="/730">dichiarazione dei redditi</a>. L&apos;INPS rilascia la CU: se non la dichiari, rischi problemi con il fisco.</div>
-              </div>
+            <div className="ib warn r d1">
+              <div className="ib-t">⚠️ Fare domanda dopo 68 giorni</div>
+              <p>Il termine è <strong>tassativo</strong>. Non ci sono proroghe. Se lo superi, perdi tutto — anche se avevi tutti i requisiti. Segna la data sul calendario il giorno stesso in cui perdi il lavoro.</p>
+            </div>
+            <div className="ib warn r d2">
+              <div className="ib-t">⚠️ Non comunicare un nuovo lavoro</div>
+              <p>Se inizi un lavoretto (anche part-time o autonomo) e non lo comunichi con il modello NASpI-COM entro 30 giorni, la NASpI <strong>decade completamente</strong>. Non rischiare.</p>
+            </div>
+            <div className="ib warn r d1">
+              <div className="ib-t">⚠️ Saltare il Centro per l&apos;Impiego</div>
+              <p>Hai 15 giorni dalla domanda per firmare il Patto di Servizio. Se non ti presenti e non rispondi alla convocazione, la NASpI può essere sospesa.</p>
+            </div>
+            <div className="ib warn r d2">
+              <div className="ib-t">⚠️ Aspettare ad aggiornare l&apos;ISEE</div>
+              <p>La NASpI abbassa il tuo reddito. Fai l&apos;<a href="/isee">ISEE corrente</a> per sbloccare bonus e agevolazioni che prima non ti spettavano.</p>
+            </div>
+            <div className="ib warn r d1">
+              <div className="ib-t">⚠️ Non fare il 730</div>
+              <p>Anche con la NASpI devi fare la <a href="/730">dichiarazione dei redditi</a>. L&apos;INPS rilascia la CU: se non la dichiari, rischi problemi con il fisco.</p>
             </div>
           </div>
 
