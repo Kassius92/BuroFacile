@@ -2,7 +2,7 @@
 
 export default function SocialProof({ count = 347 }) {
   return (
-    <div className="social-proof">
+    <div className="sp-badge">
       <div className="sp-avatars">
         <div className="sp-avatar" style={{ background: '#2A9D8F' }}>M</div>
         <div className="sp-avatar" style={{ background: '#E36414' }}>L</div>
