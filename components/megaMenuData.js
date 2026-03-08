@@ -49,7 +49,7 @@ export const categories = [
         { name: 'Bonus nido', href: '#', soon: true },
       ]},
       { title: 'Coppia', links: [
-        { name: 'Mi sposo', href: '#', soon: true },
+        { name: 'Mi sposo', href: '/mi-sposo' },
         { name: 'Divorzio', href: '#', soon: true },
       ]},
       { title: 'Eredità', links: [

@@ -17,21 +17,21 @@ import ExitPopup from '@/components/ExitPopup';
 export const metadata = {
   title: 'NASpI 2026: Requisiti, Importo, Durata e Come Fare Domanda',
   description: 'NASpI 2026: chi ne ha diritto, come si calcola, quanto dura, come fare domanda INPS entro 68 giorni e novità sulla NASpI anticipata. Guida gratuita aggiornata.',
-  alternates: { canonical: 'https://burosemplice.it/naspi' },
+  alternates: { canonical: 'https://zeroburocrazia.it/naspi' },
   openGraph: {
     title: 'NASpI 2026: Requisiti, Importo, Durata e Come Fare Domanda',
     description: 'NASpI 2026: chi ne ha diritto, come si calcola, quanto dura, come fare domanda INPS entro 68 giorni e novità sulla NASpI anticipata. Guida gratuita aggiornata.',
-    url: 'https://burosemplice.it/naspi',
+    url: 'https://zeroburocrazia.it/naspi',
     type: 'article',
-    siteName: 'BuroSemplice',
+    siteName: 'ZeroBurocrazia',
     locale: 'it_IT',
-    images: [{ url: 'https://burosemplice.it/ognaspi.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://zeroburocrazia.it/ognaspi.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'NASpI 2026: Requisiti, Importo, Durata e Come Fare Domanda',
     description: 'NASpI 2026: chi ne ha diritto, come si calcola, quanto dura, come fare domanda INPS entro 68 giorni e novità sulla NASpI anticipata. Guida gratuita aggiornata.',
-    images: ['https://burosemplice.it/ognaspi.png'],
+    images: ['https://zeroburocrazia.it/ognaspi.png'],
   },
 };
 

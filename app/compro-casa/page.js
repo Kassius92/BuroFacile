@@ -17,19 +17,19 @@ import ExitPopup from '@/components/ExitPopup';
 export const metadata = {
   title: 'Comprare Casa nel 2026: Mutuo, Bonus Prima Casa, Costi e Documenti',
   description: 'Comprare casa nel 2026: come funziona il mutuo, bonus prima casa, imposte, notaio, costi nascosti e documenti necessari. Guida gratuita completa.',
-  alternates: { canonical: 'https://burosemplice.it/compro-casa' },
+  alternates: { canonical: 'https://zeroburocrazia.it/compro-casa' },
   openGraph: {
     title: 'Comprare Casa nel 2026: Mutuo, Bonus Prima Casa, Costi e Documenti',
     description: 'Comprare casa nel 2026: come funziona il mutuo, bonus prima casa, imposte, notaio, costi nascosti e documenti necessari. Guida gratuita completa.',
-    url: 'https://burosemplice.it/compro-casa',
+    url: 'https://zeroburocrazia.it/compro-casa',
     type: 'article',
-    siteName: 'BuroSemplice',
+    siteName: 'ZeroBurocrazia',
     locale: 'it_IT',
-    images: [{ url: 'https://burosemplice.it/og-compro-casa.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://zeroburocrazia.it/og-compro-casa.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['https://burosemplice.it/og-compro-casa.png'],
+    images: ['https://zeroburocrazia.it/og-compro-casa.png'],
   },
 };
 
@@ -238,7 +238,7 @@ export default function Page() {
               <table>
                 <thead><tr><th>Tipo</th><th>Come funziona</th><th>Meglio se</th></tr></thead>
                 <tbody>
-                  <tr className="hl"><td><strong>Fisso</strong> <span className="badge">Scelta BuroSemplice</span></td><td>La rata rimane sempre uguale</td><td>Vuoi certezza e dormire tranquillo</td></tr>
+                  <tr className="hl"><td><strong>Fisso</strong> <span className="badge">Scelta ZeroBurocrazia</span></td><td>La rata rimane sempre uguale</td><td>Vuoi certezza e dormire tranquillo</td></tr>
                   <tr><td><strong>Variabile</strong></td><td>La rata cambia con l&apos;Euribor</td><td>Prevedi di estinguerlo presto</td></tr>
                   <tr><td>Misto / Cap</td><td>Variabile con tetto massimo</td><td>Vuoi un compromesso con limite di rischio</td></tr>
                 </tbody>
@@ -288,7 +288,7 @@ export default function Page() {
               <div className="aff-left">
                 <div className="aff-title">Confronta i tassi mutuo in 2 minuti</div>
                 <div className="aff-text">Inserisci importo, durata e tipo di immobile: vedi le offerte disponibili oggi da decine di banche, senza impegno e senza che nessuno ti chiami.</div>
-                <div className="aff-note">* Link in partnership — se richiedi un preventivo, BuroSemplice riceve una piccola commissione. Non cambia nulla per te: il servizio &egrave; gratuito.</div>
+                <div className="aff-note">* Link in partnership — se richiedi un preventivo, ZeroBurocrazia riceve una piccola commissione. Non cambia nulla per te: il servizio &egrave; gratuito.</div>
               </div>
               <a href="QUI_IL_TUO_LINK_AFFILIATO" target="_blank" rel="noopener sponsored" className="aff-btn">Confronta i mutui →</a>
             </div>
@@ -301,7 +301,7 @@ export default function Page() {
               <div className="aff-left">
                 <div className="aff-title">Confronta le assicurazioni casa: da 8€/mese</div>
                 <div className="aff-text">Incendio, furto, danni da acqua, responsabilit&agrave; civile. Confronta le migliori polizze per la tua nuova casa in 2 minuti.</div>
-                <div className="aff-note">* Link in partnership — se richiedi un preventivo, BuroSemplice riceve una piccola commissione. Non cambia nulla per te.</div>
+                <div className="aff-note">* Link in partnership — se richiedi un preventivo, ZeroBurocrazia riceve una piccola commissione. Non cambia nulla per te.</div>
               </div>
               <a href="QUI_LINK_AFFILIATO_CASA_ASSICURAZIONE" target="_blank" rel="noopener sponsored" className="aff-btn">Confronta polizze →</a>
             </div>

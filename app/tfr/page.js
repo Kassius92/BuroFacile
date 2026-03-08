@@ -17,21 +17,21 @@ import ExitPopup from '@/components/ExitPopup';
 export const metadata = {
   title: 'TFR 2026: Calcolo, Tassazione, Anticipo e Quando Spetta',
   description: 'TFR 2026: come si calcola la liquidazione, quanto ti spetta, tassazione separata, anticipo dopo 8 anni, TFR in azienda vs fondo pensione. Guida gratuita aggiornata.',
-  alternates: { canonical: 'https://burosemplice.it/tfr' },
+  alternates: { canonical: 'https://zeroburocrazia.it/tfr' },
   openGraph: {
     title: 'TFR 2026: Calcolo, Tassazione, Anticipo e Quando Spetta',
     description: 'TFR 2026: come si calcola la liquidazione, quanto ti spetta, tassazione separata, anticipo dopo 8 anni, TFR in azienda vs fondo pensione. Guida gratuita aggiornata.',
-    url: 'https://burosemplice.it/tfr',
+    url: 'https://zeroburocrazia.it/tfr',
     type: 'article',
-    siteName: 'BuroSemplice',
+    siteName: 'ZeroBurocrazia',
     locale: 'it_IT',
-    images: [{ url: 'https://burosemplice.it/ogtfr.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://zeroburocrazia.it/ogtfr.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'TFR 2026: Calcolo, Tassazione, Anticipo e Quando Spetta',
     description: 'TFR 2026: come si calcola la liquidazione, quanto ti spetta, tassazione separata, anticipo dopo 8 anni, TFR in azienda vs fondo pensione. Guida gratuita aggiornata.',
-    images: ['https://burosemplice.it/ogtfr.png'],
+    images: ['https://zeroburocrazia.it/ogtfr.png'],
   },
 };
 

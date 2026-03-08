@@ -363,7 +363,7 @@ export default function OrdinaForm() {
               </label>
               <label className="checkbox-row">
                 <input type="checkbox" checked={checks.marketing} onChange={e => setChecks(p => ({...p, marketing: e.target.checked}))} />
-                <span>Acconsento a essere contattato da <strong>professionisti selezionati</strong> (commercialisti, consulenti, mediatori creditizi, geometri) in relazione alla mia situazione, e a ricevere comunicazioni commerciali da BuroSemplice. Posso revocare il consenso in qualsiasi momento.</span>
+                <span>Acconsento a essere contattato da <strong>professionisti selezionati</strong> (commercialisti, consulenti, mediatori creditizi, geometri) in relazione alla mia situazione, e a ricevere comunicazioni commerciali da ZeroBurocrazia. Posso revocare il consenso in qualsiasi momento.</span>
               </label>
               <label className="checkbox-row">
                 <input type="checkbox" checked={checks.termini} onChange={e => setChecks(p => ({...p, termini: e.target.checked}))} />

@@ -17,21 +17,21 @@ import CalcRistrutturare from '@/components/CalcRistrutturare';
 export const metadata = {
   title: 'Ristrutturare Casa nel 2026: Bonus, Detrazioni, Permessi e Costi',
   description: 'Ristrutturare casa nel 2026: bonus ristrutturazione 50%, ecobonus, superbonus residuo, permessi comunali, preventivi e detrazioni fiscali. Guida gratuita.',
-  alternates: { canonical: 'https://burosemplice.it/ristrutturare' },
+  alternates: { canonical: 'https://zeroburocrazia.it/ristrutturare' },
   openGraph: {
     title: 'Ristrutturare Casa nel 2026: Bonus, Detrazioni, Permessi e Costi',
     description: 'Ristrutturare casa nel 2026: bonus ristrutturazione 50%, ecobonus, superbonus residuo, permessi comunali, preventivi e detrazioni fiscali. Guida gratuita.',
-    url: 'https://burosemplice.it/ristrutturare',
+    url: 'https://zeroburocrazia.it/ristrutturare',
     type: 'article',
-    siteName: 'BuroSemplice',
+    siteName: 'ZeroBurocrazia',
     locale: 'it_IT',
-    images: [{ url: 'https://burosemplice.it/ogristrutturare.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://zeroburocrazia.it/ogristrutturare.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ristrutturare Casa nel 2026: Bonus, Detrazioni, Permessi e Costi',
     description: 'Ristrutturare casa nel 2026: bonus ristrutturazione 50%, ecobonus, superbonus residuo, permessi comunali, preventivi e detrazioni fiscali. Guida gratuita.',
-    images: ['https://burosemplice.it/ogristrutturare.png'],
+    images: ['https://zeroburocrazia.it/ogristrutturare.png'],
   },
 };
 
@@ -60,7 +60,7 @@ const faqItems = [
 
 export default function Page() {
   const schemas = [
-    articleSchema({ title: 'Ristrutturare Casa — Guida Completa 2026 | BuroSemplice', description: 'Ristrutturare casa nel 2026: bonus ristrutturazione, ecobonus, superbonus, permessi e preventivi. Guida gratuita su detrazioni e pratiche.', url: '/ristrutturare', image: 'ogristrutturare.png', datePublished: '2026-03-04', dateModified: '2026-03-05' }),
+    articleSchema({ title: 'Ristrutturare Casa — Guida Completa 2026 | ZeroBurocrazia', description: 'Ristrutturare casa nel 2026: bonus ristrutturazione, ecobonus, superbonus, permessi e preventivi. Guida gratuita su detrazioni e pratiche.', url: '/ristrutturare', image: 'ogristrutturare.png', datePublished: '2026-03-04', dateModified: '2026-03-05' }),
     faqSchema(faqItems),
   ];
 
@@ -295,7 +295,7 @@ export default function Page() {
       <div className="aff-left">
         <div className="aff-title">Ricevi fino a 4 preventivi gratuiti da imprese della tua zona</div>
         <div className="aff-text">Descrivi i lavori, ricevi preventivi dettagliati da professionisti verificati. Confronti comodamente e scegli senza impegno.</div>
-        <div className="aff-note">* Link in partnership — se richiedi preventivi, BuroSemplice riceve una piccola commissione. Non cambia nulla per te.</div>
+        <div className="aff-note">* Link in partnership — se richiedi preventivi, ZeroBurocrazia riceve una piccola commissione. Non cambia nulla per te.</div>
       </div>
       <a href="QUI_LINK_AFFILIATO_RISTRUTTURARE_PREV" target="_blank" rel="noopener sponsored" className="aff-btn">
         Chiedi preventivi →
@@ -353,7 +353,7 @@ export default function Page() {
       <div className="aff-left">
         <div className="aff-title">Arreda casa nuova con il bonus mobili: fino a 2.500€ di detrazione</div>
         <div className="aff-text">Mobili, divani, letti, elettrodomestici classe A+. Paga con bonifico o carta e detrai il 50% in 10 rate. Scegli tra migliaia di prodotti.</div>
-        <div className="aff-note">* Link in partnership — se acquisti, BuroSemplice riceve una piccola commissione. Non cambia nulla per te.</div>
+        <div className="aff-note">* Link in partnership — se acquisti, ZeroBurocrazia riceve una piccola commissione. Non cambia nulla per te.</div>
       </div>
       <a href="QUI_LINK_AFFILIATO_RISTRUTTURARE_MOBILI" target="_blank" rel="noopener sponsored" className="aff-btn">
         Scopri l'arredamento →

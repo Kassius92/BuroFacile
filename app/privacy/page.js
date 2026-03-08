@@ -3,14 +3,14 @@ import Footer from '@/components/Footer';
 import '../utility.css';
 
 export const metadata = {
-  title: 'Privacy Policy — BuroSemplice',
-  description: 'Privacy Policy di BuroSemplice: come trattiamo i tuoi dati, cookie tecnici, diritti GDPR e come contattarci.',
-  alternates: { canonical: 'https://burosemplice.it/privacy' },
+  title: 'Privacy Policy — ZeroBurocrazia',
+  description: 'Privacy Policy di ZeroBurocrazia: come trattiamo i tuoi dati, cookie tecnici, diritti GDPR e come contattarci.',
+  alternates: { canonical: 'https://zeroburocrazia.it/privacy' },
   robots: { index: false, follow: true },
   openGraph: {
-    title: 'Privacy Policy — BuroSemplice',
-    description: 'Privacy Policy di BuroSemplice: come trattiamo i tuoi dati, cookie tecnici, diritti GDPR e come contattarci.',
-    url: 'https://burosemplice.it/privacy',
+    title: 'Privacy Policy — ZeroBurocrazia',
+    description: 'Privacy Policy di ZeroBurocrazia: come trattiamo i tuoi dati, cookie tecnici, diritti GDPR e come contattarci.',
+    url: 'https://zeroburocrazia.it/privacy',
   },
 };
 
@@ -22,7 +22,7 @@ export default function PrivacyPage() {
       <div className="page-wrap">
         <div className="page-tag">Documento legale</div>
         <h1 className="page-title">Privacy Policy</h1>
-        <p className="page-sub">Ultimo aggiornamento: marzo 2026 · Titolare: BuroSemplice</p>
+        <p className="page-sub">Ultimo aggiornamento: marzo 2026 · Titolare: ZeroBurocrazia</p>
 
         <div className="box-info">
           <p>Versione breve: le guide sono gratuite e non richiedono dati. Se richiedi la scheda personalizzata, ti chiediamo alcuni dati per prepararla e, con il tuo consenso esplicito, per metterti in contatto con professionisti della tua zona. Puoi revocare il consenso in qualsiasi momento.</p>
@@ -30,7 +30,7 @@ export default function PrivacyPage() {
 
         <div className="prose">
           <h2>1. Chi siamo</h2>
-          <p>BuroSemplice è un servizio informativo che aiuta i cittadini italiani a orientarsi nella burocrazia e nelle pratiche della vita quotidiana. Il titolare del trattamento dei dati è BuroSemplice (<a href="mailto:info.burosemplice@gmail.com">info.burosemplice@gmail.com</a>).</p>
+          <p>ZeroBurocrazia è un servizio informativo che aiuta i cittadini italiani a orientarsi nella burocrazia e nelle pratiche della vita quotidiana. Il titolare del trattamento dei dati è ZeroBurocrazia (<a href="mailto:info@zeroburocrazia.it">info@zeroburocrazia.it</a>).</p>
 
           <h2>2. Quali dati raccogliamo</h2>
 
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
           <ul>
             <li><strong>Generazione della scheda personalizzata</strong> (base giuridica: esecuzione di un servizio richiesto dall&apos;utente, art. 6.1.b GDPR) — Usiamo i dati del form per generare una scheda con importi, bonus, uffici e scadenze calcolati sulla tua situazione. La scheda viene inviata all&apos;email indicata.</li>
             <li><strong>Contatto con professionisti selezionati</strong> (base giuridica: consenso esplicito, art. 6.1.a GDPR) — Solo se hai dato il consenso specifico nel form, i tuoi dati di contatto e la tua situazione potranno essere condivisi con professionisti qualificati (commercialisti, consulenti fiscali, mediatori creditizi, geometri, consulenti del lavoro) della tua zona, affinché possano contattarti con proposte pertinenti alla tua esigenza.</li>
-            <li><strong>Comunicazioni commerciali da BuroSemplice</strong> (base giuridica: consenso esplicito, art. 6.1.a GDPR) — Solo se hai dato il consenso specifico, potremmo inviarti comunicazioni relative a servizi, guide o novità di BuroSemplice.</li>
+            <li><strong>Comunicazioni commerciali da ZeroBurocrazia</strong> (base giuridica: consenso esplicito, art. 6.1.a GDPR) — Solo se hai dato il consenso specifico, potremmo inviarti comunicazioni relative a servizi, guide o novità di ZeroBurocrazia.</li>
             <li><strong>Statistiche aggregate</strong> (base giuridica: legittimo interesse, art. 6.1.f GDPR) — Dati di navigazione anonimizzati per capire quali guide sono più utili e migliorare il sito.</li>
           </ul>
 
@@ -110,17 +110,17 @@ export default function PrivacyPage() {
             <li><strong>Opposizione</strong> — opporti al trattamento per finalità di marketing</li>
             <li><strong>Revoca del consenso</strong> — ritirare il consenso al contatto da parte di professionisti terzi o alle comunicazioni commerciali, in qualsiasi momento, senza pregiudicare la liceità del trattamento effettuato prima della revoca</li>
           </ul>
-          <p>Per esercitare questi diritti scrivi a <a href="mailto:info.burosemplice@gmail.com">info.burosemplice@gmail.com</a>. Risponderemo entro 30 giorni.</p>
+          <p>Per esercitare questi diritti scrivi a <a href="mailto:info@zeroburocrazia.it">info@zeroburocrazia.it</a>. Risponderemo entro 30 giorni.</p>
           <p>Se ritieni che i tuoi diritti siano stati violati, puoi presentare reclamo al Garante per la Protezione dei Dati Personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">garanteprivacy.it</a>).</p>
 
           <h2>7. Minori</h2>
-          <p>BuroSemplice non raccoglie consapevolmente dati da minori di 14 anni. Il form di personalizzazione è riservato a maggiorenni. Se ritieni che un minore ci abbia fornito dati personali, contattaci a <a href="mailto:info.burosemplice@gmail.com">info.burosemplice@gmail.com</a>.</p>
+          <p>ZeroBurocrazia non raccoglie consapevolmente dati da minori di 14 anni. Il form di personalizzazione è riservato a maggiorenni. Se ritieni che un minore ci abbia fornito dati personali, contattaci a <a href="mailto:info@zeroburocrazia.it">info@zeroburocrazia.it</a>.</p>
 
           <h2>8. Modifiche a questa policy</h2>
           <p>Possiamo aggiornare questa Privacy Policy in caso di modifiche al servizio o alla normativa. La data di &quot;ultimo aggiornamento&quot; in cima alla pagina indica quando è stata modificata l&apos;ultima volta. Per modifiche sostanziali, ti avviseremo con un avviso visibile sul sito.</p>
 
           <h2>9. Contatti</h2>
-          <p>Per qualsiasi domanda sulla privacy scrivi a: <a href="mailto:info.burosemplice@gmail.com">info.burosemplice@gmail.com</a></p>
+          <p>Per qualsiasi domanda sulla privacy scrivi a: <a href="mailto:info@zeroburocrazia.it">info@zeroburocrazia.it</a></p>
         </div>
       </div>
 

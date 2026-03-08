@@ -5,4 +5,4 @@ Disallow: /ordina
 Disallow: /privacy
 Disallow: /termini
 
-Sitemap: https://burosemplice.it/sitemap.xml
+Sitemap: https://zeroburocrazia.it/sitemap.xml

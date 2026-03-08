@@ -22,7 +22,7 @@ export default function CalcComproCasa() {
   return (
     <div className="calc r">
       <div className="calc-hd">
-        <div className="calc-tag">Calcolatore BuroSemplice</div>
+        <div className="calc-tag">Calcolatore ZeroBurocrazia</div>
         <h3>Costi acquisto casa 2026</h3>
       </div>
       <div className="calc-bd">

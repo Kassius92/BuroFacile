@@ -17,17 +17,17 @@ import ExitPopup from '@/components/ExitPopup';
 export const metadata = {
   title: 'Aprire Partita IVA nel 2026: Costi, Tasse, Forfettario e Procedura',
   description: 'Come aprire partita IVA nel 2026: regime forfettario o ordinario, costi reali, tasse, contributi INPS, codice ATECO e procedura online. Guida gratuita.',
-  alternates: { canonical: 'https://burosemplice.it/piva' },
+  alternates: { canonical: 'https://zeroburocrazia.it/piva' },
   openGraph: {
     title: 'Aprire Partita IVA nel 2026: Costi, Tasse, Forfettario e Procedura',
     description: 'Come aprire partita IVA nel 2026: regime forfettario o ordinario, costi reali, tasse, contributi INPS, codice ATECO e procedura online. Guida gratuita.',
-    url: 'https://burosemplice.it/piva',
+    url: 'https://zeroburocrazia.it/piva',
     type: 'article',
-    siteName: 'BuroSemplice',
+    siteName: 'ZeroBurocrazia',
     locale: 'it_IT',
-    images: [{ url: 'https://burosemplice.it/og-piva.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://zeroburocrazia.it/og-piva.png', width: 1200, height: 630 }],
   },
-  twitter: { card: 'summary_large_image', images: ['https://burosemplice.it/og-piva.png'] },
+  twitter: { card: 'summary_large_image', images: ['https://zeroburocrazia.it/og-piva.png'] },
 };
 
 const tocItems = [
@@ -261,7 +261,7 @@ export default function Page() {
                 <thead><tr><th>Metodo</th><th>Costo annuo</th><th>Cosa include</th><th>Ideale per</th></tr></thead>
                 <tbody>
                   <tr><td><strong>Da solo</strong> (servizi AE gratuiti)</td><td>0€</td><td>Fatturazione elettronica AE, dichiarazione fai-da-te</td><td>Chi ha dimestichezza col fisco</td></tr>
-                  <tr className="recommended"><td><strong>Commercialista online</strong><span className="badge-scelta">✦ Scelta BuroSemplice</span></td><td>200–500€</td><td>Apertura, dichiarazione, F24, fatturazione, assistenza</td><td>Chi vuole semplicit&agrave; e risparmio</td></tr>
+                  <tr className="recommended"><td><strong>Commercialista online</strong><span className="badge-scelta">✦ Scelta ZeroBurocrazia</span></td><td>200–500€</td><td>Apertura, dichiarazione, F24, fatturazione, assistenza</td><td>Chi vuole semplicit&agrave; e risparmio</td></tr>
                   <tr><td><strong>Commercialista tradizionale</strong></td><td>800–2.000€</td><td>Tutto + consulenza in studio, rapporto personale</td><td>Situazioni complesse, alti fatturati</td></tr>
                 </tbody>
               </table>
@@ -281,7 +281,7 @@ export default function Page() {
               <div className="aff-left">
                 <div className="aff-title">Apri la partita IVA e gestisci tutto online</div>
                 <div className="aff-text">Apertura gratuita, fatturazione elettronica inclusa, commercialista dedicato da 200€/anno. Pensato per forfettari.</div>
-                <div className="aff-note">* Link in partnership — se ti iscrivi, BuroSemplice riceve una piccola commissione. Non cambia nulla per te.</div>
+                <div className="aff-note">* Link in partnership — se ti iscrivi, ZeroBurocrazia riceve una piccola commissione. Non cambia nulla per te.</div>
               </div>
               <a href="QUI_LINK_AFFILIATO_PIVA_COMM" target="_blank" rel="noopener sponsored" className="aff-btn">Scopri il servizio →</a>
             </div>
@@ -292,7 +292,7 @@ export default function Page() {
               <div className="aff-left">
                 <div className="aff-title">Apri un conto business gratuito in 5 minuti</div>
                 <div className="aff-text">Conto con IBAN italiano, carta business e fatturazione integrata. Zero canone per i forfettari. Tutto da app.</div>
-                <div className="aff-note">* Link in partnership — se apri il conto, BuroSemplice riceve una piccola commissione. Non cambia nulla per te.</div>
+                <div className="aff-note">* Link in partnership — se apri il conto, ZeroBurocrazia riceve una piccola commissione. Non cambia nulla per te.</div>
               </div>
               <a href="QUI_LINK_AFFILIATO_PIVA_CONTO" target="_blank" rel="noopener sponsored" className="aff-btn">Apri il conto →</a>
             </div>

@@ -7,28 +7,28 @@ import OpenMenuButton from '@/components/OpenMenuButton';
 import './home.css';
 
 export const metadata = {
-  title: 'BuroSemplice — La burocrazia italiana, semplificata',
-  description: 'BuroSemplice semplifica la burocrazia italiana: guide gratuite su 730, ISEE, SPID, NASpI, mutui, partita IVA e molto altro. Scritte come te le spiegherebbe un amico.',
-  alternates: { canonical: 'https://burosemplice.it' },
-  openGraph: { url: 'https://burosemplice.it', images: [{ url: '/oghome.png', width: 1200, height: 630 }] },
+  title: 'ZeroBurocrazia — La burocrazia italiana, finalmente zero',
+  description: 'ZeroBurocrazia semplifica la burocrazia italiana: guide gratuite su 730, ISEE, SPID, NASpI, mutui, partita IVA e molto altro. Scritte come te le spiegherebbe un amico.',
+  alternates: { canonical: 'https://zeroburocrazia.it' },
+  openGraph: { url: 'https://zeroburocrazia.it', images: [{ url: '/oghome.png', width: 1200, height: 630 }] },
 };
 
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'BuroSemplice',
-  url: 'https://burosemplice.it',
-  description: 'BuroSemplice semplifica la burocrazia italiana: guide gratuite su 730, ISEE, SPID, NASpI, mutui, partita IVA e molto altro. Scritte come te le spiegherebbe un amico.',
+  name: 'ZeroBurocrazia',
+  url: 'https://zeroburocrazia.it',
+  description: 'ZeroBurocrazia semplifica la burocrazia italiana: guide gratuite su 730, ISEE, SPID, NASpI, mutui, partita IVA e molto altro. Scritte come te le spiegherebbe un amico.',
   inLanguage: 'it-IT',
   publisher: {
     '@type': 'Organization',
-    name: 'BuroSemplice',
-    url: 'https://burosemplice.it',
-    email: 'info.burosemplice@gmail.com',
+    name: 'ZeroBurocrazia',
+    url: 'https://zeroburocrazia.it',
+    email: 'info@zeroburocrazia.it',
   },
   potentialAction: {
     '@type': 'SearchAction',
-    target: 'https://burosemplice.it/?q={search_term_string}',
+    target: 'https://zeroburocrazia.it/?q={search_term_string}',
     'query-input': 'required name=search_term_string',
   },
 };

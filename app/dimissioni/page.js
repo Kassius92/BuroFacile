@@ -15,21 +15,21 @@ import ExitPopup from '@/components/ExitPopup';
 export const metadata = {
   title: 'Dimissioni Volontarie Online 2026: Procedura, Preavviso e TFR',
   description: 'Come dare le dimissioni volontarie online nel 2026: procedura telematica INPS, giorni di preavviso per CCNL, revoca entro 7 giorni, TFR e ultima busta paga. Guida gratuita.',
-  alternates: { canonical: 'https://burosemplice.it/dimissioni' },
+  alternates: { canonical: 'https://zeroburocrazia.it/dimissioni' },
   openGraph: {
     title: 'Dimissioni Volontarie Online 2026: Procedura, Preavviso e TFR',
     description: 'Come dare le dimissioni volontarie online nel 2026: procedura telematica INPS, giorni di preavviso per CCNL, revoca entro 7 giorni, TFR e ultima busta paga. Guida gratuita.',
-    url: 'https://burosemplice.it/dimissioni',
+    url: 'https://zeroburocrazia.it/dimissioni',
     type: 'article',
-    siteName: 'BuroSemplice',
+    siteName: 'ZeroBurocrazia',
     locale: 'it_IT',
-    images: [{ url: 'https://burosemplice.it/ogdimissioni.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://zeroburocrazia.it/ogdimissioni.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Dimissioni Volontarie Online 2026: Procedura, Preavviso e TFR',
     description: 'Come dare le dimissioni volontarie online nel 2026: procedura telematica INPS, giorni di preavviso per CCNL, revoca entro 7 giorni, TFR e ultima busta paga. Guida gratuita.',
-    images: ['https://burosemplice.it/ogdimissioni.png'],
+    images: ['https://zeroburocrazia.it/ogdimissioni.png'],
   },
 };
 

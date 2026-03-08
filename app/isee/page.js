@@ -16,19 +16,19 @@ import ExitPopup from '@/components/ExitPopup';
 export const metadata = {
   title: "ISEE 2026: Come Farlo, Documenti Necessari, Costi e Simulazione",
   description: "ISEE 2026: come si fa, documenti necessari, dove farlo gratis, quanto vale, simulazione online e a cosa serve. Guida gratuita aggiornata.",
-  alternates: { canonical: 'https://burosemplice.it/isee' },
+  alternates: { canonical: 'https://zeroburocrazia.it/isee' },
   openGraph: {
     title: "ISEE 2026: Come Farlo, Documenti Necessari, Costi e Simulazione",
     description: "ISEE 2026: come si fa, documenti necessari, dove farlo gratis, quanto vale, simulazione online e a cosa serve. Guida gratuita aggiornata.",
-    url: 'https://burosemplice.it/isee',
+    url: 'https://zeroburocrazia.it/isee',
     type: 'article',
-    siteName: 'BuroSemplice',
+    siteName: 'ZeroBurocrazia',
     locale: 'it_IT',
-    images: [{ url: 'https://burosemplice.it/og-isee.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://zeroburocrazia.it/og-isee.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary',
-    images: ['https://burosemplice.it/og-isee.png'],
+    images: ['https://zeroburocrazia.it/og-isee.png'],
     title: "ISEE 2026: Come Farlo, Documenti Necessari, Costi e Simulazione",
     description: "ISEE 2026: come si fa, documenti necessari, dove farlo gratis, quanto vale, simulazione online e a cosa serve. Guida gratuita aggiornata.",
   },
@@ -250,7 +250,7 @@ export default function Page() {
             <p>Il commercialista pu&ograve; fare l&apos;ISEE per te, ma <strong>ti far&agrave; pagare 30–80€</strong> per un servizio che al CAF &egrave; gratis. Conviene solo se hai una situazione patrimoniale molto complessa (immobili in pi&ugrave; regioni, conti esteri, trust).</p>
 
             <div className="ib mon r">
-              <div className="ib-t">💶 Il consiglio onesto di BuroSemplice</div>
+              <div className="ib-t">💶 Il consiglio onesto di ZeroBurocrazia</div>
               <p><strong>Se hai dimestichezza con SPID e computer</strong> → fallo online con la precompilata. Ci metti 15–20 minuti ed &egrave; tutto gratis.<br/><strong>Se non ti fidi o preferisci un aiuto</strong> → vai al CAF. &Egrave; gratis, ci metti mezz&apos;ora, e lo fanno loro. Prenota a gennaio per evitare le code.<br/><strong>Se hai situazioni complesse</strong> (immobili all&apos;estero, separazione in corso) → vai dal commercialista. Paga di pi&ugrave; ma evita errori.</p>
             </div>
           </div>
@@ -302,7 +302,7 @@ export default function Page() {
               <table>
                 <thead><tr><th>Metodo</th><th>Costo</th><th>Tempo</th></tr></thead>
                 <tbody>
-                  <tr className="hl"><td><strong>Online (precompilata INPS)</strong> <span className="badge">Scelta BuroSemplice</span></td><td className="cfr">Gratis</td><td>15–20 min compilazione. Attestazione in 1–3 giorni lavorativi.</td></tr>
+                  <tr className="hl"><td><strong>Online (precompilata INPS)</strong> <span className="badge">Scelta ZeroBurocrazia</span></td><td className="cfr">Gratis</td><td>15–20 min compilazione. Attestazione in 1–3 giorni lavorativi.</td></tr>
                   <tr><td><strong>CAF / Patronato</strong></td><td className="cfr">Gratis</td><td>30 min di appuntamento. Attestazione in 3–10 giorni. Attesa appuntamento: da 1 giorno a 3 settimane.</td></tr>
                   <tr><td><strong>Commercialista</strong></td><td className="cv">30–80€</td><td>15 min tu, il resto lo fa lui. Attestazione in 3–7 giorni.</td></tr>
                 </tbody>
@@ -322,7 +322,7 @@ export default function Page() {
               <div className="aff-left">
                 <div className="aff-title">Fai l&apos;ISEE online con un CAF a distanza</div>
                 <div className="aff-text">Carichi i documenti, il CAF compila e invia la DSU per te. Niente code, niente appuntamenti. Gratis o a costo minimo.</div>
-                <div className="aff-note">* Link in partnership — se usi il servizio, BuroSemplice riceve una piccola commissione. Non cambia nulla per te.</div>
+                <div className="aff-note">* Link in partnership — se usi il servizio, ZeroBurocrazia riceve una piccola commissione. Non cambia nulla per te.</div>
               </div>
               <a href="QUI_LINK_AFFILIATO_ISEE" target="_blank" rel="noopener sponsored" className="aff-btn">
                 Fai l&apos;ISEE online →

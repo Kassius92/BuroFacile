@@ -4,13 +4,13 @@ import NovitaContent from '@/components/NovitaContent';
 import './novita.css';
 
 export const metadata = {
-  title: 'Novità e scadenze — BuroSemplice',
+  title: 'Novità e scadenze — ZeroBurocrazia',
   description: 'Novità sulla burocrazia italiana: scadenze, circolari INPS, nuovi bonus e aggiornamenti fiscali spiegati in modo semplice.',
-  alternates: { canonical: 'https://burosemplice.it/novita' },
+  alternates: { canonical: 'https://zeroburocrazia.it/novita' },
   openGraph: {
-    title: 'Novità e scadenze — BuroSemplice',
+    title: 'Novità e scadenze — ZeroBurocrazia',
     description: 'Ogni volta che cambia qualcosa — una circolare INPS, una scadenza, un nuovo bonus — lo spieghiamo qui in parole semplici.',
-    url: 'https://burosemplice.it/novita',
+    url: 'https://zeroburocrazia.it/novita',
     images: [{ url: '/oghome.png', width: 1200, height: 630 }],
   },
 };

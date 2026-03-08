@@ -1,11 +1,11 @@
 import './globals.css';
 
 export const metadata = {
-  title: { default: 'BuroSemplice — La burocrazia spiegata semplice', template: '%s | BuroSemplice' },
+  title: { default: 'ZeroBurocrazia — La burocrazia spiegata semplice', template: '%s | ZeroBurocrazia' },
   description: 'Guide gratuite e in linguaggio semplice per affrontare la burocrazia italiana: 730, SPID, ISEE, Partita IVA e molto altro.',
-  metadataBase: new URL('https://burosemplice.it'),
+  metadataBase: new URL('https://zeroburocrazia.it'),
   openGraph: {
-    siteName: 'BuroSemplice',
+    siteName: 'ZeroBurocrazia',
     locale: 'it_IT',
     type: 'website',
     images: [{ url: '/oghome.png', width: 1200, height: 630 }],

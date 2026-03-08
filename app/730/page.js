@@ -19,21 +19,21 @@ import ExitPopup from '@/components/ExitPopup';
 export const metadata = {
   title: '730 Precompilato 2026: Come Farlo, Detrazioni, Scadenze e Rimborso',
   description: '730 precompilato 2026: chi deve farlo, tutte le detrazioni, documenti necessari, scadenze e come ottenere il massimo rimborso. Guida gratuita passo per passo.',
-  alternates: { canonical: 'https://burosemplice.it/730' },
+  alternates: { canonical: 'https://zeroburocrazia.it/730' },
   openGraph: {
     type: 'article',
     title: '730 Precompilato 2026: Come Farlo, Detrazioni, Scadenze e Rimborso',
     description: '730 precompilato 2026: chi deve farlo, tutte le detrazioni, documenti necessari, scadenze e come ottenere il massimo rimborso. Guida gratuita passo per passo.',
-    url: 'https://burosemplice.it/730',
-    siteName: 'BuroSemplice',
+    url: 'https://zeroburocrazia.it/730',
+    siteName: 'ZeroBurocrazia',
     locale: 'it_IT',
-    images: [{ url: 'https://burosemplice.it/og-730.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://zeroburocrazia.it/og-730.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary',
     title: '730 Precompilato 2026: Come Farlo, Detrazioni, Scadenze e Rimborso',
     description: '730 precompilato 2026: chi deve farlo, tutte le detrazioni, documenti necessari, scadenze e come ottenere il massimo rimborso. Guida gratuita passo per passo.',
-    images: ['https://burosemplice.it/og-730.png'],
+    images: ['https://zeroburocrazia.it/og-730.png'],
   },
 };
 
@@ -286,11 +286,11 @@ export default function Pagina730() {
             <div className="sec-tag">Confronto</div>
             <h2>Quanto costa</h2>
             <div className="tw r"><table><thead><tr><th>Metodo</th><th>Costo</th><th>Tempo</th><th>Ideale per</th></tr></thead><tbody>
-              <tr className="rec"><td><strong>Precompilata da solo</strong> <span className="badge">Scelta BuroSemplice</span></td><td className="cfr">0€</td><td>1–2 ore</td><td>Un lavoro, poche spese. Serve SPID.</td></tr>
+              <tr className="rec"><td><strong>Precompilata da solo</strong> <span className="badge">Scelta ZeroBurocrazia</span></td><td className="cfr">0€</td><td>1–2 ore</td><td>Un lavoro, poche spese. Serve SPID.</td></tr>
               <tr><td><strong>CAF / Patronato</strong></td><td className="cv">30–80€</td><td>30 min + attesa</td><td>Chi ha cambiato lavoro o ha l&apos;affitto.</td></tr>
               <tr><td><strong>Commercialista</strong></td><td className="cv">80–200€</td><td>15 min tu</td><td>Immobili in affitto, redditi esteri, cripto.</td></tr>
             </tbody></table></div>
-            <div className="ib mon r"><div className="ib-t">💶 Il consiglio onesto di BuroSemplice</div><p><strong>Un solo lavoro + poche spese</strong> → fallo da solo con la precompilata. Risparmi 50–80€.<br/><strong>Hai cambiato lavoro, mutuo, figli</strong> → vai al CAF. Miglior rapporto qualità-prezzo.<br/><strong>Immobili, redditi esteri, cripto, eredità</strong> → commercialista. Costa di più ma ottimizza di più.</p></div>
+            <div className="ib mon r"><div className="ib-t">💶 Il consiglio onesto di ZeroBurocrazia</div><p><strong>Un solo lavoro + poche spese</strong> → fallo da solo con la precompilata. Risparmi 50–80€.<br/><strong>Hai cambiato lavoro, mutuo, figli</strong> → vai al CAF. Miglior rapporto qualità-prezzo.<br/><strong>Immobili, redditi esteri, cripto, eredità</strong> → commercialista. Costa di più ma ottimizza di più.</p></div>
             <Link href="/isee" className="xlink r"><span className="xlink-em">📋</span><div className="xlink-t"><strong>Faccio l&apos;ISEE</strong> — Molti documenti sono gli stessi. Fai entrambi.</div><span className="xlink-ar">→</span></Link>
           </div>
 
@@ -301,7 +301,7 @@ export default function Pagina730() {
               <div className="aff-left">
                 <div className="aff-title">Fai il 730 online con un commercialista dedicato</div>
                 <div className="aff-text">Carichi i documenti, un commercialista controlla tutto e massimizza il rimborso. Da 29€. Risparmi tempo e non rischi errori.</div>
-                <div className="aff-note">* Link in partnership — se ti iscrivi, BuroSemplice riceve una piccola commissione. Non cambia nulla per te.</div>
+                <div className="aff-note">* Link in partnership — se ti iscrivi, ZeroBurocrazia riceve una piccola commissione. Non cambia nulla per te.</div>
               </div>
               <a href="#" target="_blank" rel="noopener sponsored" className="aff-btn btn-soon">Prossimamente</a>
             </div>

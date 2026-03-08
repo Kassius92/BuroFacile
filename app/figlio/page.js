@@ -16,21 +16,21 @@ import QuizFiglio from '@/components/QuizFiglio';
 export const metadata = {
   title: 'Aspetto un Figlio nel 2026: Bonus, Congedo, Assegno Unico e Documenti',
   description: 'Aspetti un figlio nel 2026? Congedo maternità e paternità, assegno unico, bonus nuovi nati, bonus nido e tutti i documenti da fare. Guida gratuita aggiornata.',
-  alternates: { canonical: 'https://burosemplice.it/figlio' },
+  alternates: { canonical: 'https://zeroburocrazia.it/figlio' },
   openGraph: {
     title: 'Aspetto un Figlio nel 2026: Bonus, Congedo, Assegno Unico e Documenti',
     description: 'Aspetti un figlio nel 2026? Congedo maternità e paternità, assegno unico, bonus nuovi nati, bonus nido e tutti i documenti da fare. Guida gratuita aggiornata.',
-    url: 'https://burosemplice.it/figlio',
+    url: 'https://zeroburocrazia.it/figlio',
     type: 'article',
-    siteName: 'BuroSemplice',
+    siteName: 'ZeroBurocrazia',
     locale: 'it_IT',
-    images: [{ url: 'https://burosemplice.it/ogfiglio.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://zeroburocrazia.it/ogfiglio.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary',
     title: 'Aspetto un Figlio nel 2026: Bonus, Congedo, Assegno Unico e Documenti',
     description: 'Aspetti un figlio nel 2026? Congedo maternità e paternità, assegno unico, bonus nuovi nati, bonus nido e tutti i documenti da fare. Guida gratuita aggiornata.',
-    images: ['https://burosemplice.it/ogfiglio.png'],
+    images: ['https://zeroburocrazia.it/ogfiglio.png'],
   },
 };
 
@@ -311,7 +311,7 @@ export default function Page() {
       <div className="aff-left">
         <div className="aff-title">Lista nascita: risparmia su passeggino, seggiolino e tutto il necessario</div>
         <div className="aff-text">Crea la tua lista nascita online: confronta prezzi su migliaia di prodotti per neonato, con recensioni verificate e spedizione gratuita.</div>
-        <div className="aff-note">* Link in partnership — se acquisti tramite questo link, BuroSemplice riceve una piccola commissione. Non cambia nulla per te.</div>
+        <div className="aff-note">* Link in partnership — se acquisti tramite questo link, ZeroBurocrazia riceve una piccola commissione. Non cambia nulla per te.</div>
       </div>
       <a href="QUI_LINK_AFFILIATO_FIGLIO" target="_blank" rel="noopener sponsored" className="aff-btn">
         Crea la lista nascita →

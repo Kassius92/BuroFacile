@@ -17,7 +17,7 @@ export default function CalcRistrutturare() {
   return (
     <div className="calc" id="calcolatore-tool">
       <div className="calc-hd">
-        <div className="calc-tag">Calcolatore BuroSemplice</div>
+        <div className="calc-tag">Calcolatore ZeroBurocrazia</div>
         <h3>Bonus ristrutturazione 2026</h3>
       </div>
       <div className="calc-bd">

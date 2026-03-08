@@ -16,19 +16,19 @@ import ExitPopup from '@/components/ExitPopup';
 export const metadata = {
   title: 'Come Fare lo SPID nel 2026: Costo, Tempi e Provider Migliore',
   description: 'Come fare lo SPID nel 2026: quale provider scegliere, costo, riconoscimento online o in ufficio, tempi e problemi comuni. Guida gratuita passo per passo.',
-  alternates: { canonical: 'https://burosemplice.it/spid' },
+  alternates: { canonical: 'https://zeroburocrazia.it/spid' },
   openGraph: {
     title: 'Come Fare lo SPID nel 2026: Costo, Tempi e Provider Migliore',
     description: 'Come fare lo SPID nel 2026: quale provider scegliere, costo, riconoscimento online o in ufficio, tempi e problemi comuni. Guida gratuita passo per passo.',
-    url: 'https://burosemplice.it/spid',
+    url: 'https://zeroburocrazia.it/spid',
     type: 'article',
-    siteName: 'BuroSemplice',
+    siteName: 'ZeroBurocrazia',
     locale: 'it_IT',
-    images: [{ url: 'https://burosemplice.it/og-spid.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://zeroburocrazia.it/og-spid.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['https://burosemplice.it/og-spid.png'],
+    images: ['https://zeroburocrazia.it/og-spid.png'],
     title: 'Come Fare lo SPID nel 2026: Costo, Tempi e Provider Migliore',
     description: 'Come fare lo SPID nel 2026: quale provider scegliere, costo, riconoscimento online o in ufficio, tempi e problemi comuni. Guida gratuita passo per passo.',
   },
@@ -268,7 +268,7 @@ export default function Page() {
               <table>
                 <thead><tr><th>Provider</th><th>Costo</th><th>Riconoscimento</th><th>Note</th></tr></thead>
                 <tbody>
-                  <tr className="hl"><td><strong>PosteID</strong> <span className="badge">Scelta BuroSemplice</span></td><td className="cfr">Gratis</td><td>Di persona in ufficio postale, CIE, o con carta Bancoposte</td><td>Il più usato in Italia. Code possibili. Puoi anche farlo online con CIE.</td></tr>
+                  <tr className="hl"><td><strong>PosteID</strong> <span className="badge">Scelta ZeroBurocrazia</span></td><td className="cfr">Gratis</td><td>Di persona in ufficio postale, CIE, o con carta Bancoposte</td><td>Il più usato in Italia. Code possibili. Puoi anche farlo online con CIE.</td></tr>
                   <tr><td><strong>Lepida</strong></td><td className="cfr">Gratis</td><td>CIE, oppure di persona (solo Emilia-Romagna e poche altre regioni)</td><td>Ottimo se hai la CIE — tutto online in 5 minuti.</td></tr>
                   <tr><td><strong>Aruba</strong></td><td className="cv">Gratis o 9,90€</td><td>CIE o firma digitale (gratis). Videochiamata (9,90€).</td><td>Se hai la CIE o la firma digitale: gratis e velocissimo.</td></tr>
                   <tr><td><strong>InfoCert</strong></td><td className="cv">Gratis o 14,90€</td><td>CIE (gratis). Videochiamata (14,90€). Sportello (gratis, poche sedi).</td><td>Affidabile ma la videochiamata è la più cara.</td></tr>
@@ -279,7 +279,7 @@ export default function Page() {
     <BlurredRow scheda="spid" />
 
             <div className="ib mon r">
-              <div className="ib-t">💶 Il consiglio onesto di BuroSemplice</div>
+              <div className="ib-t">💶 Il consiglio onesto di ZeroBurocrazia</div>
               <p><strong>Hai la CIE?</strong> Scegli Lepida o Aruba. Tutto gratis, tutto online, 5 minuti da casa.<br/><strong>Non hai la CIE?</strong> Scegli PosteID. È gratis, vai all&apos;ufficio postale con documento e tessera sanitaria, e in 15 minuti hai lo SPID.<br/><strong>Vuoi farlo dal divano senza CIE?</strong> Aruba con videochiamata a 9,90€. Ti chiamano in giornata e risolvi tutto in 10 minuti.</p>
             </div>
           </div>
@@ -294,7 +294,7 @@ export default function Page() {
                 <div className="aff-left">
                   <div className="aff-title">Fai lo SPID da casa in 10 minuti con Aruba</div>
                   <div className="aff-text">Riconoscimento via CIE o webcam, senza andare alle Poste. A 9,90€ (una tantum) hai lo SPID attivo in giornata.</div>
-                  <div className="aff-note">* Link in partnership — se attivi lo SPID, BuroSemplice riceve una piccola commissione. Non cambia nulla per te.</div>
+                  <div className="aff-note">* Link in partnership — se attivi lo SPID, ZeroBurocrazia riceve una piccola commissione. Non cambia nulla per te.</div>
                 </div>
                 <a href="QUI_LINK_AFFILIATO_SPID" target="_blank" rel="noopener sponsored" className="aff-btn">
                   Attiva SPID con Aruba →

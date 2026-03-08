@@ -4,15 +4,15 @@ export function articleSchema({ title, description, url, image, datePublished = 
     '@type': 'Article',
     headline: title,
     description,
-    image: `https://burosemplice.it/${image}`,
-    url: `https://burosemplice.it${url}`,
+    image: `https://zeroburocrazia.it/${image}`,
+    url: `https://zeroburocrazia.it${url}`,
     datePublished,
     dateModified,
-    author: { '@type': 'Organization', name: 'BuroSemplice', url: 'https://burosemplice.it' },
+    author: { '@type': 'Organization', name: 'ZeroBurocrazia', url: 'https://zeroburocrazia.it' },
     publisher: {
       '@type': 'Organization',
-      name: 'BuroSemplice',
-      logo: { '@type': 'ImageObject', url: 'https://burosemplice.it/favicon32x32.png' }
+      name: 'ZeroBurocrazia',
+      logo: { '@type': 'ImageObject', url: 'https://zeroburocrazia.it/favicon32x32.png' }
     },
   };
 }

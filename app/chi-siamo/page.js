@@ -4,13 +4,13 @@ import Footer from '@/components/Footer';
 import '../utility.css';
 
 export const metadata = {
-  title: 'Chi siamo — BuroSemplice',
-  description: 'BuroSemplice: chi siamo, come lavoriamo e perché abbiamo creato il sito. Guide burocratiche gratuite, verificate e scritte in italiano semplice.',
-  alternates: { canonical: 'https://burosemplice.it/chi-siamo' },
+  title: 'Chi siamo — ZeroBurocrazia',
+  description: 'ZeroBurocrazia: chi siamo, come lavoriamo e perché abbiamo creato il sito. Guide burocratiche gratuite, verificate e scritte in italiano semplice.',
+  alternates: { canonical: 'https://zeroburocrazia.it/chi-siamo' },
   openGraph: {
-    title: 'Chi siamo — BuroSemplice',
-    description: 'BuroSemplice: chi siamo, come lavoriamo e perché abbiamo creato il sito. Guide burocratiche gratuite, verificate e scritte in italiano semplice.',
-    url: 'https://burosemplice.it/chi-siamo',
+    title: 'Chi siamo — ZeroBurocrazia',
+    description: 'ZeroBurocrazia: chi siamo, come lavoriamo e perché abbiamo creato il sito. Guide burocratiche gratuite, verificate e scritte in italiano semplice.',
+    url: 'https://zeroburocrazia.it/chi-siamo',
     type: 'website',
   },
 };
@@ -23,16 +23,16 @@ export default function ChiSiamoPage() {
       <div className="page-wrap">
         <div className="page-tag">Il progetto</div>
         <h1 className="page-title">Chi siamo</h1>
-        <p className="page-lead">BuroSemplice nasce da una frustrazione personale: scoprire — spesso troppo tardi — che esistevano bonus, agevolazioni e procedure più semplici di cui nessuno aveva pensato di informarci.</p>
+        <p className="page-lead">ZeroBurocrazia nasce da una frustrazione personale: scoprire — spesso troppo tardi — che esistevano bonus, agevolazioni e procedure più semplici di cui nessuno aveva pensato di informarci.</p>
 
         <div className="prose">
           <h2>Il problema che risolviamo</h2>
           <p>Le informazioni burocratiche in Italia esistono. Sono sui siti dell&apos;Agenzia delle Entrate, dell&apos;INPS, dei Comuni. Il problema non è che mancano — è che sono scritte per chi le conosce già, disperse in centinaia di pagine, aggiornate senza preavviso, e quasi mai collegate tra loro.</p>
           <p>Il risultato: milioni di italiani perdono ogni anno migliaia di euro in bonus a cui hanno diritto, fanno pratiche nel modo sbagliato, pagano più del necessario — semplicemente perché nessuno gliel&apos;ha spiegato in modo chiaro.</p>
-          <p><strong>BuroSemplice è quell&apos;amico che sa sempre cosa fare.</strong> Non un chatbot generico. Non un sito istituzionale. Una guida scritta come se te la spiegasse una persona di fiducia, con i numeri reali, le scadenze vere, gli uffici giusti.</p>
+          <p><strong>ZeroBurocrazia è quell&apos;amico che sa sempre cosa fare.</strong> Non un chatbot generico. Non un sito istituzionale. Una guida scritta come se te la spiegasse una persona di fiducia, con i numeri reali, le scadenze vere, gli uffici giusti.</p>
 
           <h2>Come lavoriamo</h2>
-          <p>Ogni scheda di BuroSemplice è costruita a partire dalle fonti ufficiali: circolari dell&apos;Agenzia delle Entrate, messaggi INPS, testi di legge, note ministeriali. Poi viene riscritta in italiano comprensibile, con esempi concreti e numeri verificati.</p>
+          <p>Ogni scheda di ZeroBurocrazia è costruita a partire dalle fonti ufficiali: circolari dell&apos;Agenzia delle Entrate, messaggi INPS, testi di legge, note ministeriali. Poi viene riscritta in italiano comprensibile, con esempi concreti e numeri verificati.</p>
           <p>Le guide vengono aggiornate quando cambia la normativa — non una volta l&apos;anno. Quando pubblichiamo una scheda, indichiamo sempre la data dell&apos;ultimo aggiornamento e le fonti di riferimento.</p>
           <p>Non siamo infallibili. Se trovi un errore o un&apos;informazione non aggiornata, <Link href="/contatti">scrivici</Link>: lo correggiamo entro 24 ore.</p>
 
@@ -67,7 +67,7 @@ export default function ChiSiamoPage() {
           </div>
 
           <h2>Contattaci</h2>
-          <p>Hai trovato un errore? Vuoi suggerire una guida? Hai una domanda? Scrivi a <a href="mailto:info.burosemplice@gmail.com">info.burosemplice@gmail.com</a> o vai alla <Link href="/contatti">pagina contatti</Link>. Rispondiamo a tutto.</p>
+          <p>Hai trovato un errore? Vuoi suggerire una guida? Hai una domanda? Scrivi a <a href="mailto:info@zeroburocrazia.it">info@zeroburocrazia.it</a> o vai alla <Link href="/contatti">pagina contatti</Link>. Rispondiamo a tutto.</p>
         </div>
       </div>
 
